@@ -1,0 +1,93 @@
+.page-header {
+	.clearfix();
+	.container-fluid(@mobile-margin);
+	
+	position: fixed;
+	width: 100%;
+	background-color: @menu-grey;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: @mobile-margin*2;
+	-vertical-align: top;
+}
+
+.page-header__logo {
+	display: inline-block;
+}
+
+.page-header__title {
+	.out-indent();
+	.fonts(@family:'Poor Richard Regular'; @weight: normal; @size: 24px; @line-height: 20px; @color: @white);
+
+	display: inline-block;
+
+	opacity: .7;
+	vertical-align: top;
+}
+
+.main-nav {
+	-position: relative;
+}
+
+.main-nav__toggle {
+	position: absolute;
+	top: -25px;
+	right: 45px;
+	z-index: 10;
+
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: 0;
+	outline: 0;
+	background-color: @menu-grey;
+	opacity: .8;
+
+	cursor: pointer;
+}
+
+.main-nav--closed {
+	.main-nav__list {
+		display: none;
+	}
+
+	.main-nav__toggle::before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -5px;
+
+		width: 30px;
+		height: 2px;
+
+		background-color: @white;
+		box-shadow: 0 8px 0 0 @white,
+					0 16px 0 0 @white;
+	}
+}
+
+.main-nav--opened {
+	.main-nav__toggle {
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			width: 28px;
+			height: 2px;
+
+			background-color: @white;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+			box-shadow: none;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+}

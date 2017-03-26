@@ -9,29 +9,39 @@
   }
 }
 
-.container() {
+.container(@paddings) {
 	width: 320px;
 	margin: 0 auto;
 
-	padding-right: 30px;
-	padding-left: 30px;
+	padding-right: @paddings;
+	padding-left: @paddings;
 
 	box-sizing: border-box;	
 }
 
-.container-fluid() {
+.container-fluid(@paddings) {
+	padding-left: @paddings;
+	padding-right: @paddings;
 	margin-right: auto;
   	margin-left: auto;
 }
 
-.row() {
-	padding-right: -30px;
-	padding-left: -30px;
+.row(@paddings) {
+	padding-right: -@paddings;
+	padding-left: -@paddings;
 }
 
 .out-indent() {
 	margin: 0;
 	padding: 0;
+}
+
+.fonts(@family; @weight: normal; @size; @line-height; @color: @black) {
+	font-family: @family;
+	font-weight: @weight;
+	font-size: @size;
+	line-height: @line-height;
+	color: @color;
 }
 
 .hover-active() {
