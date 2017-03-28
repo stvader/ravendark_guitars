@@ -215,25 +215,29 @@ picture {
 .no-js .main-block {
   padding-top: 0;
 }
-.slider__images {
-  position: relative;
-  overflow: hidden;
-  height: 100px;
-  /*check with psd*/
+/*.slider__images {
+	position: relative;
+	overflow: hidden;
+	height: 100px;*/
+/*check with psd*/
+/*}
+
+/*.slider__images-wrapper {
+	-position: relative;
+
+	font-size: 0;
+	height: 100px;
+	white-space: nowrap;
 }
-.slider__images-wrapper {
-  -position: relative;
-  font-size: 0;
-  height: 100px;
-  white-space: nowrap;
-}
+
 .slider__picture {
-  position: relative;
-  display: inline-block;
+	position: relative;	
+	display: inline-block;
 }
+
 .slider__picture-note {
-  position: absolute;
-}
+	position: absolute;
+}*/
 /*@import "blocks/main-nav.less";
 @import "blocks/top.less";
 @import "blocks/week-product.less";
