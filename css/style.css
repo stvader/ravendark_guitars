@@ -107,10 +107,13 @@ picture {
   margin-left: auto;
   position: fixed;
   width: 100%;
+  height: 60px;
+  /*check it*/
+  box-sizing: border-box;
   background-color: #2b2b2b;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-right: 40px;
+  -padding-right: 40px;
   -vertical-align: top;
 }
 .page-header:before,
@@ -138,11 +141,21 @@ picture {
 }
 .main-nav {
   -position: relative;
+  -background-color: rgba(45, 45, 45, 0.8);
+}
+.main-nav__wrapper {
+  position: absolute;
+  background-color: rgba(43, 43, 43, 0.8);
+  top: 60px;
+  left: 0;
+  right: 0;
 }
 .main-nav__toggle {
+  margin: 0;
+  padding: 0;
   position: absolute;
-  top: -25px;
-  right: 45px;
+  top: 20px;
+  right: 25px;
   z-index: 10;
   display: block;
   width: 20px;
@@ -153,7 +166,7 @@ picture {
   opacity: .8;
   cursor: pointer;
 }
-.main-nav--closed .main-nav__list {
+.main-nav--closed .main-nav__wrapper {
   display: none;
 }
 .main-nav--closed .main-nav__toggle::before {
@@ -170,8 +183,8 @@ picture {
 .main-nav--opened .main-nav__toggle::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 9px;
+  left: -4px;
   width: 28px;
   height: 2px;
   background-color: #ffffff;
@@ -183,6 +196,44 @@ picture {
 .main-nav--opened .main-nav__toggle::after {
   transform: rotate(-45deg);
 }
+.no-js .page-header {
+  position: static;
+  height: auto;
+}
+.no-js .main-nav__wrapper {
+  display: block;
+  position: static;
+  background-color: #2b2b2b;
+}
+.no-js .main-nav__toggle {
+  display: none;
+}
+.main-block {
+  padding-top: 60px;
+  /*check this size*/
+}
+.no-js .main-block {
+  padding-top: 0;
+}
+.slider__images {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  /*check with psd*/
+}
+.slider__images-wrapper {
+  -position: relative;
+  font-size: 0;
+  height: 100px;
+  white-space: nowrap;
+}
+.slider__picture {
+  position: relative;
+  display: inline-block;
+}
+.slider__picture-note {
+  position: absolute;
+}
 /*@import "blocks/main-nav.less";
 @import "blocks/top.less";
 @import "blocks/week-product.less";
@@ -191,3 +242,8 @@ picture {
 @import "blocks/footer.less";
 @import "blocks/page-catalog-main.less";
 @import "blocks/form.less";*/
+@media (min-width: 800px) {
+  .main-nav__toggle {
+    display: none;
+  }
+}
