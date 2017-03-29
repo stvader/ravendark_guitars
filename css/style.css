@@ -80,6 +80,13 @@ picture {
   font-style: normal;
 }
 @font-face {
+  font-family: 'Rubik-Medium';
+  src: url('../fonts/Rubik-Medium.eot');
+  src: url('../fonts/Rubik-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Rubik-Medium.woff2') format('woff2'), url('../fonts/Rubik-Medium.woff') format('woff'), url('../fonts/Rubik-Medium.ttf') format('truetype'), url('../fonts/Rubik-Medium.svg#Rubik') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Rubik Bold';
   src: url('../fonts/Rubik-Bold.eot');
   src: url('../fonts/Rubik-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Rubik-Bold.woff2') format('woff2'), url('../fonts/Rubik-Bold.woff') format('woff'), url('../fonts/Rubik-Bold.ttf') format('truetype'), url('../fonts/Rubik-Bold.svg#Rubik Bold') format('svg');
@@ -104,6 +111,13 @@ picture {
   font-family: 'Merriweather';
   src: url('../fonts/Merriweather.eot');
   src: url('../fonts/Merriweather.eot?#iefix') format('embedded-opentype'), url('../fonts/Merriweather.woff2') format('woff2'), url('../fonts/Merriweather.woff') format('woff'), url('../fonts/Merriweather.ttf') format('truetype'), url('../fonts/Merriweather.svg#Merriweather') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Merriweather-Bold';
+  src: url('../fonts/Merriweather-Bold.eot');
+  src: url('../fonts/Merriweather-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Merriweather-Bold.woff2') format('woff2'), url('../fonts/Merriweather-Bold.woff') format('woff'), url('../fonts/Merriweather-Bold.ttf') format('truetype'), url('../fonts/Merriweather-Bold.svg#Merriweather') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -249,6 +263,7 @@ picture {
   right: 0;
   background-color: #9e0b0f;
 }
+/*munu mobile working if js is turned off*/
 .no-js .page-header {
   position: static;
   height: auto;
@@ -287,14 +302,109 @@ picture {
 .slider__picture-note {
   position: absolute;
 }
-/*@import "blocks/main-nav.less";
-@import "blocks/top.less";
-@import "blocks/week-product.less";
-@import "blocks/about.less";
-@import "blocks/contacts.less";
-@import "blocks/footer.less";
-@import "blocks/page-catalog-main.less";
-@import "blocks/form.less";*/
+/*-------------------------------------------
+style for all h3
+---------------------------------------------*/
+.main-home-header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather-Bold';
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  color: #282828;
+  letter-spacing: -0.7px;
+}
+/*------------------------------------------
+style for all dates
+--------------------------------------------*/
+.main-home-date {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #282828;
+  opacity: .5;
+}
+.taskbar__nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.taskbar__nav-link {
+  font-family: 'Rubik-Light';
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #282828;
+  text-decoration: none;
+}
+.taskbar__nav-link--carrent {
+  font-family: 'Rubik-Medium';
+}
+.taskbar__article-name {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather-Bold';
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #282828;
+}
+.taskbar__article-link {
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #282828;
+  text-decoration: underline;
+}
+.taskbar__blog-link {
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 40px;
+  color: #ffffff;
+  display: block;
+  width: 110px;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #9e0b0f;
+}
+.acticle__content {
+  font-family: 'Rubik-Light';
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #282828;
+}
+.article__link {
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #282828;
+}
+.page-footer {
+  height: 60px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #2b2b2b;
+}
+.copyright-block__text {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poor Richard Regular';
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 20px;
+  color: #ffffff;
+  opacity: .2;
+}
 @media (min-width: 800px) {
   .main-nav__toggle {
     display: none;
