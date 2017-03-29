@@ -120,6 +120,7 @@ picture {
   background-color: #2b2b2b;
   padding-top: 20px;
   padding-bottom: 20px;
+  z-index: 1000;
   -padding-right: 40px;
   -vertical-align: top;
 }
@@ -149,7 +150,7 @@ picture {
 .main-nav {
   -position: relative;
   -background-color: rgba(45, 45, 45, 0.8);
-  z-index: 100;
+  z-index: 2000;
 }
 .main-nav__wrapper {
   position: absolute;
@@ -243,6 +244,7 @@ picture {
   height: 2px;
   position: absolute;
   bottom: -10px;
+  /*chech in psd*/
   left: 0;
   right: 0;
   background-color: #9e0b0f;
@@ -271,10 +273,9 @@ picture {
   overflow: hidden;
   height: 100px;
   /*check with psd*/
-  display: none;
+  -display: none;
 }
 .slider__images-wrapper {
-  -position: relative;
   font-size: 0;
   height: 100px;
   white-space: nowrap;
