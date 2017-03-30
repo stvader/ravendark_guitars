@@ -1,3 +1,8 @@
+.taskbar,
+.main-content {
+
+}
+
 /*-------------------------------------------
 style for all h3
 ---------------------------------------------*/
@@ -18,37 +23,93 @@ style for all dates
 	opacity: .5;
 }
 
+.taskbar__navigation {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border: 1px solid @grey-btm-bd;
+}
+
+.taskbar__header--nav {
+	margin-bottom: 25px;
+}
+
 .taskbar__nav-list {
 	.out-indent();	
 
 	list-style: none;
+	margin-left: -10px;
+}
+
+.taskbar__nav-list:last-child {
+	border-right: none;
+}
+
+.taskbar__nav-item {
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-right: 1px solid @black;
 }
 
 .taskbar__nav-link {
 	.fonts(@family: 'Rubik-Light'; @weight: normal; @size: 16px; @line-height: 21px; @color: @grey-taskbar);
 
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .taskbar__nav-link--carrent {
 	font-family: 'Rubik-Medium';
 }
 
+
+
+.taskbar__last-articles {
+	padding-top: 30px;
+	padding-bottom: 70px;
+	border-bottom: 1px solid @grey-btm-bd;
+}
+
+
+.taskbar__header--last-article {
+	margin-bottom: 35px;
+}
+
+.taskbar__article-title {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 35px;
+
+}
+
+.taskbar__date {
+	-margin-bottom: 15px;
+}
+
 .taskbar__article-name {
 	.out-indent();
 	.fonts(@family: 'Merriweather-Bold'; @weight: bold; @size: 16px; @line-height: 22px; @color: @grey-taskbar);
+
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .taskbar__article-link {
 	.fonts(@family: 'Rubik'; @weight: normal; @size: 14px; @line-height: 14px; @color: @grey-taskbar);
 
+	display: block;
 	text-decoration: underline;
+	text-align: right;
+	cursor: pointer;
+	-float:right;
 }
 
 .taskbar__blog-link {
 	.fonts(@family: 'Rubik'; @weight: normal; @size: 14px; @line-height: 40px; @color: @white);
 
 	display: block;
+	float: right;
 	width: 110px;
 	height: 40px;
 	text-decoration: none;
@@ -57,7 +118,7 @@ style for all dates
 }
 
 .acticle__content {
-	.fonts(@family: 'Rubik-Light'; @weight: normal; @size: 16px; @line-height: 25px; @color: @grey-taskbar);
+	.fonts(@family: 'Rubik-Light'; @weight: normal; @size: 16px; @line-height: 23px; @color: @grey-taskbar);
 }
 
 .article__link {

@@ -1,9 +1,14 @@
 .page-footer {
-	height: 60px;
-	box-sizing: border-box;
+	.container-fluid(@mobile-padding);
+	height: @header-footer-mobile-height;
+	box-sizing: border-box;	
+	background-color: @menu-grey;
+}
+
+.copyright-block {
+	.out-indent();
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background-color: @menu-grey;
 }
 
 .copyright-block__text {
