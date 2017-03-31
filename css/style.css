@@ -286,25 +286,38 @@ picture {
   padding-top: 0;
 }
 .slider {
-  height: 370px;
+  -height: 370px;
   margin-left: -20px;
   margin-right: -20px;
 }
 .slider__images {
   position: relative;
   overflow: hidden;
-  height: 100px;
+  -height: 370px;
   /*check with psd*/
   -display: none;
 }
 .slider__images-wrapper {
   font-size: 0;
-  height: 100px;
+  height: 370px;
   white-space: nowrap;
 }
 .slider__picture {
   position: relative;
   display: inline-block;
+  -height: 370px;
+  -background-image: url("../img/slider-image 1 large.jpg");
+  -overflow: hidden;
+  background-size: cover;
+}
+.slider__image {
+  height: 370px;
+  background-image: url("../img/slider-image 1 large.jpg");
+  background-size: cover;
+}
+.slider__image {
+  -height: 100%;
+  -width: 100%;
 }
 .slider__picture-note {
   position: absolute;
@@ -338,7 +351,7 @@ style for all dates
 .taskbar__navigation {
   padding-top: 30px;
   padding-bottom: 30px;
-  border: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
 }
 .taskbar__header--nav {
   margin-bottom: 25px;
@@ -464,7 +477,43 @@ style for all dates
   opacity: .2;
 }
 @media (min-width: 800px) {
+  .page-header {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page-header__logo {
+    margin-top: -7px;
+  }
+  .page-header__title {
+    margin-right: 30px;
+  }
+  .main-nav {
+    display: block;
+    float: right;
+  }
   .main-nav__toggle {
     display: none;
+  }
+  .main-nav .main-nav__wrapper {
+    /*for display*/
+    display: block;
+    position: static;
+  }
+  .main-nav__list {
+    display: inline-block;
+    padding-right: 40px;
+  }
+  .main-nav__list:last-child {
+    padding-right: 0;
+  }
+  .main-nav__item {
+    display: inline-block;
+    margin-top: 0;
+    padding-right: 20px;
+  }
+  .main-nav__item:last-child {
+    padding-right: 0;
   }
 }

@@ -167,7 +167,48 @@
 }
 
 @media @desktop-width {
+	.page-header {
+		.container-fluid(@desktop-padding);
+	}
+
+	.page-header__logo {
+		margin-top: -7px;
+	}
+
+	.page-header__title {
+		margin-right: 30px;
+	}
+
+	.main-nav {
+		display: block;
+		float: right;
+	}
+
 	.main-nav__toggle {
 		display: none;
+	}
+
+	.main-nav .main-nav__wrapper { /*for display*/
+		display: block;
+		position: static;
+	}
+
+	.main-nav__list {
+		display: inline-block;
+		padding-right: 40px;
+	}
+
+	.main-nav__list:last-child {
+		padding-right: 0;
+	}
+
+	.main-nav__item {
+		display: inline-block;
+		margin-top: 0;
+		padding-right: 20px;
+	}
+
+	.main-nav__item:last-child {
+		padding-right: 0;
 	}
 }
