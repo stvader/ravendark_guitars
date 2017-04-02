@@ -109,10 +109,16 @@ style for all dates
 	float: right;	
 }
 
+.taskbar__for-desktop {
+	display: none;
+}
+
 .article {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	border-top: 1px solid @grey-btm-bd;
+	min-height: 350px;
+	box-sizing: border-box;
 }
 
 .article:last-child {
@@ -146,4 +152,29 @@ style for all dates
 
 	display: inline-block;
 	float: right;
+}
+
+@media @desktop-width {
+	.taskbar {
+		width: 285px;
+		float: right;
+		margin-left: 70px;
+	}
+
+	.taskbar__for-desktop {
+		display: block;
+	}
+
+	.taskbar__blog-link {
+		float: none;
+	}
+
+	.article__img {
+		float: left;
+		margin-right: 55px;
+	}
+
+	.article__header {
+		line-height: 30px;
+	}
 }

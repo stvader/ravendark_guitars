@@ -478,10 +478,15 @@ style for all dates
 .taskbar__blog-link {
   float: right;
 }
+.taskbar__for-desktop {
+  display: none;
+}
 .article {
   padding-top: 30px;
   padding-bottom: 30px;
   border-top: 1px solid #ebebeb;
+  min-height: 350px;
+  box-sizing: border-box;
 }
 .article:last-child {
   border-bottom: 1px solid #ebebeb;
@@ -521,14 +526,15 @@ style for all dates
   margin-right: auto;
   margin-left: auto;
   height: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   box-sizing: border-box;
   background-color: #2b2b2b;
+  text-align: center;
 }
 .copyright-block {
   margin: 0;
   padding: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 .copyright-block__text {
   margin: 0;
@@ -546,6 +552,9 @@ style for all dates
   font-size: 24px;
   line-height: 20px;
   color: #ffffff;
+}
+.main-nav__wrapper {
+  display: none;
 }
 @media (min-width: 800px) {
   .page-header {
@@ -586,5 +595,40 @@ style for all dates
   }
   .main-nav__item:last-child {
     padding-right: 0;
+  }
+  .main-block {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .taskbar {
+    width: 285px;
+    float: right;
+    margin-left: 70px;
+  }
+  .taskbar__for-desktop {
+    display: block;
+  }
+  .taskbar__blog-link {
+    float: none;
+  }
+  .article__img {
+    float: left;
+    margin-right: 55px;
+  }
+  .article__header {
+    line-height: 30px;
+  }
+  .page-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 60px;
+    text-align: left;
+  }
+  .copyright-block {
+    display: inline-block;
   }
 }

@@ -1,14 +1,15 @@
 .page-footer {
 	.container-fluid(@mobile-padding);
 	height: @header-footer-mobile-height;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	box-sizing: border-box;	
 	background-color: @menu-grey;
+	text-align: center;
 }
 
 .copyright-block {
-	.out-indent();
-	padding-top: 20px;
-	padding-bottom: 20px;
+	.out-indent();	
 }
 
 .copyright-block__text {
@@ -20,4 +21,21 @@
 
 .footer__copyright {
 	.fonts(@family:'Gentium Basic Bold'; @weight: 100; @size: 24px; @line-height: 20px; @color: @white);
+}
+
+.main-nav__wrapper {
+	display: none;
+}
+
+@media @desktop-width {
+	.page-footer {
+		.container-fluid(@desktop-padding);
+
+		padding-right: @desktop-padding + 20px;
+		text-align: left;
+	}
+
+	.copyright-block {
+		display: inline-block;
+	}	
 }
