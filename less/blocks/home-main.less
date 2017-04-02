@@ -1,14 +1,12 @@
-.taskbar,
-.main-content {
-
+.main-block--home {
+	padding-top: 0;
 }
-
 /*-------------------------------------------
 style for all h3
 ---------------------------------------------*/
 .main-home-header {
 	.out-indent();
-	.fonts(@family: 'Merriweather-Bold'; @weight: bold; @size: 21px; @line-height: 26px; @color: @grey-taskbar);
+	.fonts(@family: 'Merriweather Bold'; @weight: bold; @size: 21px; @line-height: 26px; @color: @grey-taskbar);
 
 	letter-spacing: -0.7px;
 }
@@ -52,14 +50,14 @@ style for all dates
 }
 
 .taskbar__nav-link {
-	.fonts(@family: 'Rubik-Light'; @weight: normal; @size: 16px; @line-height: 21px; @color: @grey-taskbar);
+	.fonts(@family: 'Rubik Light'; @weight: normal; @size: 16px; @line-height: 21px; @color: @grey-taskbar);
 
 	text-decoration: none;
 	cursor: pointer;
 }
 
 .taskbar__nav-link--carrent {
-	font-family: 'Rubik-Medium';
+	font-family: 'Rubik Medium';
 }
 
 
@@ -67,7 +65,7 @@ style for all dates
 .taskbar__last-articles {
 	padding-top: 30px;
 	padding-bottom: 70px;
-	border-bottom: 1px solid @grey-btm-bd;
+	-border-bottom: 1px solid @grey-btm-bd;
 }
 
 
@@ -87,9 +85,11 @@ style for all dates
 	-margin-bottom: 15px;
 }
 
+
+
 .taskbar__article-name {
 	.out-indent();
-	.fonts(@family: 'Merriweather-Bold'; @weight: bold; @size: 16px; @line-height: 22px; @color: @grey-taskbar);
+	.fonts(@family: 'Merriweather Bold'; @weight: bold; @size: 16px; @line-height: 22px; @color: @grey-taskbar);
 
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -106,21 +106,44 @@ style for all dates
 }
 
 .taskbar__blog-link {
-	.fonts(@family: 'Rubik'; @weight: normal; @size: 14px; @line-height: 40px; @color: @white);
+	float: right;	
+}
 
-	display: block;
-	float: right;
-	width: 110px;
-	height: 40px;
-	text-decoration: none;
-	text-align: center;
-	background-color: @red;
+.article {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-top: 1px solid @grey-btm-bd;
+}
+
+.article:last-child {
+	border-bottom: 1px solid @grey-btm-bd;
+}
+
+.article__img {
+	margin-bottom: 30px;
+}
+
+.article__date {
+	margin-bottom: 30px;
+}
+
+.article__header {
+	margin-bottom: 30px;
 }
 
 .acticle__content {
-	.fonts(@family: 'Rubik-Light'; @weight: normal; @size: 16px; @line-height: 23px; @color: @grey-taskbar);
+	.fonts(@family: 'Rubik Light'; @weight: normal; @size: 16px; @line-height: 23px; @color: @grey-taskbar);
+
+	margin-bottom: 30px;
+}
+
+.article__social {
+	display: inline-block;
 }
 
 .article__link {
 	.fonts(@family: 'Rubik'; @weight: normal; @size: 14px; @line-height: 14px; @color: @grey-taskbar);
+
+	display: inline-block;
+	float: right;
 }
