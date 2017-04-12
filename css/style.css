@@ -333,6 +333,8 @@ picture {
   margin-bottom: 30px;
 }
 .slider__navigation {
+  /*!! DELETE before production*/
+  display: none;
   position: absolute;
   bottom: 30px;
   z-index: 3000;

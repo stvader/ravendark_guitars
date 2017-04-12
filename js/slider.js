@@ -7,7 +7,7 @@ $(document).ready(function(){
     	autoplaySpeed: 5000,
     	arrows: false,
     	dots: true
-    	dotsClass: 'slider__pagination'
+    	
 
     });
 
