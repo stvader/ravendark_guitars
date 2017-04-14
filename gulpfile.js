@@ -35,7 +35,8 @@ gulp.task('server', ["style"], function() {
 		server: '.'
 	});
 
-	gulp.watch('less/**/*.less', ['style']);
+	gulp.watch('less/**/*.less', ['style'])
+		.on('change', server.reload);
 	gulp.watch('*.html')
 		.on('change', server.reload);
 	gulp.watch('js/**/*.js')
