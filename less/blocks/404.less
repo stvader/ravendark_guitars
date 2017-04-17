@@ -1,0 +1,60 @@
+.main-block--404 {
+	text-align: center;
+	padding-top: 120px;
+}
+
+.no-exist__number-error {
+	.out-indent();
+	.fonts(@family: 'Gentium Basic Bold'; @weight: normal; @size: 170px; @line-height: 106px; @color: @menu-grey);
+}
+
+.no-exist__question {
+	.out-indent();
+	.fonts(@family: 'Merriweather Bold'; @weight: bold; @size: 48px; @line-height: 100px; @color: @menu-grey);
+}
+
+.no-exist__info {
+	.out-indent();
+	.fonts(@family: 'Rubik'; @weight: normal; @size: 14px; @line-height: 21px; @color: @menu-grey);
+	
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
+}
+
+.no-exist__link-home {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
+	width: 190px;
+}
+
+/*footer will stick to bottom*/
+
+@media @desktop-width {
+	.main-block--404  {
+		text-align: left;
+		padding-top: 200px;
+	}
+
+	.no-exist__head {
+		float: left;
+		width: 405px;
+		text-align: center;
+	}
+
+	.no-exist__descr {
+		float: left;
+	}
+
+	.no-exist__info {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.no-exist__link-home {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
