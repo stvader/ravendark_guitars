@@ -1,0 +1,28 @@
+.taskbar__navigation {
+	display: none;
+}
+
+.blog-articles__header {
+	.out-indent();
+	.fonts(@family: "Merriweather Bold"; @weight: bold; @size: 30px; @line-height: 42px; @color: @grey-taskbar);
+}
+
+.blog-articles__date {
+	.out-indent();
+	.fonts(@family: "Rubik"; @weight: normal; @size: 11px; @line-height: 11px; @color: @grey-taskbar);
+
+	opacity: .5;
+}
+
+.blog-articles__content {
+	.out-indent();
+	.fonts(@family: "Rubik Light"; @weight: normal; @size: 16px; @line-height: 28px; @color: @grey-taskbar);
+
+}
+
+@media @desktop-width {
+
+	.blog-articles__header {
+		font-size: 42px;
+	}
+}
