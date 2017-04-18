@@ -368,6 +368,7 @@ picture {
 .slider__pagination-link--active {
   background-color: #9e0b0f;
 }
+/*END od deletated!!!!*/
 .main-block--home {
   padding-top: 0;
 }
@@ -598,6 +599,10 @@ style for all dates
     padding-right: 40px;
     margin-right: auto;
     margin-left: auto;
+  }
+  .slider__picture-note {
+    padding-left: 40px;
+    padding-right: 40px;
   }
   .taskbar {
     width: 285px;
