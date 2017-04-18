@@ -264,6 +264,42 @@ picture {
 .no-js .main-nav__toggle {
   display: none;
 }
+.page-footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #2b2b2b;
+  text-align: center;
+}
+.copyright-block {
+  margin: 0;
+  padding: 0;
+}
+.copyright-block__text {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poor Richard Regular';
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 20px;
+  color: #ffffff;
+  opacity: .2;
+}
+.footer__copyright {
+  font-family: 'Gentium Basic Bold';
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 20px;
+  color: #ffffff;
+}
+.main-nav__wrapper {
+  display: none;
+}
 .main-block {
   padding-left: 20px;
   padding-right: 20px;
@@ -518,42 +554,48 @@ style for all dates
   display: inline-block;
   float: right;
 }
-.page-footer {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  height: 60px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  box-sizing: border-box;
-  background-color: #2b2b2b;
+.main-block--404 {
   text-align: center;
+  padding-top: 120px;
 }
-.copyright-block {
+.no-exist__number-error {
   margin: 0;
   padding: 0;
-}
-.copyright-block__text {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poor Richard Regular';
-  font-weight: 100;
-  font-size: 24px;
-  line-height: 20px;
-  color: #ffffff;
-  opacity: .2;
-}
-.footer__copyright {
   font-family: 'Gentium Basic Bold';
-  font-weight: 100;
-  font-size: 24px;
-  line-height: 20px;
-  color: #ffffff;
+  font-weight: normal;
+  font-size: 170px;
+  line-height: 106px;
+  color: #2b2b2b;
 }
-.main-nav__wrapper {
-  display: none;
+.no-exist__question {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather Bold';
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 100px;
+  color: #2b2b2b;
 }
+.no-exist__info {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2b2b2b;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+.no-exist__link-home {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  width: 190px;
+}
+/*footer will stick to bottom*/
 @media (min-width: 800px) {
   .page-header {
     padding-left: 40px;
@@ -594,6 +636,17 @@ style for all dates
   .main-nav__item:last-child {
     padding-right: 0;
   }
+  .page-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 60px;
+    text-align: left;
+  }
+  .copyright-block {
+    display: inline-block;
+  }
   .main-block {
     padding-left: 40px;
     padding-right: 40px;
@@ -625,15 +678,24 @@ style for all dates
   .article__header {
     line-height: 30px;
   }
-  .page-footer {
-    padding-left: 40px;
-    padding-right: 40px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 60px;
+  .main-block--404 {
     text-align: left;
+    padding-top: 200px;
   }
-  .copyright-block {
-    display: inline-block;
+  .no-exist__head {
+    float: left;
+    width: 405px;
+    text-align: center;
+  }
+  .no-exist__descr {
+    float: left;
+  }
+  .no-exist__info {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .no-exist__link-home {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
