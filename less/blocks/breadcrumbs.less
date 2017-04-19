@@ -1,12 +1,16 @@
 .breadcrumbs {
 	.out-indent();
 
+	padding-top: 20px;
+	padding-bottom: 20px;
+
 	list-style: none;
 	opacity: .5;
 }
 
 .breadcrumbs__item {
 	display: inline-block;
+	padding-right: 15px;
 
 	&:not(:last-child)::after {
 		content: ">";
@@ -17,7 +21,7 @@
 .breadcrumbs__link {
 	.fonts(@family: "Rubik"; @weight: normal; @size: 14px; @line-height: 14px; @color: @black);
 
-	-display: block;
+	padding-right: 15px;
 	text-decoration: none;
 	
 	

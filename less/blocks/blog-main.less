@@ -1,5 +1,13 @@
-.taskbar__navigation {
+.main-block--blog .taskbar__navigation {
 	display: none;
+}
+
+.blog-articles__article {
+
+	&:not(:last-child) {
+		border-bottom: 1px solid @grey-pale-border;
+	}
+	
 }
 
 .blog-articles__header {
@@ -11,6 +19,8 @@
 	.out-indent();
 	.fonts(@family: "Rubik"; @weight: normal; @size: 11px; @line-height: 11px; @color: @grey-taskbar);
 
+	padding-top: 20px;
+	padding-bottom: 20px;
 	opacity: .5;
 }
 
@@ -20,7 +30,32 @@
 
 }
 
+.blog-articles__picture {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.blog-articles__image {
+	width: 100%;
+}
+
+.blog-articles__pict-discr {
+	.out-indent();
+	.fonts(@family: "Rubik Light Italic"; @weight: normal; @size: 14px; @line-height: 18px; @color: @grey-taskbar);
+
+	margin-top: 8px;
+}
+
 @media @desktop-width {
+	.main-block--blog .taskbar__navigation {
+		display: block;
+		float: right;
+		-width: 285px;
+	}
+
+	.blog-articles {
+		margin-right: 460px;
+	}
 
 	.blog-articles__header {
 		font-size: 42px;
