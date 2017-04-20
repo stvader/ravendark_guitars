@@ -3,6 +3,11 @@ window.addEventListener('load', function() {
 	var menu = document.querySelector('.main-nav');
 	var wrapper = document.querySelector('.main-nav__wrapper');
 	var sliderWrapper = document.querySelector('.slider__images-wrapper');
+	
+
+	if (document.body.classList.contains('no-js')) {
+		document.body.classList.remove('no-js');
+	}
 
 	toggle.addEventListener('click', function() {
 		if(menu.classList.contains('main-nav--closed')) {
@@ -15,8 +20,11 @@ window.addEventListener('load', function() {
 			menu.classList.remove('main-nav--opened');
 			menu.classList.add('main-nav--closed');
 			document.body.style.overflow = "";
+			wrapper.style.height = 'auto';
 			sliderWrapper.classList.add('js-slid');
 		}
 	});
+
+
 
 });

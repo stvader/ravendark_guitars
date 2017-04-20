@@ -42,7 +42,7 @@
 	top: 60px;
 	left: 0;
 	right: 0;
-	z-index: 100;
+	z-index: 9999;
 }
 
 .main-nav__toggle {
@@ -85,6 +85,10 @@
 }
 
 .main-nav--opened {
+	.main-nav__wrapper {
+		display: block;
+	}
+
 	.main-nav__toggle {
 		&::before,
 		&::after {
@@ -193,6 +197,7 @@
 	.main-nav .main-nav__wrapper { /*for display*/
 		display: block;
 		position: static;
+		height: auto;
 	}
 
 	.main-nav__list {

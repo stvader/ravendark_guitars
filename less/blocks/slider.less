@@ -6,13 +6,13 @@
 .slider__images {
 	position: relative;
 	overflow: hidden;
-	height: 370px;/*check with psd*/
+	-height: 370px;/*check with psd*/
 	-display: none;
 }
 
 .slider__images-wrapper {
 	font-size: 0;
-	height: 370px;
+	-height: 370px;
 	white-space: nowrap;
 }
 
@@ -56,8 +56,10 @@
 	margin-bottom: 30px;
 }
 
-.slider__note-link {
-
+.no-js {
+	.slider {
+		padding-top: 0;
+	}
 }
 
 .slider__navigation { /*!! DELETE before production*/
@@ -104,8 +106,19 @@
 }/*END od deletated!!!!*/
 
 @media @desktop-width {
+	.slider__picture,
+	.slider__image {
+		height: 315px;
+	}
+
+	.slider__image {
+		
+	}
+
 	.slider__picture-note {
 		padding-left: @desktop-padding;
 		padding-right: @desktop-padding;
 	}
+
+
 }

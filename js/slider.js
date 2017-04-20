@@ -1,17 +1,19 @@
 $(document).ready(function(){
 	var slider = $('.js-slid');
-	var autoPlay = true;
+	var sliderImage = $('.slider__image');
 
     slider.slick({
-    	autoplay: true,
+    	autoplay: false,
     	autoplaySpeed: 5000,
     	arrows: false,
     	dots: true
     	
 
-    });
+    }); 
 
-   
+    for (var i=0; i<sliderImage.length; i++) {
+        // var width = sliderImage[i].width();
+    };
 
     $('.main-nav__toggle').click(function(){
     	if (autoPlay) {
@@ -22,4 +24,6 @@ $(document).ready(function(){
     		autoPlay = true;
     	}
     });
+
+    
 });

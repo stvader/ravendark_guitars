@@ -124,7 +124,7 @@
 .slick-dots {
     position: absolute;
     bottom: 25px;
-    z-index: 3000;
+    z-index: 900;
 
     width: 100%;
     padding: 0;

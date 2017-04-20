@@ -151,7 +151,7 @@ picture {
   top: 60px;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 9999;
 }
 .main-nav__toggle {
   margin: 0;
@@ -181,6 +181,9 @@ picture {
   height: 2px;
   background-color: #ffffff;
   box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
+}
+.main-nav--opened .main-nav__wrapper {
+  display: block;
 }
 .main-nav--opened .main-nav__toggle::before,
 .main-nav--opened .main-nav__toggle::after {
@@ -352,13 +355,13 @@ picture {
 .slider__images {
   position: relative;
   overflow: hidden;
-  height: 370px;
+  -height: 370px;
   /*check with psd*/
   -display: none;
 }
 .slider__images-wrapper {
   font-size: 0;
-  height: 370px;
+  -height: 370px;
   white-space: nowrap;
 }
 .slider__picture {
@@ -403,6 +406,9 @@ picture {
   padding: 0;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+.no-js .slider {
+  padding-top: 0;
 }
 .slider__navigation {
   /*!! DELETE before production*/
@@ -553,6 +559,9 @@ style for all dates
 }
 .taskbar__for-desktop {
   display: none;
+}
+.main-content {
+  margin-bottom: 40px;
 }
 .article {
   padding-top: 30px;
@@ -765,6 +774,7 @@ style for all dates
     /*for display*/
     display: block;
     position: static;
+    height: auto;
   }
   .main-nav__list {
     display: inline-block;
@@ -797,6 +807,10 @@ style for all dates
     padding-right: 40px;
     margin-right: auto;
     margin-left: auto;
+  }
+  .slider__picture,
+  .slider__image {
+    height: 315px;
   }
   .slider__picture-note {
     padding-left: 40px;
