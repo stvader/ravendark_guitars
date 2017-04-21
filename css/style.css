@@ -575,6 +575,10 @@ style for all dates
 }
 .article__img {
   margin-bottom: 30px;
+  -width: 100%;
+}
+.article__photo {
+  width: 100%;
 }
 .article__date {
   margin-bottom: 30px;
@@ -750,47 +754,7 @@ style for all dates
     width: 50%;
   }
 }
-@media (min-width: 800px) {
-  .page-header {
-    padding-left: 40px;
-    padding-right: 40px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .page-header__logo {
-    margin-top: -7px;
-  }
-  .page-header__title {
-    margin-right: 30px;
-  }
-  .main-nav {
-    display: block;
-    float: right;
-  }
-  .main-nav__toggle {
-    display: none;
-  }
-  .main-nav .main-nav__wrapper {
-    /*for display*/
-    display: block;
-    position: static;
-    height: auto;
-  }
-  .main-nav__list {
-    display: inline-block;
-    padding-right: 40px;
-  }
-  .main-nav__list:last-child {
-    padding-right: 0;
-  }
-  .main-nav__item {
-    display: inline-block;
-    margin-top: 0;
-    padding-right: 30px;
-  }
-  .main-nav__item:last-child {
-    padding-right: 0;
-  }
+@media (min-width: 768px) {
   .page-footer {
     padding-left: 40px;
     padding-right: 40px;
@@ -811,7 +775,12 @@ style for all dates
   .slider__picture,
   .slider__image {
     height: 315px;
+    -overflow: hidden;
   }
+  /*.slider__image {
+		width: 100%;
+		height: auto;
+	}*/
   .slider__picture-note {
     padding-left: 40px;
     padding-right: 40px;
@@ -867,6 +836,48 @@ style for all dates
   }
   .blog-articles__header {
     font-size: 42px;
+  }
+}
+@media (min-width: 925px) {
+  .page-header {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .page-header__logo {
+    margin-top: -7px;
+  }
+  .page-header__title {
+    margin-right: 30px;
+  }
+  .main-nav {
+    display: block;
+    float: right;
+  }
+  .main-nav__toggle {
+    display: none;
+  }
+  .main-nav .main-nav__wrapper {
+    /*for display*/
+    display: block;
+    position: static;
+    height: auto;
+  }
+  .main-nav__list {
+    display: inline-block;
+    padding-right: 40px;
+  }
+  .main-nav__list:last-child {
+    padding-right: 0;
+  }
+  .main-nav__item {
+    display: inline-block;
+    margin-top: 0;
+    padding-right: 30px;
+  }
+  .main-nav__item:last-child {
+    padding-right: 0;
   }
 }
 @media (min-width: 940px) {
