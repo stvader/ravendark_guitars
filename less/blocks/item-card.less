@@ -1,0 +1,249 @@
+/*------------scrolling menu BEGIN-----------------*/
+.guitar-menu__block-scroll {
+	overflow: hidden;
+	width: calc(~"100%+40px"); /*@mobile-padding*2 */
+	margin-right: -(@mobile-padding);
+	margin-left: -(@mobile-padding);
+}
+
+.guitar-menu__wrapper {
+	width: calc(~"100%+40px"); /*@mobile-padding*2 */
+	margin-right: -(@mobile-padding);
+	margin-left: -(@mobile-padding);
+	overflow-x: scroll;
+	overflow-y: hidden;
+
+	&::-webkit-scrollbar {
+    	width: 0px;  /* remove scrollbar space */
+    	background: transparent;  /* optional: just make scrollbar invisible */
+	}
+}
+
+.guitar-menu__inner {
+	white-space: nowrap;
+	padding-left: @mobile-padding*2; /*for correct slider*/
+}
+/*------------scrolling menu END-----------------*/
+
+.guitar-menu__block-scroll--names {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.guitar-menu__inner--title {
+	height: 22px;
+}
+
+.guitar-menu__title-link {
+	text-decoration: none;
+
+	display: inline-block;
+	padding-right: 25px;
+
+	&:first-child {
+		-padding-left: @mobile-padding;
+	}
+
+	&:last-child {
+		padding-right: @mobile-padding;
+	}	
+}
+
+.guitar-menu__title {
+	.out-indent();
+	.fonts(@family: "Merriweather Bold";
+		@weight: bold; 
+		@size: 21px; 
+		@line-height: 19px; 
+		@color: @grey-header);	
+
+	&--current {
+		color: @red;
+	}
+}
+
+.guitar-menu__block-scroll--materials {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.guitar-menu__material-link {
+	text-decoration: none;
+
+	display: inline-block;
+	padding-right: 15px;
+
+	&:not(:first-child) {
+		padding-left: 15px;
+	}
+
+	&:not(:last-child) {
+		border-right: 1px solid @black;
+	}
+
+	&--current {
+		font-family: "Rubik Bold";
+		font-weight: bold;
+	}
+}
+
+.guitar-menu__material {
+	.out-indent();
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 16px; 
+		@line-height: 21px; 
+		@color: @grey-header);
+
+	&--current {
+		font-family: "Rubik Bold";
+		font-weight: bold;
+	}
+	
+}
+
+.guitar-item-card__image {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	margin-left: 35px;
+}
+
+.guitar-item-card__header {
+	.out-indent();
+	.fonts(@family: "Merriweather Bold"; 
+		@weight: bold; 
+		@size: 42px; 
+		@line-height: 42px; 
+		@color: @grey-header);
+}
+
+.guitar-item-card__material {
+	.out-indent();
+	.fonts(@family: "Merriweather"; 
+		@weight: normal; 
+		@size: 24px; 
+		@line-height: 75px; 
+		@color: @grey-header);
+}
+
+.guitar-item-card__descr {
+	width: 100%;	
+	margin-bottom: 35px;
+	border-spacing: 0;  	
+}
+
+.guitar-item-card__desrc-char {
+	border: 0;
+}
+
+.guitar-item-card__cell {
+	.out-indent();
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 14px; 
+		@line-height: 20px; 
+		@color: @black);
+
+	width: 50%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border: 0;
+	border-bottom: 1px solid @black-opacity-10;
+	vertical-align: top;
+
+
+	&--option {
+		padding-right: 20px;
+		text-transform: uppercase;
+		color: @black-opacity-70;
+	}
+}
+
+.guitar-item-card__btn {
+	float: left;
+	margin-right: 20px;
+}
+
+.guitar-item-card__req-comment {
+	.out-indent();
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 14px; 
+		@line-height: 21px; 
+		@color: @black);
+
+	max-width: calc(150px + 20px + 110px); /*own width + btn margin width + btn width*/
+	-margin-bottom: 40px;
+	opacity: .6;
+}
+
+.guitar-item-card__mini-gallery {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.guitar-item-card__article-date {
+	.out-indent();
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 11px; 
+		@line-height: 10px; 
+		@color: @grey-taskbar);
+
+	opacity: .5;
+}
+
+.guitar-item-card__article-announce {
+	-padding-bottom: 25px;
+}
+
+.guitar-item-card__article-header {
+	.out-indent();
+	.fonts(@family: "Merriweather Bold"; 
+		@weight: bold; 
+		@size: 18px; 
+		@line-height: 26px; 
+		@color: @grey-taskbar);
+
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+.guitar-item-card__link-wrapper {
+	text-align: right;
+}          
+
+.guitar-item-card__article-link {
+	.out-indent();
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 14px; 
+		@line-height: 12px; 
+		@color: @grey-taskbar);
+	
+}
+
+
+
+.guitar-item-card__descr-text {
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+
+.guitar-item-card__text {
+	.out-indent();
+	.fonts(@family: "Rubik Light"; 
+		@weight: normal; 
+		@size: 16px; 
+		@line-height: 23px; 
+		@color: @grey-taskbar);
+
+	margin-top: 25px;
+}
+
+@media @desktop-width {
+	.guitar-item-card__article-header {
+		font-size: 16px;
+		line-height: 21px  ;
+	}
+}

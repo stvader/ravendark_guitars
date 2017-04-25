@@ -7,8 +7,9 @@
 	display: inline-block;
 	vertical-align: top;
 
-	width: 100%;
-	min-width: 280px;
+	width: 50%;
+	height: 440px;
+	min-width: 140px;
 	-max-width: 300px;
 	-box-sizing: border-box;
 	
@@ -19,9 +20,9 @@
 }
 
 .guitar-card__inner {
-	width: 280px;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	width: 140px;
+	padding-top: 20px;
+	padding-bottom: 30px;
 	margin-left: auto;
 	margin-right: auto;
 	box-sizing: border-box;
@@ -33,8 +34,8 @@
 	.out-indent();
 	.fonts(@family: "Merriweather Bold"; 
 		@weight: bold; 
-		@size: 42px; 
-		@line-height: 37px; 
+		@size: 18px; 
+		@line-height: 1; 
 		@color: @grey-header);
 
 	opacity: .5;
@@ -44,11 +45,29 @@
 	.out-indent();
 	.fonts(@family: "Merriweather Bold"; 
 		@weight: bold; 
-		@size: 16px; 
-		@line-height: 1; 
+		@size: 14px; 
+		@line-height: 25px; 
 		@color: @grey-header);
 
 	opacity: .5;
+}
+
+.guitar-card__image {
+	height: 290px;
+	-width: 140px;
+	-height: auto;
+	-margin-left: auto;
+	-margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 8px;
+	vertical-align: top;
+}
+
+.guitar-card__photo {
+	width: 100%;
+	height: auto;
+	-width: 100%;
+	-height: auto;
 }
 
 .guitar-card__btn {
@@ -58,7 +77,19 @@
 
 @media (min-width: 620px) {
 	.guitar-card {
-		width: 50%;
+		-width: 50%;
+	}
+
+	.guitar-card__inner {
+		width: 280px;
+	}
+
+	.guitar-card__header {
+		font-size: 42px;
+	}
+
+	.guitar-card__min-deskr {
+		font-size: 16px;
 	}
 }
 

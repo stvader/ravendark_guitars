@@ -151,7 +151,11 @@ style for all dates
 }
 
 .acticle__content {
-	.fonts(@family: 'Rubik Light'; @weight: normal; @size: 16px; @line-height: 23px; @color: @grey-taskbar);
+	.fonts(@family: 'Rubik Light'; 
+		@weight: normal; 
+		@size: 16px; 
+		@line-height: 23px; 
+		@color: @grey-taskbar);
 
 	margin-bottom: 30px;
 }
@@ -161,7 +165,10 @@ style for all dates
 }
 
 .article__link {
-	.fonts(@family: 'Rubik'; @weight: normal; @size: 14px; @line-height: 14px; @color: @grey-taskbar);
+	.fonts(@family: 'Rubik'; 
+		@weight: normal; @size: 14px; 
+		@line-height: 14px; 
+		@color: @grey-taskbar);
 
 	display: inline-block;
 	float: right;
@@ -183,9 +190,12 @@ style for all dates
 	}
 
 	.main-content {
-		margin-right: 285px;
-	}
+		margin-right: 355px;
+	}	
+	
+}
 
+@media (min-width: 1200px) {
 	.article__img {
 		float: left;
 		margin-right: 55px;
@@ -194,5 +204,4 @@ style for all dates
 	.article__header {
 		line-height: 30px;
 	}
-	
 }

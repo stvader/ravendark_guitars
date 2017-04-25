@@ -12,12 +12,20 @@
 
 .blog-articles__header {
 	.out-indent();
-	.fonts(@family: "Merriweather Bold"; @weight: bold; @size: 30px; @line-height: 42px; @color: @grey-taskbar);
+	.fonts(@family: "Merriweather Bold"; 
+		@weight: bold; 
+		@size: 30px; 
+		@line-height: 42px; 
+		@color: @grey-taskbar);
 }
 
 .blog-articles__date {
 	.out-indent();
-	.fonts(@family: "Rubik"; @weight: normal; @size: 11px; @line-height: 11px; @color: @grey-taskbar);
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 11px; 
+		@line-height: 11px; 
+		@color: @grey-taskbar);
 
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -26,13 +34,18 @@
 
 .blog-articles__content {
 	.out-indent();
-	.fonts(@family: "Rubik Light"; @weight: normal; @size: 16px; @line-height: 28px; @color: @grey-taskbar);
+	.fonts(@family: "Rubik Light"; 
+		@weight: normal; 
+		@size: 16px; 
+		@line-height: 28px; 
+		@color: @grey-taskbar);
 
 }
 
 .blog-articles__picture {
 	padding-top: 20px;
 	padding-bottom: 20px;
+	max-width: 660px;
 }
 
 .blog-articles__image {
@@ -41,7 +54,11 @@
 
 .blog-articles__pict-discr {
 	.out-indent();
-	.fonts(@family: "Rubik Light Italic"; @weight: normal; @size: 14px; @line-height: 18px; @color: @grey-taskbar);
+	.fonts(@family: "Rubik Light Italic"; 
+		@weight: normal; 
+		@size: 14px; 
+		@line-height: 18px; 
+		@color: @grey-taskbar);
 
 	margin-top: 8px;
 }
@@ -54,9 +71,13 @@
 	}
 
 	.blog-articles {
-		margin-right: 460px;
+		margin-right: 355px;
 	}
 
+	
+}
+
+@media (min-width: 1200px) {
 	.blog-articles__header {
 		font-size: 42px;
 	}
