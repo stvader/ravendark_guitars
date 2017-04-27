@@ -10,7 +10,7 @@
 
 .scrolling__wrapper {
 	-width: 100%;
-	width: calc(~"100%+40px"); /*@mobile-padding*2 */
+	-width: calc(~"100%+40px"); /*@mobile-padding*2 */
 	-margin-right: -(@mobile-padding);
 	-margin-left: -(@mobile-padding);
 	overflow-x: scroll;
@@ -164,12 +164,12 @@
 	.fonts(@family: "Rubik"; 
 		@weight: normal; 
 		@size: 14px; 
-		@line-height: 20px; 
+		@line-height: 16px; 
 		@color: @black);
 
 	width: 50%;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 	border: 0;
 	border-bottom: 1px solid @black-opacity-10;
 	vertical-align: top;
@@ -294,14 +294,24 @@
 		padding-right: @desktop-padding;
 	}
 
+	.guitar-item-card__gallery-wrapper-inner {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media (min-width: 1200px) {	
+
 	.guitar-item-card__image {
 		float: left;
-		width: 600px;
+		width: 590px;
 		-padding-left: 150px;
 	}
 
 	.guitar-item-card__info-wrapper {
 		margin-left: 600px;
+		margin-right: 50px;
+		padding-left: 5%;
 	}
 
 	.guitar-item-card__header,
@@ -309,9 +319,35 @@
 		display: inline-block;
 	}
 
+	.guitar-item-card__header {
+		padding-right: 10px;
+	}
+
 
 	.guitar-item-card__article-header {
 		font-size: 16px;
 		line-height: 21px  ;
 	}
+
+	.guitar-item-card__descr {
+		-padding-left: 8%;
+	}
+
+	.guitar-item-card__cell--option {
+		-width: 35%;
+	}
+
+	.guitar-item-card__cell--value {
+		width: 65%;
+	}
+
+	.guitar-item-card__mini-gallery,
+	.guitar-item-card__article-announce {
+		display: inline-block;
+	}
+
+	.guitar-item-card__article-announce {
+		
+	}
 }
+
