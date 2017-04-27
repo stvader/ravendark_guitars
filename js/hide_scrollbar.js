@@ -12,6 +12,6 @@ function hideScrollBar(elemWrapperClass, elemScrollingClass) {
 
 window.addEventListener('load', function() {	
 
-	hideScrollBar('.guitar-menu__block-scroll', '.guitar-menu__wrapper');
+	hideScrollBar('.scrolling__block-scroll', '.scrolling__wrapper');
 });
 
