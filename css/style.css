@@ -378,6 +378,14 @@ picture {
   -box-sizing: border-box;
   padding-top: 60px;
 }
+.main-block:before,
+.main-block:after {
+  content: " ";
+  display: table;
+}
+.main-block:after {
+  clear: both;
+}
 .no-js .main-block {
   padding-top: 0;
 }
@@ -916,10 +924,10 @@ style for all dates
   margin-bottom: 30px;
   -margin-left: -20px;
   -margin-right: -20px;
-  background-color: #7f7f7f;
+  background-color: #f7f7f7;
 }
 .guitar-menu__inner--material {
-  -background-color: #7f7f7f;
+  -background-color: #f7f7f7;
   padding-top: 8px;
   padding-bottom: 8px;
   box-sizing: border-box;
@@ -951,6 +959,14 @@ style for all dates
 .guitar-menu__material--current {
   font-family: "Rubik Bold";
   font-weight: bold;
+}
+.guitar-item-card__image-with-descr:before,
+.guitar-item-card__image-with-descr:after {
+  content: " ";
+  display: table;
+}
+.guitar-item-card__image-with-descr:after {
+  clear: both;
 }
 .guitar-item-card__image {
   margin-top: 10px;
@@ -1025,7 +1041,7 @@ style for all dates
   -margin-bottom: 40px;
   opacity: .6;
 }
-.guitar-item-card__mini-gallery {
+.guitar-item-card__galley-with-announce {
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -1092,7 +1108,7 @@ style for all dates
   font-size: 16px;
   line-height: 23px;
   color: #282828;
-  margin-top: 25px;
+  -margin-top: 25px;
 }
 @media (min-width: 620px) {
   .guitar-card__inner {
@@ -1194,6 +1210,12 @@ style for all dates
   .guitar-item-card__gallery-wrapper-inner {
     padding-left: 0;
     padding-right: 0;
+  }
+  .guitar-item-card__descr-text {
+    -moz-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
   }
 }
 @media (min-width: 940px) {
@@ -1317,9 +1339,31 @@ style for all dates
   .guitar-item-card__cell--value {
     width: 65%;
   }
+  .guitar-item-card__galley-with-announce {
+    position: relative;
+    margin-left: -40px;
+    margin-right: -40px;
+  }
   .guitar-item-card__mini-gallery,
   .guitar-item-card__article-announce {
-    display: inline-block;
+    -display: inline-block;
+  }
+  .guitar-item-card__mini-gallery {
+    margin: 0;
+    height: 150px;
+  }
+  .guitar-item-card__article-announce {
+    position: absolute;
+    height: 150px;
+    right: 0;
+    top: 0;
+    left: 950px;
+    padding-right: 40px;
+  }
+  .guitar-item-card__link-wrapper {
+    position: absolute;
+    right: 40px;
+    bottom: 15px;
   }
 }
 @media (min-width: 1220px) {

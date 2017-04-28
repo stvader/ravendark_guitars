@@ -15,11 +15,12 @@ gulp.task('style', function() {
 		.pipe(less())
 		.pipe(postcss([
 			autoprefixer({browsers: [
-				"last 1 version",
+				"last 2 version",
 				"last 2 Chrome version",
 				"last 2 Firefox version",
 				"last 2 Opera version",
-				"last 2 Edge version"
+				"last 2 Edge version",
+				"last 2 ie version"
 			]}),
 			mqpacker({
 				sort: true
