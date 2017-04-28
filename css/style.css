@@ -1110,6 +1110,50 @@ style for all dates
   color: #282828;
   -margin-top: 25px;
 }
+.gallery-menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gallery-menu__item {
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid grey;
+  /*try out PSD!!!!*/
+}
+.gallery-menu__link {
+  font-family: "Merriweather Bold";
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 19px;
+  color: #2c2c2c;
+  text-decoration: none;
+}
+.gallery-submenu__list {
+  display: none;
+}
+.gallery-menu__item--active .gallery-menu__link {
+  color: #9e0b0f;
+}
+.gallery-menu__item--active .gallery-submenu__list {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style: none;
+}
+.gallery-menu__item--active .gallery-submenu__item {
+  margin-top: 10px;
+}
+.gallery-menu__item--active .gallery-submenu__link {
+  font-family: "Rubik";
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #2c2c2c;
+  text-decoration: none;
+}
 @media (min-width: 620px) {
   .guitar-card__inner {
     width: 285px;
@@ -1216,6 +1260,11 @@ style for all dates
     column-count: 2;
     -moz-column-gap: 40px;
     column-gap: 40px;
+  }
+  .gallery-menu__list {
+    width: 140px;
+    float: left;
+    padding-right: 20px;
   }
 }
 @media (min-width: 940px) {

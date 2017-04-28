@@ -1,0 +1,63 @@
+.gallery-menu__list {
+	.out-indent();
+
+	list-style: none;
+}
+
+.gallery-menu__item {
+	.out-indent();
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px solid grey; /*try out PSD!!!!*/
+}
+
+.gallery-menu__link {
+	.fonts(@family: "Merriweather Bold";
+		@weight: bold; 
+		@size: 21px; 
+		@line-height: 19px; 
+		@color: @grey-header);
+
+	text-decoration: none;
+}
+
+.gallery-submenu__list {
+	display: none;	
+}
+
+
+.gallery-menu__item--active {
+	.gallery-menu__link {
+		color: @red;
+	}
+
+	.gallery-submenu__list {
+		.out-indent();
+
+		display: block;
+		list-style: none;
+	}
+
+	.gallery-submenu__item {
+		margin-top: 10px;
+	}
+
+	.gallery-submenu__link {
+		.fonts(@family: "Rubik"; 
+			@weight: normal; 
+			@size: 16px; 
+			@line-height: 21px; 
+			@color: @grey-header);
+
+		text-decoration: none;
+	}
+}
+
+@media @desktop-width {
+	.gallery-menu__list {
+		width: 140px;
+		float: left;
+		padding-right: 20px;
+	}
+}
