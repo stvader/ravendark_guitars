@@ -808,10 +808,9 @@ style for all dates
   vertical-align: top;
   width: 50%;
   min-width: 140px;
-  border-top: 1px solid grey;
-  /*check*/
+  border-top: 1px solid #d8d8d8;
   /*for line under empty space*/
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #d8d8d8;
   margin-bottom: -1px;
   padding-bottom: 1px;
   /*---------*/
@@ -1061,7 +1060,6 @@ style for all dates
   padding-right: 20px;
   box-sizing: border-box;
   background-color: #f7f7f7;
-  /*!!!!!!!!!BGC check in PSD*/
 }
 .guitar-item-card__article-date {
   margin: 0;
@@ -1122,8 +1120,7 @@ style for all dates
   padding: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 1px solid grey;
-  /*try out PSD!!!!*/
+  border-top: 1px solid #e9e9e9;
 }
 .gallery-menu__link {
   font-family: "Merriweather Bold";
@@ -1170,6 +1167,99 @@ style for all dates
   width: 100%;
   max-width: none;
   min-width: none;
+}
+.gallery-modal {
+  display: none;
+}
+.gallery-modal--opened {
+  display: block;
+  position: absolute;
+  padding-top: 20px;
+  -max-width: calc(728px);
+  /*desktpo-width - left padding - right padding*/
+  -width: 100%;
+  -margin-left: 20px;
+  -margin-right: 20px;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  z-index: 3000;
+}
+.gallery-modal--opened::before,
+.gallery-modal--opened::after {
+  content: "<";
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  top: 50%;
+  cursor: pointer;
+  font-family: 'Rubik Light';
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  color: #909090;
+}
+.gallery-modal--opened::before {
+  left: -15px;
+}
+.gallery-modal--opened::after {
+  content: ">";
+  right: -15px;
+}
+.gallery-modal--opened .gallery-modal__header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik Light Italic';
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 18px;
+  color: #909090;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.gallery-modal--opened .gallery-modal__material {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik Light Italic';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 23px;
+  color: #909090;
+  font-style: italic;
+}
+.gallery-modal--opened .gallery-modal__image {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.gallery-modal--opened .gallery-modal__photo {
+  width: 100%;
+  max-width: none;
+}
+.gallery-modal--opened .gallery-modal__descr {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik Light Italic';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #909090;
+  font-style: italic;
+}
+.gallery-overlay {
+  display: none;
+}
+.gallery-overlay--opened {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.95);
 }
 @media (min-width: 620px) {
   .guitar-card__inner {
@@ -1278,26 +1368,22 @@ style for all dates
     -moz-column-gap: 40px;
     column-gap: 40px;
   }
-  .gallery-menu__list {
-    width: 15%;
-    min-width: 160px;
-    float: left;
-    padding-right: 20px;
+  .gallery-modal--opened {
+    max-width: 745px;
+    left: 40px;
+    right: 40px;
   }
-  .gallery-menu__list:before,
-  .gallery-menu__list:after {
-    content: " ";
-    display: table;
+  .gallery-modal--opened::before {
+    left: -4%;
   }
-  .gallery-menu__list:after {
-    clear: both;
+  .gallery-modal--opened::after {
+    right: -4%;
   }
-  .gallery-images-block {
-    width: auto;
-    margin-left: 160px;
-  }
-  .gallery-image {
-    width: 260px;
+}
+@media (min-width: 845px) {
+  .gallery-modal--opened {
+    left: calc(50% - 372.5px);
+    right: calc(50% - 372.5px);
   }
 }
 @media (min-width: 940px) {
@@ -1446,6 +1532,30 @@ style for all dates
     position: absolute;
     right: 40px;
     bottom: 15px;
+  }
+  .gallery-menu__list {
+    width: 15%;
+    min-width: 160px;
+    float: left;
+    padding-right: 20px;
+  }
+  .gallery-menu__list:before,
+  .gallery-menu__list:after {
+    content: " ";
+    display: table;
+  }
+  .gallery-menu__list:after {
+    clear: both;
+  }
+  .gallery-images-block {
+    width: auto;
+    margin-left: 15%;
+  }
+  .gallery-image {
+    width: 260px;
+  }
+  .gallery-modal--opened {
+    padding-top: 30px;
   }
 }
 @media (min-width: 1220px) {
