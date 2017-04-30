@@ -401,6 +401,7 @@ picture {
   text-decoration: none;
   text-align: center;
   background-color: #9e0b0f;
+  cursor: pointer;
 }
 .breadcrumbs {
   margin: 0;
@@ -1023,8 +1024,13 @@ style for all dates
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.7);
 }
+.guitar-item-card__btn,
+.guitar-item-card__req-comment {
+  display: inline-block;
+  vertical-align: top;
+}
 .guitar-item-card__btn {
-  float: left;
+  -float: left;
   margin-right: 20px;
 }
 .guitar-item-card__req-comment {
@@ -1035,7 +1041,8 @@ style for all dates
   font-size: 14px;
   line-height: 21px;
   color: #000000;
-  max-width: calc(280px);
+  max-width: 150px;
+  -max-width: calc(280px);
   /*own width + btn margin width + btn width*/
   -margin-bottom: 40px;
   opacity: .6;
@@ -1048,10 +1055,20 @@ style for all dates
   padding-left: 0;
 }
 .guitar-item-card__gallery-image {
+  position: relative;
   display: inline-block;
+  cursor: pointer;
 }
-.guitar-item-card__gallery-image:hover {
-  /*-------------------*/
+.guitar-item-card__gallery-image:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .guitar-item-card__article-announce {
   padding-top: 20px;
