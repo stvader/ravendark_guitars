@@ -1179,11 +1179,30 @@ style for all dates
 .gallery-image {
   display: inline-block;
   width: 33.33333%;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/*for height % from width*/
+.gallery-images__img-container {
+  position: relative;
+  height: 0;
+  padding-top: 75%;
+}
+.gallery-images__img-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /*end h%*/
 }
 .gallery-photo {
   width: 100%;
   max-width: none;
   min-width: none;
+  -vertical-align: middle;
+  -display: inline-block;
 }
 .gallery-modal {
   display: none;

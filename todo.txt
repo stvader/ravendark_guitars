@@ -1,0 +1,2 @@
+1) gallery images in links
+2) breadpoints links
