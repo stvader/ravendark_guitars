@@ -1178,7 +1178,9 @@ style for all dates
 }
 .gallery-image {
   display: inline-block;
-  width: 33.33333%;
+  position: relative;
+  width: 192px;
+  height: 145px;
   border: 1px solid #ffffff;
   box-sizing: border-box;
   overflow: hidden;
@@ -1200,7 +1202,10 @@ style for all dates
 .gallery-photo {
   width: 100%;
   max-width: none;
-  min-width: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -margin-top: -0.625em;
   -vertical-align: middle;
   -display: inline-block;
 }
@@ -1296,6 +1301,63 @@ style for all dates
   bottom: 0;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.95);
+}
+.contacts__pre-info,
+.contacts__header--desktop,
+.contacts__btn {
+  display: none;
+}
+.contacts__header {
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather Bold";
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 0.8;
+  color: #2c2c2c;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.contacts__info-wrapper {
+  position: relative;
+  padding-top: calc(85px);
+  /*height table + margin-top paragrph*/
+}
+.contacts__slogan {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik Light";
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.contacts__table {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik";
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: #000000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.contacts__table-cell--title {
+  width: 60px;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+.contacts__link {
+  font-family: "Rubik";
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+  text-decoration: none;
 }
 @media (min-width: 620px) {
   .guitar-card__inner {
@@ -1404,6 +1466,10 @@ style for all dates
     -moz-column-gap: 40px;
     column-gap: 40px;
   }
+  .gallery-image {
+    width: 260px;
+    height: 196px;
+  }
   .gallery-modal--opened {
     max-width: 745px;
     left: 40px;
@@ -1414,6 +1480,61 @@ style for all dates
   }
   .gallery-modal--opened::after {
     right: -4%;
+  }
+  .contacts__pre-info,
+  .contacts__header--desktop,
+  .contacts__btn {
+    display: block;
+  }
+  .breadcrumbs--guitars,
+  .contacts__header--mobile {
+    display: none;
+  }
+  .contacts {
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 50px;
+    padding-bottom: 230px;
+    background-color: #f7f7f7;
+    background-image: url('../../img/bg-order.jpg');
+  }
+  .contacts__pre-info {
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik Medium";
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .contacts__header--desktop {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: #ffffff;
+    font-size: 52px;
+  }
+  .contacts__info-wrapper {
+    max-width: 450px;
+    padding-top: 0;
+  }
+  .contacts__slogan {
+    color: #ffffff;
+  }
+  .contacts__table {
+    position: static;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .contacts__table-cell--title {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .contacts__link {
+    color: #ffffff;
+  }
+  .contacts__btn {
+    width: 142px;
   }
 }
 @media (min-width: 845px) {
@@ -1586,9 +1707,6 @@ style for all dates
   .gallery-images-block {
     width: auto;
     margin-left: 15%;
-  }
-  .gallery-image {
-    width: 260px;
   }
   .gallery-modal--opened {
     padding-top: 30px;

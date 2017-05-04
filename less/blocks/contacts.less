@@ -1,0 +1,133 @@
+.contacts__pre-info,
+.contacts__header--desktop,
+.contacts__btn {
+	display: none;
+}
+
+.contacts__header {
+	.out-indent();
+	.fonts(@family: "Merriweather Bold";
+		@weight: bold; 
+		@size: 36px; 
+		@line-height: 0.8; 
+		@color: @grey-header);
+
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+.contacts__info-wrapper {
+	position: relative;
+	padding-top: calc(60px + 25px); /*height table + margin-top paragrph*/
+}
+
+.contacts__slogan {
+	.out-indent();
+	.fonts(@family: "Rubik Light"; 
+		@weight: normal; 
+		@size: 14px; 
+		@line-height: 20px; 
+		@color: @black-opacity-60);
+}
+
+.contacts__table {
+	.out-indent();
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 16px; 
+		@line-height: 30px; 
+		@color: @black);
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+.contacts__table-cell--title {
+	width: 60px;
+	color: @black-opacity-70;
+	text-transform: uppercase;
+}
+
+.contacts__link {
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 18px; 
+		@line-height: 30px; 
+		@color: @black);
+
+	text-decoration: none;
+}
+
+
+
+@media @desktop-width {
+
+	.contacts__pre-info,
+	.contacts__header--desktop,
+	.contacts__btn {
+		display: block;
+	}
+
+	.breadcrumbs--guitars,
+	.contacts__header--mobile {
+		display: none;
+	}
+
+	.contacts {
+		margin-left: -(@desktop-padding);
+		margin-right: -(@desktop-padding);
+		padding-left: @desktop-padding;
+		padding-right: @desktop-padding;
+		padding-top: 50px;
+		padding-bottom: 230px;
+		background-color: #f7f7f7;
+		background-image: url('../../img/bg-order.jpg');
+	}
+
+	.contacts__pre-info {
+		.out-indent();
+		.fonts(@family: "Rubik Medium"; 
+			@weight: normal; 
+			@size: 12px; 
+			@line-height: 1.2; 
+			@color: @white-opacity-70);
+	}
+
+	.contacts__header--desktop {
+		margin-top: 20px;
+		margin-bottom: 50px;
+		color: @white;
+		font-size: 52px;
+	}
+
+	.contacts__info-wrapper {
+		max-width: 450px;
+		padding-top: 0;
+	}
+
+	.contacts__slogan {
+		color: @white;
+	}
+
+	.contacts__table {
+		position: static;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.contacts__table-cell--title {
+		color: @white-opacity-70;
+	}
+
+	.contacts__link {
+		color: @white;
+	}
+
+	.contacts__btn {
+		width: 142px;
+	}
+
+}

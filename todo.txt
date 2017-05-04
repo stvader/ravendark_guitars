@@ -1,2 +1,6 @@
-1) gallery images in links
-2) breadpoints links
+1) gallery images in links +
+2) breadpoints links +
+3) try out fonts for contacts
+4) change bdi for contact desktop
+
+

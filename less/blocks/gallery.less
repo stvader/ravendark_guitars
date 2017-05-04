@@ -65,7 +65,9 @@
 
 .gallery-image {
 	display: inline-block;
-	width: 33.33333%;
+	position: relative;
+	width: 192px;
+	height: 145px;
 	border: 1px solid @white;
 	box-sizing: border-box;
 	overflow: hidden;
@@ -96,8 +98,13 @@
 
 .gallery-photo {
 	width: 100%;
-	max-width: none;
-	min-width: none;
+	max-width: none;	
+	 position: absolute;
+	 top: 50%;
+	// left: 0;
+	// right: 0;
+	transform: translateY(-50%);
+	-margin-top: -0.625em;
 	-vertical-align: middle;
 	-display: inline-block;
 }
@@ -209,6 +216,11 @@
 }
 
 @media @desktop-width {
+	.gallery-image {
+		width: 260px;
+		height: 196px;
+	}
+	
 	.gallery-modal {
 		&--opened {
 			max-width: 745px;
@@ -250,9 +262,7 @@
 		margin-left: 15%;
 	}
 
-	.gallery-image {
-		width: 260px;
-	}
+	
 
 	.gallery-modal {
 		&--opened {
