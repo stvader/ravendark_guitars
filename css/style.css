@@ -1312,7 +1312,7 @@ style for all dates
   padding: 0;
   font-family: "Merriweather Bold";
   font-weight: bold;
-  font-size: 36px;
+  font-size: 48px;
   line-height: 0.8;
   color: #2c2c2c;
   margin-top: 15px;
@@ -1354,8 +1354,8 @@ style for all dates
 .contacts__link {
   font-family: "Rubik";
   font-weight: normal;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 14px;
+  line-height: 18px;
   color: #000000;
   text-decoration: none;
 }
@@ -1499,21 +1499,23 @@ style for all dates
     padding-bottom: 230px;
     background-color: #f7f7f7;
     background-image: url('../../img/bg-order.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .contacts__pre-info {
     margin: 0;
     padding: 0;
     font-family: "Rubik Medium";
     font-weight: normal;
-    font-size: 12px;
-    line-height: 1.2;
+    font-size: 18px;
+    line-height: 21px;
     color: rgba(255, 255, 255, 0.7);
   }
   .contacts__header--desktop {
     margin-top: 20px;
     margin-bottom: 50px;
     color: #ffffff;
-    font-size: 52px;
+    font-size: 70px;
   }
   .contacts__info-wrapper {
     max-width: 450px;
@@ -1521,17 +1523,20 @@ style for all dates
   }
   .contacts__slogan {
     color: #ffffff;
+    font-size: 18px;
   }
   .contacts__table {
     position: static;
     margin-top: 30px;
     margin-bottom: 30px;
+    font-size: 14px;
   }
   .contacts__table-cell--title {
     color: rgba(255, 255, 255, 0.7);
   }
   .contacts__link {
     color: #ffffff;
+    font-size: 14px;
   }
   .contacts__btn {
     width: 142px;
