@@ -14,12 +14,20 @@
 
 	&:not(:last-child)::after {
 		content: ">";
-		.fonts(@family: "Rubik"; @weight: normal; @size: 14px; @line-height: 14px; @color: @black);
+		.fonts(@family: "Rubik"; 
+			@weight: normal; 
+			@size: 14px; 
+			@line-height: 14px; 
+			@color: @black);
 	}
 }
 
 .breadcrumbs__link {
-	.fonts(@family: "Rubik"; @weight: normal; @size: 14px; @line-height: 14px; @color: @black);
+	.fonts(@family: "Rubik"; 
+		@weight: normal; 
+		@size: 14px; 
+		@line-height: 14px; 
+		@color: @black);
 
 	padding-right: 15px;
 	text-decoration: none;
@@ -29,4 +37,14 @@
 
 .breadcrumbs__link--current {
 	color: @grey-breadcrumbs-current;
+}
+
+.breadcrumbs--order {
+	.breadcrumbs__item::after {
+		color: @white;
+	}
+
+	.breadcrumbs__link {
+		color: @white;
+	}
 }

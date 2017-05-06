@@ -435,6 +435,12 @@ picture {
 .breadcrumbs__link--current {
   color: #a9a9a9;
 }
+.breadcrumbs--order .breadcrumbs__item::after {
+  color: #ffffff;
+}
+.breadcrumbs--order .breadcrumbs__link {
+  color: #ffffff;
+}
 .slider {
   padding-top: 60px;
 }
@@ -1358,6 +1364,64 @@ style for all dates
   line-height: 18px;
   color: #000000;
   text-decoration: none;
+}
+.order__wrapper {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #393939;
+}
+.breadcrumbs--order {
+  /*breadcrumbs.less*/
+}
+.order__header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather Bold';
+  font-weight: normal;
+  font-size: 37px;
+  line-height: 35px;
+  color: #c0c0c0;
+}
+.order__sector-number {
+  font-family: 'Rubik Medium';
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 40px;
+  color: rgba(151, 151, 151, 0.8);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.order__sector-header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik Medium';
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  color: rgba(151, 151, 151, 0.8);
+  display: inline-block;
+  text-transform: uppercase;
+}
+.order__subsector-name {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  color: rgba(151, 151, 151, 0.8);
+  text-transform: uppercase;
+}
+.order__subsector-value {
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.8);
 }
 @media (min-width: 620px) {
   .guitar-card__inner {
