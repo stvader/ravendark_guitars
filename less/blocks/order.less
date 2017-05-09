@@ -14,51 +14,120 @@
 	.out-indent();
 	.fonts(@family: 'Merriweather Bold';
 		@weight: normal; 
-		@size: 37px; 
-		@line-height: 35px; 
+		@size: 32px; 
+		@line-height: 18px; 
 		@color: @grey-order-font);
+
+	margin-top: 15px;
+	margin-bottom: 40px;
+}
+
+.order__sector {
+	margin-left: -(@mobile-padding);
+	margin-right: -(@mobile-padding);
+	padding-left: @mobile-padding;
+	padding-right: @mobile-padding;
+	padding-bottom: 30px;
+	border-top: 1px solid @white-opacity-20;
+
+	&--contacts {
+		
+	}
+
+	&--active {
+		background-color: @grey-order-sector-active;
+	}
+
+	&--complete {
+		.order__sector-number {
+			color: @white-opacity-80;
+			background-color: @tiffany;
+		}
+	} 
+}
+
+.order__sector-name {
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .order__sector-number {
 	.fonts(@family: 'Rubik Medium';
 		@weight: normal; 
-		@size: 24px; 
+		@size: 18px; 
 		@line-height: 40px; 
-		@color: @grey-order-font-point);
+		@color: @grey-order-number-op);
 
 	display: inline-block;
+	margin-right: 10px;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
+	background-color: @white-opacity-60;
+	text-align: center;
 }
 
 .order__sector-header {
 	.out-indent();
 	.fonts(@family: 'Rubik Medium';
 		@weight: normal; 
-		@size: 24px; 
-		@line-height: 24px; 
+		@size: 18px; 
+		@line-height: 40px; 
 		@color: @grey-order-font-point);
 
 	display: inline-block;
 	text-transform: uppercase;
 }
 
+.order__subsector-list {
+	.out-indent();
+
+	list-style: none;
+}
+
+.order__subsector {
+	&:not(:first-child) {
+		margin-top: 30px;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 30px;
+	}	
+}
+
 .order__subsector-name {
 	.out-indent();
 	.fonts(@family: 'Rubik';
 		@weight: normal; 
-		@size: 18px; 
+		@size: 14px; 
 		@line-height: 18px; 
 		@color: @grey-order-font-point);
 
 	text-transform: uppercase;
+	position: relative;
+
+	&::after {
+		content: 'v';
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		height: 18px;
+		line-height: 18px;
+		cursor: pointer;
+		
+		.fonts(@family: 'Rubik'; 
+			@weight: normal; 
+			@size: 14px; 
+			@line-height: 18px; 
+			@color: @grey-order-font-point); /*timed until svg epsent*/
+	}
 }
 
 .order__subsector-value {
 	.fonts(@family: 'Rubik';
 		@weight: normal; 
-		@size: 18px; 
+		@size: 14px; 
 		@line-height: 18px; 
 		@color: @white-opacity-80);
 }

@@ -1380,46 +1380,97 @@ style for all dates
   padding: 0;
   font-family: 'Merriweather Bold';
   font-weight: normal;
-  font-size: 37px;
-  line-height: 35px;
+  font-size: 32px;
+  line-height: 18px;
   color: #c0c0c0;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+.order__sector {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.order__sector--active {
+  background-color: #4d4d4d;
+}
+.order__sector--complete .order__sector-number {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #00a37b;
+}
+.order__sector-name {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .order__sector-number {
   font-family: 'Rubik Medium';
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 40px;
-  color: rgba(151, 151, 151, 0.8);
+  color: rgba(57, 57, 57, 0.8);
   display: inline-block;
+  margin-right: 10px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  text-align: center;
 }
 .order__sector-header {
   margin: 0;
   padding: 0;
   font-family: 'Rubik Medium';
   font-weight: normal;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 40px;
   color: rgba(151, 151, 151, 0.8);
   display: inline-block;
   text-transform: uppercase;
+}
+.order__subsector-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.order__subsector:not(:first-child) {
+  margin-top: 30px;
+}
+.order__subsector:not(:last-child) {
+  margin-bottom: 30px;
 }
 .order__subsector-name {
   margin: 0;
   padding: 0;
   font-family: 'Rubik';
   font-weight: normal;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 18px;
   color: rgba(151, 151, 151, 0.8);
   text-transform: uppercase;
+  position: relative;
+}
+.order__subsector-name::after {
+  content: 'v';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 18px;
+  cursor: pointer;
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(151, 151, 151, 0.8);
+  /*timed until svg epsent*/
 }
 .order__subsector-value {
   font-family: 'Rubik';
   font-weight: normal;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 18px;
   color: rgba(255, 255, 255, 0.8);
 }
