@@ -15,6 +15,7 @@
 	<!--script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.min.js"></script-->
 	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script-->
 	<!--script type="text/javascript" src="//code.jquery.com/jquery-migrate-3.0.0.min.js"></script-->
+	<script defer src="node_modules/svgxuse/svgxuse.js"></script>
 	<script type="text/javascript" src="js/slick/slick.min.js"></script>
 	<script type="text/javascript" src="js/slider.js"></script>
 </head>
@@ -72,7 +73,9 @@
 					<li class="main-nav__item main-nav__item--search">
 						<input type="text" name="search" id="search" placeholder="Search" class="main-nav__search-input">
 						<a href="" class="main-nav__link main-nav__link--search">
-							<img src="#" alt="S" class="main-nav__search">
+							<svg class="main-nav__search-icon">
+							  <use xlink:href="img/symbols.svg#search-glass"></use>
+							</svg>
 						</a>
 					</li>
 				</ul>
@@ -451,8 +454,8 @@
 		</nav>
 	</footer>
 
-	<!--script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="js/slick/slick.min.js"></script-->
+	
+	<!--script src="js/svgxuse.min.js" defer></script-->
+	<script defer src="node_modules/svgxuse/svgxuse.js"></script>
 </body>
 </html>

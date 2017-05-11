@@ -25,11 +25,11 @@
 	.fonts(@family:'Poor Richard Regular'; 
 		@weight: normal; @size: 24px; 
 		@line-height: 20px;
-		@color: @white);
+		@color: @white-opacity-70);
 
 	display: inline-block;
 
-	opacity: .7;
+	-opacity: .7;
 	vertical-align: top;
 	letter-spacing: -0.7px;
 }
@@ -62,8 +62,8 @@
 	height: 20px;
 	border: 0;
 	outline: 0;
-	background-color: @menu-grey;
-	opacity: .8;
+	background-color: @menu-grey-opacity;
+	-opacity: .8;
 
 	cursor: pointer;
 }
@@ -141,10 +141,10 @@
 		@weight: normal; 
 		@size: 14px; 
 		@line-height: 14px; 
-		@color: @white);
+		@color: @white-opacity-60);
 
 	-display: block;
-	opacity: .6;
+	-opacity: .6;
 	text-decoration: none;
 
 
@@ -220,6 +220,14 @@
 	text-transform: uppercase;
 }
 
+.main-nav__search-input:active + .main-nav__link--search,
+.main-nav__search-input:hover + .main-nav__link--search,
+.main-nav__search-input:focus + .main-nav__link--search,{
+	.main-nav__search-icon {
+		fill: @white;
+	}
+}
+
 .main-nav__item--search {
 	position: relative;
 }
@@ -234,8 +242,18 @@
 	-top: 5px;
 }
 
+.main-nav__search-icon {
+	.icon-add-fill("../img/symbols.svg", 
+		@white-opacity-60);
+
+	width: 20px;
+	height: 20px;
+	fill: @white-opacity-60; 
+}
+
 .main-nav__item--current .main-nav__link {
-	opacity: 1;
+	color: @white;
+	-opacity: 1;
 	position: relative;
 
 	&::before {
@@ -335,7 +353,7 @@
 		margin-bottom: -20px;
 	    padding-top: 10px;	    
 	    padding-bottom: 10px;
-	    opacity: 1;
+	    -opacity: 1;
 	}
 
 	.main-nav__list--search {

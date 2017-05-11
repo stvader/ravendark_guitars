@@ -8,6 +8,8 @@ var rename = require('gulp-rename');
 var mqpacker = require('css-mqpacker');
 var minify = require('gulp-csso');
 var imagemin = require('gulp-imagemin');
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
 
 gulp.task('style', function() {
 	gulp.src('less/style.less')
@@ -73,5 +75,15 @@ gulp.task('images', function(){
 			imagemin.optipng({optimizationLevel: 3}),
 			imagemin.jpegtran({prograssive: true})
 		]))
+		.pipe(gulp.dest('img'));
+});
+
+gulp.task('symbols', function() {
+	return gulp.src('img/icon/*.svg')
+		.pipe(svgmin())
+		.pipe(svgstore({
+			inlineSvg: true
+		}))
+		.pipe(rename('symbols.svg'))
 		.pipe(gulp.dest('img'));
 });

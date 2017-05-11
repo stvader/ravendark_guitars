@@ -1,3 +1,7 @@
+/**
+ * @src      The path to your SVG file
+ * @fill-new The fill value you would like to have injected into your paths
+ */
 @font-face {
   font-family: OpenSansBold;
   src: url(../fonts/opensansbold.woff2);
@@ -134,9 +138,9 @@ picture {
   font-weight: normal;
   font-size: 24px;
   line-height: 20px;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.7);
   display: inline-block;
-  opacity: .7;
+  -opacity: .7;
   vertical-align: top;
   letter-spacing: -0.7px;
 }
@@ -165,8 +169,8 @@ picture {
   height: 20px;
   border: 0;
   outline: 0;
-  background-color: #2b2b2b;
-  opacity: .8;
+  background-color: rgba(43, 43, 43, 0.98);
+  -opacity: .8;
   cursor: pointer;
 }
 .main-nav--closed .main-nav__wrapper {
@@ -225,9 +229,9 @@ picture {
   font-weight: normal;
   font-size: 14px;
   line-height: 14px;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.6);
   -display: block;
-  opacity: .6;
+  -opacity: .6;
   text-decoration: none;
 }
 .main-nav__list--request {
@@ -289,6 +293,11 @@ picture {
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
 }
+.main-nav__search-input:active + .main-nav__link--search .main-nav__search-icon,
+.main-nav__search-input:hover + .main-nav__link--search .main-nav__search-icon,
+.main-nav__search-input:focus + .main-nav__link--search .main-nav__search-icon {
+  fill: #ffffff;
+}
 .main-nav__item--search {
   position: relative;
 }
@@ -301,8 +310,15 @@ picture {
   bottom: 10px;
   -top: 5px;
 }
+.main-nav__search-icon {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Csymbol%20id%3D%22multiply%22%20viewBox%3D%220%200%2031.112%2031.112%22%3E%3Cpath%20fill%3D%22rgba%28255,%20255,%20255,%200.6%29%22%20d%3D%22M31.112%201.414L29.698%200%2015.556%2014.142%201.414%200%200%201.414l14.142%2014.142L0%2029.698l1.414%201.414L15.556%2016.97l14.142%2014.142%201.414-1.414L16.97%2015.556z%22%2F%3E%3C%2Fsymbol%3E%3Csymbol%20id%3D%22search-glass%22%20viewBox%3D%220%200%20483.083%20483.083%22%3E%3Cpath%20fill%3D%22rgba%28255,%20255,%20255,%200.6%29%22%20d%3D%22M332.74%20315.35c30.883-33.433%2050.15-78.2%2050.15-127.5C382.89%2084.433%20298.74%200%20195.04%200S7.19%2084.433%207.19%20187.85%2091.34%20375.7%20195.04%20375.7c42.217%200%2081.033-13.883%20112.483-37.4l139.683%20139.683c3.4%203.4%207.65%205.1%2011.9%205.1s8.783-1.7%2011.9-5.1c6.517-6.517%206.517-17.283%200-24.083L332.74%20315.35zM41.19%20187.85C41.19%20103.133%20110.04%2034%20195.04%2034c84.717%200%20153.85%2068.85%20153.85%20153.85S280.04%20341.7%20195.04%20341.7%2041.19%20272.567%2041.19%20187.85z%22%2F%3E%3C%2Fsymbol%3E%3Csymbol%20id%3D%22social-logo-fb%22%20viewBox%3D%220%200%2090%2090%22%3E%3Cpath%20fill%3D%22rgba%28255,%20255,%20255,%200.6%29%22%20d%3D%22M90%2015.001C90%207.119%2082.884%200%2075%200H15C7.116%200%200%207.119%200%2015.001v59.998C0%2082.881%207.116%2090%2015.001%2090H45V56H34V41h11v-5.844C45%2025.077%2052.568%2016%2061.875%2016H74v15H61.875C60.548%2031%2059%2032.611%2059%2035.024V41h15v15H59v34h16c7.884%200%2015-7.119%2015-15.001V15.001z%22%2F%3E%3C%2Fsymbol%3E%3Csymbol%20id%3D%22social-logo-google-plus%22%20viewBox%3D%220%200%20510%20510%22%3E%3Cpath%20fill%3D%22rgba%28255,%20255,%20255,%200.6%29%22%20d%3D%22M234.6%20175.95c0-25.5-15.3-76.5-53.55-76.5-15.3%200-33.15%2010.2-33.15%2043.35%200%2030.6%2015.3%2073.95%2051%2073.95%200%200%2035.7-2.55%2035.7-40.8zM219.3%20300.9h-7.65c-7.65%200-30.6%202.55-45.9%207.649C147.9%20313.65%20127.5%20326.4%20127.5%20351.9c0%2028.05%2025.5%2056.1%2076.5%2056.1%2038.25%200%2061.2-25.5%2061.2-51%200-17.85-12.75-30.6-45.9-56.1zM459%200H51C22.95%200%200%2022.95%200%2051v408c0%2028.05%2022.95%2051%2051%2051h408c28.05%200%2051-22.95%2051-51V51c0-28.05-22.95-51-51-51zM181.05%20438.6c-71.4%200-104.55-40.8-104.55-76.5%200-12.75%202.55-40.8%2038.25-61.199%2020.4-12.75%2045.9-20.4%2079.05-22.95-5.1-5.101-7.65-12.75-7.65-25.5%200-5.1%200-7.65%202.55-12.75h-10.2c-51%200-81.6-38.25-81.6-76.5%200-43.35%2033.15-91.8%20104.55-91.8h107.1l-7.649%207.65L283.05%2096.9l-2.55%202.55h-17.85c10.199%2010.2%2022.949%2028.05%2022.949%2056.1%200%2035.7-17.85%2053.55-40.8%2068.85-5.1%202.55-10.2%2010.2-10.2%2017.85s5.1%2012.75%2010.2%2015.3c2.55%202.55%207.65%205.101%2012.75%207.65%2020.4%2015.3%2048.45%2033.149%2048.45%2073.95.001%2045.9-33.149%2099.45-124.949%2099.45zM433.5%20255h-51v51H357v-51h-51v-25.5h51v-51h25.5v51h51V255z%22%2F%3E%3C%2Fsymbol%3E%3Csymbol%20id%3D%22social-logo-twitter%22%20viewBox%3D%220%200%20510%20510%22%3E%3Cpath%20fill%3D%22rgba%28255,%20255,%20255,%200.6%29%22%20d%3D%22M459%200H51C22.95%200%200%2022.95%200%2051v408c0%2028.05%2022.95%2051%2051%2051h408c28.05%200%2051-22.95%2051-51V51c0-28.05-22.95-51-51-51zm-58.65%20186.15c-2.55%20117.3-76.5%20198.9-188.7%20204-45.9%202.55-79.05-12.75-109.65-30.6%2033.15%205.101%2076.5-7.649%2099.45-28.05-33.15-2.55-53.55-20.4-63.75-48.45%2010.2%202.55%2020.4%200%2028.05%200-30.6-10.2-51-28.05-53.55-68.85%207.65%205.1%2017.85%207.65%2028.05%207.65-22.95-12.75-38.25-61.2-20.4-91.8%2033.15%2035.7%2073.95%2066.3%20140.25%2071.4-17.85-71.4%2079.051-109.65%20117.301-61.2%2017.85-2.55%2030.6-10.2%2043.35-15.3-5.1%2017.85-15.3%2028.05-28.05%2038.25%2012.75-2.55%2025.5-5.1%2035.7-10.2-2.551%2012.75-15.301%2022.95-28.051%2033.15z%22%2F%3E%3C%2Fsymbol%3E%3Csymbol%20id%3D%22social-logo-vk%22%20viewBox%3D%220%200%2014.171%2014.171%22%3E%3Cpath%20fill%3D%22rgba%28255,%20255,%20255,%200.6%29%22%20d%3D%22M13.268%200H.905C.405%200%200%20.405%200%20.904v12.363c0%20.499.405.904.905.904h12.362a.904.904%200%200%200%20.904-.904V.904A.902.902%200%200%200%2013.268%200zm-1.513%208.635c.259.264.821.707.719%201.158-.094.414-.712.263-1.312.287-.685.029-1.091.044-1.503-.287-.194-.157-.308-.343-.494-.551-.169-.188-.382-.525-.672-.512-.521.026-.358.752-.543%201.247-2.896.456-4.059-1.333-5.085-3.069-.497-.841-1.215-2.647-1.215-2.647l2.048-.007s.657%201.195.831%201.503c.148.262.311.47.479.704.141.194.364.574.608.543.397-.051.469-1.591.223-2.107-.098-.209-.333-.282-.576-.353.082-.518%202.297-.626%202.655-.224.52.584-.36%202.21.352%202.684%201-.524%201.854-2.718%201.854-2.718l2.398.015s-.375%201.186-.768%201.712c-.229.308-.989.994-.959%201.503.024.403.642.795.96%201.119z%22%20fill%3D%22%23030104%22%2F%3E%3C%2Fsymbol%3E%3C%2Fsvg%3E");
+  width: 20px;
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.6);
+}
 .main-nav__item--current .main-nav__link {
-  opacity: 1;
+  color: #ffffff;
+  -opacity: 1;
   position: relative;
 }
 .main-nav__item--current .main-nav__link::before {
@@ -1474,6 +1490,72 @@ style for all dates
   line-height: 18px;
   color: rgba(255, 255, 255, 0.8);
 }
+.order__subsector-accord {
+  display: none;
+}
+.order__subsector-accord--active {
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+}
+.order__subsector-accord--active .order__accord-header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #979797;
+  -margin-top: 30px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.order__subsector-accord--active .order__accord-field {
+  margin: 0;
+  padding: 0;
+  margin-right: -30px;
+  border: 0;
+  font-size: 0;
+}
+.order__subsector-accord--active .order_arrord-mat-card {
+  display: inline-block;
+  max-width: calc(160px);
+  /*label width + max lebel margin-right*/
+}
+.order__subsector-accord--active .form-label {
+  -margin-right: 30px;
+  width: 130px;
+  cursor: pointer;
+}
+.order__subsector-accord--active .order__accord-radio-name {
+  font-family: 'Rubik';
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+.order__subsector-accord--active .order__accord-btn {
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 40px;
+  color: #2c2c2c;
+  margin-top: 30px;
+  width: 135px;
+  height: 40px;
+  border: 1px solid #000000;
+  outline: 0;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
 @media (min-width: 620px) {
   .guitar-card__inner {
     width: 285px;
@@ -1689,8 +1771,7 @@ style for all dates
   .main-nav__toggle {
     display: none;
   }
-  .main-nav .main-nav__wrapper {
-    /*for display*/
+  .main-nav .main-nav__wrapper {/*for display*/
     display: block;
     position: static;
     height: auto;
@@ -1720,15 +1801,14 @@ style for all dates
     font-weight: normal;
     font-size: 14px;
     line-height: 40px;
-    color: #ffffff;
-    /*as btn, fix*/
+    color: #ffffff;/*as btn, fix*/
     width: 120px;
     -margin: 0;
     margin-top: -20px;
     margin-bottom: -20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    opacity: 1;
+    -opacity: 1;
   }
   .main-nav__list--search {
     padding-right: 40px;
