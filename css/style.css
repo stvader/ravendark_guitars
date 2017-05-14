@@ -39,6 +39,9 @@ picture {
   border: none;
   border-style: none;
 }
+input {
+  outline: none;
+}
 @font-face {
   font-family: 'Rubik';
   src: url('../fonts/Rubik.eot');
@@ -1064,7 +1067,7 @@ style for all dates
   line-height: 21px;
   color: #000000;
   max-width: 150px;
-  -max-width: calc(280px);
+  -max-width: calc(150px + 20px + 110px);
   /*own width + btn margin width + btn width*/
   -margin-bottom: 40px;
   opacity: .6;
@@ -1238,7 +1241,7 @@ style for all dates
   display: block;
   position: absolute;
   padding-top: 20px;
-  -max-width: calc(728px);
+  -max-width: calc(768px - 20px - 20px);
   /*desktpo-width - left padding - right padding*/
   -width: 100%;
   -margin-left: 20px;
@@ -1342,7 +1345,7 @@ style for all dates
 }
 .contacts__info-wrapper {
   position: relative;
-  padding-top: calc(85px);
+  padding-top: calc(60px + 25px);
   /*height table + margin-top paragrph*/
 }
 .contacts__slogan {
@@ -1410,6 +1413,9 @@ style for all dates
   padding-bottom: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+.order__sector--contacts {
+  padding-bottom: 0;
+}
 .order__sector--active {
   background-color: #4d4d4d;
 }
@@ -1457,6 +1463,11 @@ style for all dates
 .order__subsector:not(:last-child) {
   margin-bottom: 30px;
 }
+.order__subsector-head,
+.order__sector-name {
+  position: relative;
+  cursor: pointer;
+}
 .order__subsector-name {
   margin: 0;
   padding: 0;
@@ -1466,22 +1477,42 @@ style for all dates
   line-height: 18px;
   color: rgba(151, 151, 151, 0.8);
   text-transform: uppercase;
-  position: relative;
+  -position: relative;
 }
-.order__subsector-name::after {
-  content: 'v';
+.order__subsector-button {
+  margin: 0;
+  padding: 0;
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
   height: 18px;
+  width: 18px;
+  border: 0;
+  outline: 0;
+  background-color: inherit;
+  -border: 1px solid #fff;
   cursor: pointer;
-  font-family: 'Rubik';
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: rgba(151, 151, 151, 0.8);
-  /*timed until svg epsent*/
+}
+.order__subsector-button::before,
+.order__subsector-button::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 2px;
+  bottom: 4px;
+  background-color: #adadad;
+}
+.order__subsector-button::before {
+  left: -2px;
+  transform: rotate(45deg);
+}
+.order__subsector-button::after {
+  right: -2px;
+  transform: rotate(-45deg);
+}
+.order__sector-name .order__subsector-button {
+  top: 24px;
 }
 .order__subsector-value {
   font-family: 'Rubik';
@@ -1497,6 +1528,7 @@ style for all dates
   display: block;
   margin: 0;
   padding: 0;
+  margin-top: 30px;
   margin-left: -20px;
   margin-right: -20px;
   padding-left: 20px;
@@ -1504,6 +1536,10 @@ style for all dates
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #ffffff;
+}
+.order__subsector-accord--active .order__accord-header-wrapper {
+  position: relative;
+  cursor: pointer;
 }
 .order__subsector-accord--active .order__accord-header {
   margin: 0;
@@ -1517,22 +1553,78 @@ style for all dates
   margin-bottom: 30px;
   text-transform: uppercase;
 }
+.order__subsector-accord--active .order__accord-header-button {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 18px;
+  width: 18px;
+  border: 0;
+  outline: 0;
+  background-color: inherit;
+  -border: 1px solid #fff;
+  cursor: pointer;
+}
+.order__subsector-accord--active .order__accord-header-button::before,
+.order__subsector-accord--active .order__accord-header-button::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 2px;
+  top: 4px;
+  background-color: #adadad;
+}
+.order__subsector-accord--active .order__accord-header-button::before {
+  left: -2px;
+  transform: rotate(-45deg);
+}
+.order__subsector-accord--active .order__accord-header-button::after {
+  right: -2px;
+  transform: rotate(45deg);
+}
+.order__subsector-accord--active .order__accord-descript {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik Light';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
 .order__subsector-accord--active .order__accord-field {
   margin: 0;
   padding: 0;
-  margin-right: -30px;
+  margin-right: -20px;
+  -margin-bottom: 30px;
   border: 0;
   font-size: 0;
 }
 .order__subsector-accord--active .order_arrord-mat-card {
   display: inline-block;
-  max-width: calc(160px);
+  width: 50%;
+  min-width: 150px;
+  max-width: 160px;
   /*label width + max lebel margin-right*/
 }
 .order__subsector-accord--active .form-label {
-  -margin-right: 30px;
+  display: block;
+  margin-right: 20px;
+  padding-bottom: 30px;
   width: 130px;
   cursor: pointer;
+}
+.order__subsector-accord--active .order__accord-image {
+  -border: 1px solid #000;
+  border-radius: 10%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.order__subsector-accord--active .order__accord-radio {
+  margin-right: 8px;
 }
 .order__subsector-accord--active .order__accord-radio-name {
   font-family: 'Rubik';
@@ -1547,14 +1639,70 @@ style for all dates
   font-size: 14px;
   line-height: 40px;
   color: #2c2c2c;
-  margin-top: 30px;
+  -margin-top: 30px;
   width: 135px;
   height: 40px;
-  border: 1px solid #000000;
+  border: 1px solid #2c2c2c;
   outline: 0;
-  background-color: #ffffff;
+  background-color: inherit;
   text-align: center;
   cursor: pointer;
+  -display: block;
+}
+.order__subsector-accord--active .order__accord-btn--hidden {
+  display: none;
+}
+.order__subsector-accord--active .order__accord-comment-wrapper {
+  display: none;
+}
+.order__subsector-accord--active .order__accord-comment-wrapper--active {
+  position: relative;
+  display: block;
+}
+.order__subsector-accord--active .order__accord-comment-field {
+  box-sizing: border-box;
+  width: calc(100% - 35px);
+  -margin-right: 35px;
+  padding: 20px;
+  resize: none;
+}
+.order__subsector-accord--active .order__accord-comment-button {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  outline: 0;
+  border: 0;
+  background-color: inherit;
+  cursor: pointer;
+}
+.order__subsector-accord--active .order__accord-comment-button::before,
+.order__subsector-accord--active .order__accord-comment-button::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 28px;
+  top: 9px;
+  left: -4px;
+  background-color: #adadad;
+}
+.order__subsector-accord--active .order__accord-comment-button::before {
+  transform: rotate(45deg);
+}
+.order__subsector-accord--active .order__accord-comment-button::after {
+  transform: rotate(-45deg);
+}
+.order__subsector-accord--active .order__accord-select-freds {
+  display: block;
+  margin-bottom: 30px;
+}
+@media (min-width: 490px) {/*min-width card of color *3 + side padding * 2*/
+  .order__subsector-accord--active .order_arrord-mat-card {
+    width: 33.333333%;
+  }
 }
 @media (min-width: 620px) {
   .guitar-card__inner {
@@ -1572,6 +1720,11 @@ style for all dates
   .guitar-card__image {
     padding-top: 30px;
     padding-bottom: 20px;
+  }
+}
+@media (min-width: 640px) {/*min-width card of color *4 + side padding * 2*/
+  .order__subsector-accord--active .order_arrord-mat-card {
+    width: 25%;
   }
 }
 @media (min-width: 768px) {
@@ -1737,6 +1890,24 @@ style for all dates
   }
   .contacts__btn {
     width: 142px;
+  }
+  .order__wrapper {
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .order__sector {
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .order__subsector-accord--active {
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 @media (min-width: 845px) {

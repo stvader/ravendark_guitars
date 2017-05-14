@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="js/js-main.js"></script>
 	<script type="text/javascript" src="js/hide_scrollbar.js"></script>
+	<script type="text/javascript" src="js/comment-block.js"></script>
 </head>
 <body>
 	
@@ -48,14 +49,18 @@
 								<h3 class="order__subsector-name">
 									Материал коруса
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									ясень
 								</div>
 							</div>
 							<div class="order__subsector-accord order__subsector-accord--active">
-								<h3 class="order__accord-header">
-									Материал корпуса
-								</h3>
+								<div class="order__accord-header-wrapper">
+									<h3 class="order__accord-header">
+										Материал корпуса
+									</h3>
+									<button class="order__accord-header-button"></button>
+								</div>
 								<fieldset class="order__accord-field">
 									<div class="order_arrord-mat-card">	
 										<label for="body-material-w1" class="form-label form-label--image-block">
@@ -71,7 +76,7 @@
 									<div class="order_arrord-mat-card">	
 										<label for="body-material-w2" class="form-label form-label--image-block">
 											<div class="order__accord-image">
-												<img src="img/ash-2.jpg" alt="" class="order__accord-pict">
+												<img src="img/mahogony.jpg" alt="mahagony" class="order__accord-pict">
 											</div>
 											<input type="radio" name="body-material" value="wood2" id="body-material-w2" class="order__accord-radio">
 											<span class="order__accord-radio-name">
@@ -93,7 +98,7 @@
 									<div class="order_arrord-mat-card">	
 										<label for="body-material-w4" class="form-label form-label--image-block">
 											<div class="order__accord-image">
-												<img src="img/ash-2.jpg" alt="" class="order__accord-pict">
+												<img src="img/other-material.jpg" alt="other material" class="order__accord-pict">
 											</div>
 											<input type="radio" name="body-material" value="wood4" id="body-material-w4" class="order__accord-radio">
 											<span class="order__accord-radio-name">
@@ -106,6 +111,10 @@
 								<button class="order__accord-btn">
 									Add Comment
 								</button>
+								<div class="order__accord-comment-wrapper">
+									<textarea name="body-material-comment" id="body-material-comment" rows="8" cols="20" class="order__accord-comment-field" placeholder="Your massage" ></textarea>
+									<button class="order__accord-comment-button"></button>
+								</div>
 							</div>
 						</li>
 						<li class="order__subsector">
@@ -113,12 +122,72 @@
 								<h3 class="order__subsector-name">
 									Материал топа
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									орех
 								</div>
 							</div>
-							<div class="order__subsector-accord">
-								
+							<div class="order__subsector-accord order__subsector-accord--active">
+								<div class="order__accord-header-wrapper">
+									<h3 class="order__accord-header">
+										Материал топа
+									</h3>
+									<button class="order__accord-header-button"></button>
+								</div>
+								<fieldset class="order__accord-field">
+									<div class="order_arrord-mat-card">	
+										<label for="top-material-w1" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/ash-2.jpg" alt="ash" class="order__accord-pict">
+											</div>
+											<input type="radio" name="top-material" value="wood1" id="top-material-w1" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												ясень
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="top-material-w2" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/mahogony.jpg" alt="mahagony" class="order__accord-pict">
+											</div>
+											<input type="radio" name="top-material" value="wood2" id="top-material-w2" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												махагонь
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="top-material-w3" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/nut.jpg" alt="nut" class="order__accord-pict">
+											</div>
+											<input type="radio" name="top-material" value="wood3" id="top-material-w3" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												орех
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="top-material-w4" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/other-material.jpg" alt="other material" class="order__accord-pict">
+											</div>
+											<input type="radio" name="top-material" value="wood4" id="top-material-w4" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												другой
+											</span>
+										</label>
+									</div>
+								</fieldset>
+
+								<button class="order__accord-btn">
+									Add Comment
+								</button>
+								<div class="order__accord-comment-wrapper">
+									<textarea name="body-material-comment" id="body-material-comment" rows="8" cols="20" class="order__accord-comment-field" placeholder="Your massage" ></textarea>
+									<button class="order__accord-comment-button"></button>
+								</div>
 							</div>
 						</li>
 					</ul>
@@ -139,12 +208,184 @@
 								<h3 class="order__subsector-name">
 									Материал тела грифа
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
+							</div>							
+							<div class="order__subsector-accord order__subsector-accord--active">
+								<div class="order__accord-header-wrapper">
+									<h3 class="order__accord-header">
+										Материал тела грифа
+									</h3>
+									<button class="order__accord-header-button"></button>
+								</div>
+								<p class="order__accord-descript">
+									мы делаем гриф из представленных мариалов, но и другие варианты могут быть воплощены в реальность
+								</p>
+								<fieldset class="order__accord-field">
+									<div class="order_arrord-mat-card">	
+										<label for="neck-body-material-w1" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/ash-2.jpg" alt="ash" class="order__accord-pict">
+											</div>
+											<input type="radio" name="neck-body-material" value="wood1" id="neck-body-material-w1" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												ясень
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="neck-body-material-w2" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/mahogony.jpg" alt="mahagony" class="order__accord-pict">
+											</div>
+											<input type="radio" name="neck-body-material" value="wood2" id="neck-body-material-w2" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												махагонь
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="neck-body-material-w3" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/nut.jpg" alt="nut" class="order__accord-pict">
+											</div>
+											<input type="radio" name="neck-body-material" value="wood3" id="neck-body-material-w3" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												клен-орех-клен
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="neck-body-material-w4" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/other-material.jpg" alt="other material" class="order__accord-pict">
+											</div>
+											<input type="radio" name="neck-body-material" value="wood4" id="neck-body-material-w4" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												другой
+											</span>
+										</label>
+									</div>
+								</fieldset>
+
+								<button class="order__accord-btn">
+									Add Comment
+								</button>
+								<div class="order__accord-comment-wrapper">
+									<textarea name="body-material-comment" id="body-material-comment" rows="8" cols="20" class="order__accord-comment-field" placeholder="Your massage" ></textarea>
+									<button class="order__accord-comment-button"></button>
+								</div>
 							</div>
-							<div class="order__subsector-accord">
-								
+						</li>
+						<li class="order__subsector">
+							<div class="order__subsector-head">
+								<h3 class="order__subsector-name">
+									Материал накладки грифа
+								</h3>
+								<button class="order__subsector-button"></button>
+								<div class="order__subsector-value">
+									
+								</div>
+							</div>							
+							<div class="order__subsector-accord order__subsector-accord--active">
+								<div class="order__accord-header-wrapper">
+									<h3 class="order__accord-header">
+										Материал накладки грифа
+									</h3>
+									<button class="order__accord-header-button"></button>
+								</div>
+								<p class="order__accord-descript">
+									мы делаем гриф из представленных мариалов, но и другие варианты могут быть воплощены в реальность
+								</p>
+								<fieldset class="order__accord-field">
+									<div class="order_arrord-mat-card">	
+										<label for="fretboard-material-w1" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/ash-2.jpg" alt="ash" class="order__accord-pict">
+											</div>
+											<input type="radio" name="fretboard-material" value="wood1" id="fretboard-material-w1" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												пао ферро
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="fretboard-material-w2" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/mahogony.jpg" alt="mahagony" class="order__accord-pict">
+											</div>
+											<input type="radio" name="fretboard-material" value="wood2" id="fretboard-material-w2" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												циркоте
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="fretboard-material-w3" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/nut.jpg" alt="nut" class="order__accord-pict">
+											</div>
+											<input type="radio" name="fretboard-material" value="wood3" id="fretboard-material-w3" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												черное дерево
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="fretboard-material-w4" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/other-material.jpg" alt="other material" class="order__accord-pict">
+											</div>
+											<input type="radio" name="fretboard-material" value="wood4" id="fretboard-material-w4" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												палиссандр
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="fretboard-material-w1" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/ash-2.jpg" alt="ash" class="order__accord-pict">
+											</div>
+											<input type="radio" name="fretboard-material" value="wood1" id="fretboard-material-w1" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												бокоте
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="fretboard-material-w2" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/mahogony.jpg" alt="mahagony" class="order__accord-pict">
+											</div>
+											<input type="radio" name="fretboard-material" value="wood2" id="fretboard-material-w2" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												клен
+											</span>
+										</label>
+									</div>
+									<div class="order_arrord-mat-card">	
+										<label for="fretboard-material-w4" class="form-label form-label--image-block">
+											<div class="order__accord-image">
+												<img src="img/other-material.jpg" alt="other material" class="order__accord-pict">
+											</div>
+											<input type="radio" name="fretboard-material" value="wood4" id="fretboard-material-w4" class="order__accord-radio">
+											<span class="order__accord-radio-name">
+												другой
+											</span>
+										</label>
+									</div>
+								</fieldset>
+
+								<button class="order__accord-btn">
+									Add Comment
+								</button>
+								<div class="order__accord-comment-wrapper">
+									<textarea name="body-material-comment" id="body-material-comment" rows="8" cols="20" class="order__accord-comment-field" placeholder="Your massage" ></textarea>
+									<button class="order__accord-comment-button"></button>
+								</div>
 							</div>
 						</li>
 						<li class="order__subsector">
@@ -152,12 +393,31 @@
 								<h3 class="order__subsector-name">
 									Количество ладов
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
 							</div>
-							<div class="order__subsector-accord">
-								
+							<div class="order__subsector-accord order__subsector-accord--active">
+								<div class="order__accord-header-wrapper">
+									<h3 class="order__accord-header">
+										Количество ладов
+									</h3>
+									<button class="order__accord-header-button"></button>
+								</div>
+								<select name="amount-freds" id="amount-freds" class="order__accord-select-freds">
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24" selected="true">24</option>
+								</select>
+								<button class="order__accord-btn">
+									Add Comment
+								</button>
+								<div class="order__accord-comment-wrapper">
+									<textarea name="body-material-comment" id="body-material-comment" rows="8" cols="20" class="order__accord-comment-field" placeholder="Your massage" ></textarea>
+									<button class="order__accord-comment-button"></button>
+								</div>
 							</div>
 						</li>
 						<li class="order__subsector">
@@ -165,6 +425,7 @@
 								<h3 class="order__subsector-name">
 									Способ крепления грифа
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
@@ -191,6 +452,7 @@
 								<h3 class="order__subsector-name">
 									Лак
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
@@ -217,6 +479,7 @@
 								<h3 class="order__subsector-name">
 									Звукосниматели
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
@@ -230,6 +493,7 @@
 								<h3 class="order__subsector-name">
 									Электроника
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
@@ -256,6 +520,7 @@
 								<h3 class="order__subsector-name">
 									Цвет фурнитуры
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
@@ -269,6 +534,7 @@
 								<h3 class="order__subsector-name">
 									Бридж
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
@@ -282,6 +548,7 @@
 								<h3 class="order__subsector-name">
 									Колки
 								</h3>
+								<button class="order__subsector-button"></button>
 								<div class="order__subsector-value">
 									
 								</div>
@@ -294,13 +561,17 @@
 				</div>
 
 				<div class="order__sector order__sector--contacts">
-					<div class="order__sector-name">
+					<div class="order__sector-name order__subsector-head">
 						<span class="order__sector-number">
 							6
 						</span>
 						<h2 class="order__sector-header">
 							Контакты
 						</h2>
+						<button class="order__subsector-button"></button>
+						<div class="order__subsector-value">
+							
+						</div>
 					</div>
 					
 				</div>
