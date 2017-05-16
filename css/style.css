@@ -1593,7 +1593,16 @@ style for all dates
   font-size: 14px;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 5px;
+}
+.order__subsector-accord--active .order__accord-descript--neck {
   margin-bottom: 30px;
+}
+.order__subsector-accord--active .order__accord-descript--neck-cramping {
+  margin-left: 18px;
+}
+.order__subsector-accord--active .order__accord-descript--contacts {
+  font-family: 'Rubik';
 }
 .order__subsector-accord--active .order__accord-field {
   margin: 0;
@@ -1603,6 +1612,16 @@ style for all dates
   border: 0;
   font-size: 0;
 }
+.order__subsector-accord--active .order__accord-field--neck-cramping,
+.order__subsector-accord--active .order__accord-field--polish {
+  margin-bottom: 20px;
+}
+.order__subsector-accord--active .order__accord-field--customer-info .order__accord-customer-input:active,
+.order__subsector-accord--active .order__accord-field--customer-info .order__accord-comment-field:active,
+.order__subsector-accord--active .order__accord-field--customer-info .order__accord-customer-input:focus,
+.order__subsector-accord--active .order__accord-field--customer-info .order__accord-comment-field:focus {
+  border: 1px solid #26b18f;
+}
 .order__subsector-accord--active .order_arrord-mat-card {
   display: inline-block;
   width: 50%;
@@ -1611,11 +1630,24 @@ style for all dates
   /*label width + max lebel margin-right*/
 }
 .order__subsector-accord--active .form-label {
-  display: block;
+  font-family: 'Rubik';
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  display: inline-block;
   margin-right: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
+  /*check!!*/
   width: 130px;
+  vertical-align: top;
   cursor: pointer;
+}
+.order__subsector-accord--active .form-label--image-block {
+  padding-bottom: 30px;
+}
+.order__subsector-accord--active .form-label--image-block {
+  display: block;
 }
 .order__subsector-accord--active .order__accord-image {
   -border: 1px solid #000;
@@ -1623,15 +1655,11 @@ style for all dates
   overflow: hidden;
   margin-bottom: 10px;
 }
-.order__subsector-accord--active .order__accord-radio {
-  margin-right: 8px;
-}
-.order__subsector-accord--active .order__accord-radio-name {
-  font-family: 'Rubik';
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
-  color: #000000;
+.order__subsector-accord--active .order__accord-radio,
+.order__subsector-accord--active .order__accord-check {
+  margin-right: 4px;
+  display: inline-block;
+  vertical-align: top;
 }
 .order__subsector-accord--active .order__accord-btn {
   font-family: 'Rubik';
@@ -1647,7 +1675,7 @@ style for all dates
   background-color: inherit;
   text-align: center;
   cursor: pointer;
-  -display: block;
+  display: block;
 }
 .order__subsector-accord--active .order__accord-btn--hidden {
   display: none;
@@ -1660,11 +1688,26 @@ style for all dates
   display: block;
 }
 .order__subsector-accord--active .order__accord-comment-field {
+  font-family: 'Rubik Light';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
   box-sizing: border-box;
   width: calc(100% - 35px);
   -margin-right: 35px;
   padding: 20px;
   resize: none;
+  outline: none;
+}
+.order__subsector-accord--active .order__accord-comment-field--fixed {
+  width: 100%;
+  margin-top: 20px;
+  /*check*/
+  border: 1px solid #000000;
+}
+.order__subsector-accord--active .order__accord-comment-field--customer-info {
+  border: 1px solid #000000;
 }
 .order__subsector-accord--active .order__accord-comment-button {
   margin: 0;
@@ -1695,13 +1738,45 @@ style for all dates
 .order__subsector-accord--active .order__accord-comment-button::after {
   transform: rotate(-45deg);
 }
-.order__subsector-accord--active .order__accord-select-freds {
+.order__subsector-accord--active .order__accord-select {
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+.order__subsector-accord--active .order__accord-select--freds {
   display: block;
   margin-bottom: 30px;
+}
+.order__subsector-accord--active .order__accord-radio-block {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.order__subsector-accord--active .order__accord-radio-item {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.order__subsector-accord--active .customer-info {
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2c2c2c;
+  padding: 5px;
+  border: 1px solid #000000;
 }
 @media (min-width: 490px) {/*min-width card of color *3 + side padding * 2*/
   .order__subsector-accord--active .order_arrord-mat-card {
     width: 33.333333%;
+  }
+}
+@media (min-width: 520px) {/*for electronic layout*/
+  .order__accord-electornic-select-block,
+  .order__accord-electornic-check-block {
+    display: inline-block;
   }
 }
 @media (min-width: 620px) {
