@@ -1,10 +1,8 @@
-1) gallery images in links +
-2) breadpoints links +
-3) try out fonts for contacts+
-4) change bdi for contact desktop+
-5) try out fonts and paddingd for order (from freds amount)
+5) try out fonts and paddingd for order (from freds amount)+
 6) fix svg for ie
 7) check textaria border
 8) change textareas names
-!!!! begin from customer info block
+
+
+130*70
 

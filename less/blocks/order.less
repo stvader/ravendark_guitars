@@ -252,35 +252,46 @@
 			margin-bottom: 30px;
 		}
 
-		&--neck-cramping {			
+		&--neck-cramping,
+		&--polish {			
 			margin-left: 18px;
+			margin-bottom: 20px;
 		}
 
 		&--contacts {
 			font-family: 'Rubik';
+			margin-bottom: 20px;
 		}
 	}
 
 	.order__accord-field {
 		.out-indent();
-
-		margin-right: -20px;
-		-margin-bottom: 30px;
+		
+		margin-bottom: 20px;
 		border: 0;
 		font-size: 0;
 
+		&--images-cards {
+			margin-right: -20px;
+		}
+
 		&--neck-cramping,
 		&--polish {
-			margin-bottom: 20px;
+			-margin-bottom: 20px;
 		}
 
 		&--customer-info {
 			.order__accord-customer-input,
 			.order__accord-comment-field {
+				padding: 10px;
+
 				&:active,
-				&:focus {
-					border: 1px solid @turquoise;
+				&:focus {					
+					border: 2px solid @turquoise;
 				}
+			}
+			.order__accord-comment-field {
+				width: 100%;
 			}
 		}
 	}
@@ -312,7 +323,15 @@
 
 		&--image-block {
 			display: block;			
-		}		
+		}
+
+		&--customer {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-weight: normal;
+			color: @grey-header;
+			text-transform: uppercase;
+		}	
 	}
 
 	.order__accord-image {
@@ -378,17 +397,18 @@
 		width: calc(~"100% - 35px");
 		-margin-right: 35px;
 		padding: 20px;
+		border: 1px solid @grey-header;
 		resize: none;
 		outline: none;
 
 		&--fixed {
 			width: 100%;
 			margin-top: 20px;/*check*/
-			border: 1px solid @black;
+			
 		}
 
 		&--customer-info {
-			border: 1px solid @black;
+			-border: 1px solid @black;
 		}
 	}
 	
@@ -409,11 +429,11 @@
 		&::after {
 			content: "";
 			position: absolute;
-			height: 2px;
+			height: 1px;
 			width: 28px;
 			top: 9px;
 			left: -4px;
-			background-color: @grey-order-bd;
+			background-color: @grey-header;
 		}
 
 		&::before {
@@ -439,6 +459,14 @@
 		}
 	}
 
+	.order__accord-electornic-select-block {
+		margin-bottom: 30px;
+	}
+
+	.order__accord-electornic-check-block {
+		margin-bottom: 10px;
+	}
+
 	.order__accord-radio-block {
 		.out-indent();
 
@@ -449,16 +477,19 @@
 		.out-indent();
 
 		display: block;
+		margin-bottom: 10px;
 	}
 
-	.customer-info {
+	.order__accord-customer-input {
 		.fonts(@family: 'Rubik'; 
 			@weight: normal; 
 			@size: 14px; 
 			@line-height: 18px; 
 			@color: @grey-header);
 
-		padding: 5px;
+		box-sizing: border-box;
+		width: 100%;
+		-padding: 10px;
 		border: 1px solid @black;
 	}
 }
@@ -503,8 +534,7 @@
 }
 
 @media (min-width: 520px) { /*for electronic layout*/
-	.order__accord-electornic-select-block,
-	.order__accord-electornic-check-block {
+	.order__accord-feild--electornic {
 		display: inline-block;
 	}
 }

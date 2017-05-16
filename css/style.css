@@ -1598,29 +1598,41 @@ style for all dates
 .order__subsector-accord--active .order__accord-descript--neck {
   margin-bottom: 30px;
 }
-.order__subsector-accord--active .order__accord-descript--neck-cramping {
+.order__subsector-accord--active .order__accord-descript--neck-cramping,
+.order__subsector-accord--active .order__accord-descript--polish {
   margin-left: 18px;
+  margin-bottom: 20px;
 }
 .order__subsector-accord--active .order__accord-descript--contacts {
   font-family: 'Rubik';
+  margin-bottom: 20px;
 }
 .order__subsector-accord--active .order__accord-field {
   margin: 0;
   padding: 0;
-  margin-right: -20px;
-  -margin-bottom: 30px;
+  margin-bottom: 20px;
   border: 0;
   font-size: 0;
 }
+.order__subsector-accord--active .order__accord-field--images-cards {
+  margin-right: -20px;
+}
 .order__subsector-accord--active .order__accord-field--neck-cramping,
 .order__subsector-accord--active .order__accord-field--polish {
-  margin-bottom: 20px;
+  -margin-bottom: 20px;
+}
+.order__subsector-accord--active .order__accord-field--customer-info .order__accord-customer-input,
+.order__subsector-accord--active .order__accord-field--customer-info .order__accord-comment-field {
+  padding: 10px;
 }
 .order__subsector-accord--active .order__accord-field--customer-info .order__accord-customer-input:active,
 .order__subsector-accord--active .order__accord-field--customer-info .order__accord-comment-field:active,
 .order__subsector-accord--active .order__accord-field--customer-info .order__accord-customer-input:focus,
 .order__subsector-accord--active .order__accord-field--customer-info .order__accord-comment-field:focus {
-  border: 1px solid #26b18f;
+  border: 2px solid #26b18f;
+}
+.order__subsector-accord--active .order__accord-field--customer-info .order__accord-comment-field {
+  width: 100%;
 }
 .order__subsector-accord--active .order_arrord-mat-card {
   display: inline-block;
@@ -1648,6 +1660,13 @@ style for all dates
 }
 .order__subsector-accord--active .form-label--image-block {
   display: block;
+}
+.order__subsector-accord--active .form-label--customer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: normal;
+  color: #2c2c2c;
+  text-transform: uppercase;
 }
 .order__subsector-accord--active .order__accord-image {
   -border: 1px solid #000;
@@ -1697,6 +1716,7 @@ style for all dates
   width: calc(100% - 35px);
   -margin-right: 35px;
   padding: 20px;
+  border: 1px solid #2c2c2c;
   resize: none;
   outline: none;
 }
@@ -1704,10 +1724,9 @@ style for all dates
   width: 100%;
   margin-top: 20px;
   /*check*/
-  border: 1px solid #000000;
 }
 .order__subsector-accord--active .order__accord-comment-field--customer-info {
-  border: 1px solid #000000;
+  -border: 1px solid #000000;
 }
 .order__subsector-accord--active .order__accord-comment-button {
   margin: 0;
@@ -1726,11 +1745,11 @@ style for all dates
 .order__subsector-accord--active .order__accord-comment-button::after {
   content: "";
   position: absolute;
-  height: 2px;
+  height: 1px;
   width: 28px;
   top: 9px;
   left: -4px;
-  background-color: #adadad;
+  background-color: #2c2c2c;
 }
 .order__subsector-accord--active .order__accord-comment-button::before {
   transform: rotate(45deg);
@@ -1749,6 +1768,12 @@ style for all dates
   display: block;
   margin-bottom: 30px;
 }
+.order__subsector-accord--active .order__accord-electornic-select-block {
+  margin-bottom: 30px;
+}
+.order__subsector-accord--active .order__accord-electornic-check-block {
+  margin-bottom: 10px;
+}
 .order__subsector-accord--active .order__accord-radio-block {
   margin: 0;
   padding: 0;
@@ -1758,14 +1783,17 @@ style for all dates
   margin: 0;
   padding: 0;
   display: block;
+  margin-bottom: 10px;
 }
-.order__subsector-accord--active .customer-info {
+.order__subsector-accord--active .order__accord-customer-input {
   font-family: 'Rubik';
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
   color: #2c2c2c;
-  padding: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  -padding: 10px;
   border: 1px solid #000000;
 }
 @media (min-width: 490px) {/*min-width card of color *3 + side padding * 2*/
@@ -1774,8 +1802,7 @@ style for all dates
   }
 }
 @media (min-width: 520px) {/*for electronic layout*/
-  .order__accord-electornic-select-block,
-  .order__accord-electornic-check-block {
+  .order__accord-feild--electornic {
     display: inline-block;
   }
 }
