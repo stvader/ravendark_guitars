@@ -1,12 +1,10 @@
-1) fix order vadidate trouble
-2) order img alt do right
-3) !!! complete fix image cards
-5) try out fonts and paddingd for order (from freds amount)+
+1) fix order vadidate trouble+
+2) order img alt do right+
+3) !!! complete fix image cards+
+
 6) fix svg for ie
-7) check textaria border+
-8) change textareas names
 
 
 
-130*70+
+
 

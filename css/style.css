@@ -1647,7 +1647,6 @@ style for all dates
   display: block;
   margin-right: 20px;
   margin-bottom: 30px;
-  /*check!!*/
   width: 130px;
   vertical-align: top;
 }
@@ -1660,9 +1659,7 @@ style for all dates
   display: inline-block;
   margin-right: 20px;
   padding-bottom: 5px;
-  /*check!!*/
   width: 130px;
-  /*check!!*/
   vertical-align: top;
   cursor: pointer;
 }
@@ -1738,7 +1735,6 @@ style for all dates
 .order__subsector-accord--active .order__accord-comment-field--fixed {
   width: 100%;
   margin-top: 20px;
-  /*check*/
 }
 .order__subsector-accord--active .order__accord-comment-field--customer-info {
   -border: 1px solid #000000;
