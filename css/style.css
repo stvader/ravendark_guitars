@@ -420,6 +420,8 @@ input {
   text-decoration: none;
   text-align: center;
   background-color: #9e0b0f;
+  outline: none;
+  border: none;
   cursor: pointer;
 }
 .breadcrumbs {
@@ -1634,12 +1636,20 @@ style for all dates
 .order__subsector-accord--active .order__accord-field--customer-info .order__accord-comment-field {
   width: 100%;
 }
-.order__subsector-accord--active .order_arrord-mat-card {
+.order__subsector-accord--active .order__arrord-mat-card {
   display: inline-block;
   width: 50%;
   min-width: 150px;
   max-width: 160px;
   /*label width + max lebel margin-right*/
+}
+.order__subsector-accord--active .order__accord-image-block {
+  display: block;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  /*check!!*/
+  width: 130px;
+  vertical-align: top;
 }
 .order__subsector-accord--active .form-label {
   font-family: 'Rubik';
@@ -1652,14 +1662,13 @@ style for all dates
   padding-bottom: 5px;
   /*check!!*/
   width: 130px;
+  /*check!!*/
   vertical-align: top;
   cursor: pointer;
 }
-.order__subsector-accord--active .form-label--image-block {
-  padding-bottom: 30px;
-}
-.order__subsector-accord--active .form-label--image-block {
-  display: block;
+.order__subsector-accord--active .form-label--image-radio {
+  width: auto;
+  margin-right: 0;
 }
 .order__subsector-accord--active .form-label--customer {
   padding-top: 10px;
@@ -1669,16 +1678,22 @@ style for all dates
   text-transform: uppercase;
 }
 .order__subsector-accord--active .order__accord-image {
+  display: block;
+  width: 130px;
   -border: 1px solid #000;
-  border-radius: 10%;
+  border-radius: 5%;
   overflow: hidden;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 .order__subsector-accord--active .order__accord-radio,
 .order__subsector-accord--active .order__accord-check {
   margin-right: 4px;
   display: inline-block;
   vertical-align: top;
+}
+.order__subsector-accord--active .order__accord-radio-name {
+  -cursor: pointer;
 }
 .order__subsector-accord--active .order__accord-btn {
   font-family: 'Rubik';
@@ -1796,8 +1811,12 @@ style for all dates
   -padding: 10px;
   border: 1px solid #000000;
 }
+.order__subsector-accord--active .order__submit-btn {
+  width: 130px;
+  background-color: #00a37b;
+}
 @media (min-width: 490px) {/*min-width card of color *3 + side padding * 2*/
-  .order__subsector-accord--active .order_arrord-mat-card {
+  .order__subsector-accord--active .order__arrord-mat-card {
     width: 33.333333%;
   }
 }
@@ -1825,7 +1844,7 @@ style for all dates
   }
 }
 @media (min-width: 640px) {/*min-width card of color *4 + side padding * 2*/
-  .order__subsector-accord--active .order_arrord-mat-card {
+  .order__subsector-accord--active .order__arrord-mat-card {
     width: 25%;
   }
 }

@@ -296,33 +296,49 @@
 		}
 	}
 
-	.order_arrord-mat-card {
+	.order__arrord-mat-card {
 		display: inline-block;
 		width: 50%;
 		min-width: 150px;
 		max-width: 160px; /*label width + max lebel margin-right*/
 	}
 
+	.order__accord-image-block {
+		// .fonts(@family: 'Rubik'; 
+		// 	@weight: bold; 
+		// 	@size: 14px; 
+		// 	@line-height: 18px; 
+		// 	@color: @black);
+
+		display: block;
+		margin-right: 20px;
+		margin-bottom: 30px;/*check!!*/
+		width: 130px;
+		vertical-align: top;
+	}
+
 	.form-label {
 		.fonts(@family: 'Rubik'; 
-			@weight: bold; 
-			@size: 14px; 
-			@line-height: 18px; 
-			@color: @black);
+		 	@weight: bold; 
+		 	@size: 14px; 
+		 	@line-height: 18px; 
+		 	@color: @black);
 
 		display: inline-block;
 		margin-right: 20px;
 		padding-bottom: 5px;/*check!!*/
-		width: 130px;
+		width: 130px;/*check!!*/
 		vertical-align: top;
 		cursor: pointer;
 
-		&--image-block {
-			padding-bottom: 30px;
-		}
+		// &--image-block {
+		// 	display: block;
+		// 	padding-bottom: 30px;
+		// }
 
-		&--image-block {
-			display: block;			
+		&--image-radio {
+			width: auto;
+			margin-right: 0;
 		}
 
 		&--customer {
@@ -335,10 +351,13 @@
 	}
 
 	.order__accord-image {
+		display: block;
+		width: 130px;
 		-border: 1px solid #000;
-		border-radius: 10%;
+		border-radius: 5%;
 		overflow: hidden;
 		margin-bottom: 10px;
+		cursor: pointer;
 	}
 
 	.order__accord-radio,
@@ -349,7 +368,7 @@
 	}
 
 	.order__accord-radio-name {
-				
+		-cursor: pointer;		
 	}
 
 	.order__accord-btn {
@@ -492,11 +511,16 @@
 		-padding: 10px;
 		border: 1px solid @black;
 	}
+
+	.order__submit-btn {
+		width: 130px;
+		background-color: @turquoise-btn;
+	}
 }
 
 @media (min-width: 490px) { /*min-width card of color *3 + side padding * 2*/
 	.order__subsector-accord--active {
-		.order_arrord-mat-card {
+		.order__arrord-mat-card {
 			width: 33.333333%;
 		}
 	}
@@ -504,7 +528,7 @@
 
 @media (min-width: 640px) { /*min-width card of color *4 + side padding * 2*/
 	.order__subsector-accord--active {
-		.order_arrord-mat-card {
+		.order__arrord-mat-card {
 			width: 25%;
 		}
 	}
