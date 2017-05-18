@@ -23,6 +23,7 @@ window.addEventListener('load', function() {
 	var i, j;	
 
 	function showCommentBlock(e) {
+		e.preventDefault();
 		var parent = this.closest('.order__subsector-accord');
 		var aimBlock = parent.querySelector('.order__accord-comment-wrapper');
 
@@ -35,7 +36,8 @@ window.addEventListener('load', function() {
 		}
 	}
 
-	function hideCommentBlock() {
+	function hideCommentBlock(e) {
+		e.preventDefault();
 		var wrapper = this.closest('.order__accord-comment-wrapper');
 		var parentBlock = this.closest('.order__subsector-accord');
 		var blockBtn = parentBlock.querySelector('.order__accord-btn');

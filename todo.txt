@@ -1,10 +1,12 @@
-1) fix order vadidate trouble+
-2) order img alt do right+
-3) !!! complete fix image cards+
-
-6) fix svg for ie
-
-
-
-
-
+1) fix svg for ie
+2) logo for ie mobile 
+3) fix add comment trouble +
+3) checkbox and radio custom as maket
+4) radio and label on one line
+4) checkbox and label on one line
+5) add comment text 2px up
+6) margin between accordion block and button and between buttonand block with radio must be equal
+7) loot at skype!!
+8) label about tangut oil in one line
+9) selects dropdown look as makets (cerntre)
+10) input for customer info: margins between label and next label must be different
