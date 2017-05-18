@@ -267,12 +267,13 @@
 	.order__accord-field {
 		.out-indent();
 		
-		margin-bottom: 20px;
+		margin-bottom: 30px;
 		border: 0;
 		font-size: 0;
 
 		&--images-cards {
 			margin-right: -20px;
+			margin-bottom: 0;
 		}
 
 		&--neck-cramping,
@@ -301,6 +302,7 @@
 		width: 50%;
 		min-width: 150px;
 		max-width: 160px; /*label width + max lebel margin-right*/
+		margin-bottom: 30px;
 	}
 
 	.order__accord-image-block {
@@ -312,7 +314,6 @@
 
 		display: block;
 		margin-right: 20px;
-		margin-bottom: 30px;
 		width: 130px;
 		vertical-align: top;
 	}
@@ -326,7 +327,7 @@
 
 		display: inline-block;
 		margin-right: 20px;
-		padding-bottom: 5px;
+		-padding-bottom: 5px;
 		width: 130px;
 		vertical-align: top;
 		cursor: pointer;
@@ -370,8 +371,8 @@
 		.fonts(@family: 'Rubik'; 
 			@weight: normal; 
 			@size: 14px; 
-			@line-height: 40px; 
-			@color: @grey-header);
+			@line-height: 38px; 
+			@color: @grey-header); /*lh height - 2px (border width)*/
 
 		-margin-top: 30px;
 		width: 135px;
@@ -466,6 +467,12 @@
 			@line-height: 18px; 
 			@color: @black);
 
+		display: inline-block;
+		width: 60px;
+		height: 30px;
+		padding-left: 10px;
+		vertical-align: bottom;
+		border: 1px solid @grey-order-select-bd;
 		
 		&--freds {
 			display: block;
@@ -491,7 +498,16 @@
 		.out-indent();
 
 		display: block;
-		margin-bottom: 10px;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}		
+	}
+
+	.order__accord-customer-block {
+		&:not(:last-child) {
+			margin-bottom: 20px; /*may be 30px*/
+		}
+		
 	}
 
 	.order__accord-customer-input {
