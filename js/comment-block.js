@@ -60,7 +60,64 @@ window.addEventListener('load', function() {
 		btnOpenComment[i].addEventListener('click', showCommentBlock);		
 	}
 
-	for (i=0; i<btnHideComment.length; i++) {
-		btnHideComment[i].addEventListener('click', hideCommentBlock);
+	for (j=0; j<btnHideComment.length; j++) {
+		btnHideComment[j].addEventListener('click', hideCommentBlock);
 	}
-});
+});// comment block hide-show
+
+window.addEventListener('load', function() {
+	var btsnShowAccordionBlock = document.querySelectorAll('.js-show-accord-block');
+	var btnsHideAccordionBlock = document.querySelectorAll('.js-hide-accord-block');
+	var i, j;
+	var accordsBlock = document.querySelectorAll('.order__subsector-accord');
+
+
+console.log(accordsBlock);
+	function hideAllAccords() {		
+		var i;
+
+		for (i=0; i<accordsBlock.length; i++) {
+			if (accordsBlock[i].classList.contains('order__subsector-accord--active')) {
+				accordsBlock[i].classList.remove('order__subsector-accord--active')
+			}
+		}
+	}
+
+	function showAccordionBlock(e) {		
+		var target = e.target;
+		var parentBlock = this.parentNode;
+		var accordionBlock = parentBlock.querySelector('.order__subsector-accord');
+
+		if (target.tagName == 'BUTTON') {
+			e.preventDefault();			
+		}
+
+		hideAllAccords();
+
+		if (!accordionBlock.classList.contains('order__subsector-accord--active')) {
+			accordionBlock.classList.add('order__subsector-accord--active');
+		} else {
+			
+		}
+		
+	}
+
+	function hideAccordionBlock(e) {
+		var target = e.target;
+		console.log('4');
+
+		if (target.tagName == 'BUTTON') {
+			e.preventDefault();			
+		}
+	}
+
+	hideAllAccords();	
+
+	for (i=0; i<btsnShowAccordionBlock.length; i++) {
+		btsnShowAccordionBlock[i].addEventListener('click', showAccordionBlock);
+	}
+
+	for (j=0; j<btnsHideAccordionBlock.length; j++) {
+		btnsHideAccordionBlock[j].addEventListener('click', hideAccordionBlock);
+	}
+});// accordion

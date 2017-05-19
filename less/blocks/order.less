@@ -150,9 +150,10 @@
 	}
 }
 
-.order__sector-name { /*for contacts sector*/
+.order__customer-head-wrapper { /*for contacts sector*/
+	position: relative;
 	.order__subsector-button {
-		top: 24px;
+		top: 10px;
 	}
 }
 
@@ -327,10 +328,57 @@
 
 		display: inline-block;
 		margin-right: 20px;
-		-padding-bottom: 5px;
+		-padding-bottom: 5px;		
 		width: 130px;
 		vertical-align: top;
 		cursor: pointer;
+
+		&--radio {
+			position: relative;
+			padding-left: 20px;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				margin-top: -6px;
+				left: 0;
+				top: 50%;
+				border: 1px solid @grey-order-custom-signs;
+				border-radius: 50%;
+				box-sizing: border-box;
+			}
+
+			&::after {
+				display: none;
+				width: 6px;
+				height: 6px;
+				margin-top: -3px;
+				left: 2.5px;
+				border: none;
+				background-color: @grey-order-custom-signs-active; 
+			}
+		}
+
+		&--check-label {
+			position: relative;
+			padding-left: 20px;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				margin-top: -6px;
+				left: 0;
+				top: 50%;
+				border: 1px solid @grey-order-custom-signs;
+				box-sizing: border-box;
+			}
+			
+		} 
 
 		&--image-radio {
 			width: auto;
@@ -346,6 +394,15 @@
 		}	
 	}
 
+	.order__accord-radio,
+	.order__accord-check {
+		display: none;
+	}
+
+	.order__accord-radio:checked + label::after {
+		display: block;
+	}
+
 	.order__accord-image {
 		display: block;
 		width: 130px;
@@ -356,16 +413,14 @@
 		cursor: pointer;
 	}
 
-	.order__accord-radio,
-	.order__accord-check {
+	/*.order__accord-radio111,
+	.order__accord-check111{
 		margin-right: 4px;
 		display: inline-block;
 		vertical-align: top;
-	}
+	}*/
 
-	.order__accord-radio-name {
-		-cursor: pointer;		
-	}
+	
 
 	.order__accord-btn {
 		.fonts(@family: 'Rubik'; 

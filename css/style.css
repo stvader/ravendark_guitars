@@ -1513,11 +1513,12 @@ style for all dates
   right: -2px;
   transform: rotate(-45deg);
 }
-.order__sector-name {
+.order__customer-head-wrapper {
   /*for contacts sector*/
+  position: relative;
 }
-.order__sector-name .order__subsector-button {
-  top: 24px;
+.order__customer-head-wrapper .order__subsector-button {
+  top: 10px;
 }
 .order__subsector-value {
   font-family: 'Rubik';
@@ -1541,6 +1542,12 @@ style for all dates
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #ffffff;
+  /*.order__accord-radio111,
+	.order__accord-check111{
+		margin-right: 4px;
+		display: inline-block;
+		vertical-align: top;
+	}*/
 }
 .order__subsector-accord--active .order__accord-header-wrapper {
   position: relative;
@@ -1667,6 +1674,47 @@ style for all dates
   vertical-align: top;
   cursor: pointer;
 }
+.order__subsector-accord--active .form-label--radio {
+  position: relative;
+  padding-left: 20px;
+}
+.order__subsector-accord--active .form-label--radio::before,
+.order__subsector-accord--active .form-label--radio::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  left: 0;
+  top: 50%;
+  border: 1px solid #b7b7b7;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.order__subsector-accord--active .form-label--radio::after {
+  display: none;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  left: 2.5px;
+  border: none;
+  background-color: #464646;
+}
+.order__subsector-accord--active .form-label--check-label {
+  position: relative;
+  padding-left: 20px;
+}
+.order__subsector-accord--active .form-label--check-label::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  left: 0;
+  top: 50%;
+  border: 1px solid #b7b7b7;
+  box-sizing: border-box;
+}
 .order__subsector-accord--active .form-label--image-radio {
   width: auto;
   margin-right: 0;
@@ -1678,6 +1726,13 @@ style for all dates
   color: #2c2c2c;
   text-transform: uppercase;
 }
+.order__subsector-accord--active .order__accord-radio,
+.order__subsector-accord--active .order__accord-check {
+  display: none;
+}
+.order__subsector-accord--active .order__accord-radio:checked + label::after {
+  display: block;
+}
 .order__subsector-accord--active .order__accord-image {
   display: block;
   width: 130px;
@@ -1686,15 +1741,6 @@ style for all dates
   overflow: hidden;
   margin-bottom: 10px;
   cursor: pointer;
-}
-.order__subsector-accord--active .order__accord-radio,
-.order__subsector-accord--active .order__accord-check {
-  margin-right: 4px;
-  display: inline-block;
-  vertical-align: top;
-}
-.order__subsector-accord--active .order__accord-radio-name {
-  -cursor: pointer;
 }
 .order__subsector-accord--active .order__accord-btn {
   font-family: 'Rubik';
