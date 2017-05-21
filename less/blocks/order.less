@@ -36,6 +36,10 @@
 
 	&--active {
 		background-color: @grey-order-sector-active;
+
+		.order__subsector-button {
+			background-color: @grey-order-sector-active; /*for IE*/
+		}
 	}
 
 	&--complete {

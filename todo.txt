@@ -10,3 +10,5 @@
 8) label about tangut oil in one line (ask disigner WTF)
 9) selects dropdown look as makets (bottom) +
 10) input for customer info: margins between label and next label must be different +
+11) delete complete mark for active block
+12) fix JS!!!! it makes fuckin shit!!!
