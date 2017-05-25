@@ -456,12 +456,6 @@ input {
 .breadcrumbs__link--current {
   color: #a9a9a9;
 }
-.breadcrumbs--order .breadcrumbs__item::after {
-  color: #ffffff;
-}
-.breadcrumbs--order .breadcrumbs__link {
-  color: #ffffff;
-}
 .slider {
   padding-top: 60px;
 }
@@ -1456,6 +1450,7 @@ style for all dates
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.6);
   text-align: center;
+  box-sizing: border-box;
 }
 .order__sector-header {
   margin: 0;
@@ -2290,13 +2285,20 @@ style for all dates
     display: block;
     float: left;
     -clear: both;
-    width: 325px;
-    height: 290px;
+    width: 345px;
+    height: 205px;
     background-color: #2f2f2f;
   }
   .order__head-block,
   .order__order-section {
     margin-left: 395px;
+  }
+  .order__header {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 48px;
+    line-height: 37px;
+    color: #2c2c2c;
   }
   .order__sector {
     margin-left: -40px;
@@ -2344,13 +2346,38 @@ style for all dates
     display: block;
   }
   .order__order-section .order__sector-name {
-    display: none;
+    -display: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .order__order-section .order__sector-number {
+    width: 36px;
+    height: 36px;
+    color: #393939;
+    line-height: 33px;
+    border: 3px solid #393939;
+  }
+  .order__order-section .order__sector-header {
+    font-size: 24px;
+    color: #000000;
+  }
+  .order__order-section .order__subsector {
+    border-top: 1px solid rgba(57, 57, 57, 0.1);
   }
   .order__order-section .order__subsector-head {
     display: none;
   }
+  .order__order-section .order__sector--contacts .order__subsector-head {
+    display: block;
+  }
+  .order__order-section .order__subsector-button {
+    display: none;
+  }
   .order__order-section .order__subsector-accord {
     display: block;
+  }
+  .order__order-section .order__accord-header-button {
+    display: none;
   }
 }
 @media (min-width: 1220px) {
@@ -2365,5 +2392,13 @@ style for all dates
   .slider__image {
     width: 100%;
     height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .breadcrumbs--order .breadcrumbs__item::after {
+    color: #ffffff;
+  }
+  .breadcrumbs--order .breadcrumbs__link {
+    color: #ffffff;
   }
 }

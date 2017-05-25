@@ -2,7 +2,6 @@
 2) logo for ie mobile 
 3) checkbox and radio custom as maket +
 4) autofocus for textarea
+5) do background for left menu order
 8) label about tangut oil in one line (ask disigner WTF)
-9) selects dropdown look as makets (bottom) +
-11) delete complete mark for active block +
-12) fix JS!!!! it makes fuckin shit!!!++
+

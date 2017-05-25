@@ -82,6 +82,7 @@
 	border-radius: 50%;
 	background-color: @white-opacity-60;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 .order__sector-header {
@@ -604,6 +605,18 @@
 	}
 //}
 
+@media @mobile-width {
+	.breadcrumbs--order {
+	.breadcrumbs__item::after {
+			color: @white;
+		}
+
+		.breadcrumbs__link {
+			color: @white;
+		}
+	}
+}
+
 @media (min-width: 490px) { /*min-width card of color *3 + side padding * 2*/
 	.order__subsector-accord--active {
 		.order__arrord-mat-card {
@@ -661,8 +674,8 @@
 		display: block;
 		float: left;
 		-clear: both;
-		width: 325px;
-		height: 290px;
+		width: 345px;
+		height: 205px; //190
 		background-color: rgb(47,47,47); //check
 	}
 
@@ -671,6 +684,13 @@
 		margin-left: 395px;
 	}
 
+	.order__header {
+		margin-top: 10px; // 30px - 20px maket padding - breadcrumbs pb
+		margin-bottom: 0;
+		font-size: 48px;
+		line-height: 37px;
+		color: @grey-header;
+	}
 
 	.order__sector {
 		margin-left: -(@desktop-padding);
@@ -733,15 +753,50 @@
 		}
 
 		.order__sector-name {
-			display: none;
+			-display: none;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+
+
+		.order__sector-number {
+			width: 36px;
+			height: 36px;
+			color: @bgc-summery-order;
+			line-height: 33px;
+			border: 3px solid @bgc-summery-order;
+		}
+
+		.order__sector-header {
+			font-size: 24px;
+			color: @black;
+		}
+
+		.order__subsector {
+			border-top: 1px solid @bgc-summery-order-op-10;
 		}
 
 		.order__subsector-head {
 			display: none;
 		}
 
+		.order__sector--contacts {
+			.order__subsector-head {
+				display: block;
+			}
+		}
+
+		.order__subsector-button {
+			display: none;
+		}
+
 		.order__subsector-accord {
 			display: block;
+		}
+
+		.order__accord-header-button {
+			display: none;
 		}
 	}
 
