@@ -32,6 +32,10 @@
 
 })();
 
+/*--------------------------
+BEGIN COMMENTS js
+----------------------------*/
+
 window.addEventListener('load', function() {
 	var btnOpenComment = document.querySelectorAll('.order__accord-btn');
 	var btnHideComment = document.querySelectorAll('.order__accord-comment-button');
@@ -41,6 +45,7 @@ window.addEventListener('load', function() {
 		e.preventDefault();
 		var parent = this.closest('.order__subsector-accord');
 		var aimBlock = parent.querySelector('.order__accord-comment-wrapper');
+		var textarea = parent.querySelector('.order__accord-comment-field');
 
 		if (!this.classList.contains('order__accord-btn--hidden')) {
 			this.classList.add('order__accord-btn--hidden');
@@ -48,6 +53,7 @@ window.addEventListener('load', function() {
 
 		if (!aimBlock.classList.contains('order__accord-comment-wrapper--active')) {
 			aimBlock.classList.add('order__accord-comment-wrapper--active');
+			textarea.focus();
 		}
 	}
 
@@ -78,9 +84,19 @@ window.addEventListener('load', function() {
 	for (j=0; j<btnHideComment.length; j++) {
 		btnHideComment[j].addEventListener('click', hideCommentBlock);
 	}
-});// comment block hide-show
+});
+
+/*--------------------------
+END COMMENTS js
+----------------------------*/
+
+/*--------------------------
+BEGIN ACCORDION BLOCK FORM js
+----------------------------*/
 
 window.addEventListener('load', function() {
+	var desktopSize = 1100;	
+	var clientWidth = document.documentElement.clientWidth;
 	var btsnShowAccordionBlock = document.querySelectorAll('.js-show-accord-block');
 	var btnsHideAccordionBlock = document.querySelectorAll('.js-hide-accord-block');
 	var i, j;
@@ -158,10 +174,10 @@ window.addEventListener('load', function() {
 		var i;
 
 		for (i=0; i < areas.length; i++) {
-			if (areas[i].value.length && areas[i].classList.contains('js-needing-for-display')) {					
+			if (areas[i].value.length) {					
 				return true;
 			}
-		}		
+		}
 
 		return false;
 	}
@@ -169,10 +185,18 @@ window.addEventListener('load', function() {
 	function takeTextareaItems(arr) {
 		var areas = Array.prototype.slice.call(arr);
 		var resultArray = [];
+		var i;
 
 		areas.forEach(function(item) {
-
+			for (i=0; i < areas.length; i++) {
+				if (areas[i].value.length) {
+					//console.log(areas[i].value);
+					resultArray.push(areas[i].value);
+				}
+			}
 		});
+
+		return resultArray;
 	}
 
 	function fillCheckedItems(block) {
@@ -198,7 +222,8 @@ window.addEventListener('load', function() {
 			valueArray = valueArray.concat(takeCheckedItems(checkInputs));
 		}
 
-		if (checkTextarea(textarea)) {			
+		if (textarea.length) {	
+			//console.log('yes');		
 			valueArray = valueArray.concat(takeTextareaItems(textarea));
 		}
 		
@@ -209,18 +234,18 @@ window.addEventListener('load', function() {
 
 	function makeSectorActive(block) {
 		var sectorBlock = block.closest('.order__sector');
-
+		
 		//removeSectorComplete(sectorBlock);
 
 		if (!sectorBlock.classList.contains('order__sector--active')) {
+			removeSectorActive();
+			
 			sectorBlock.classList.add('order__sector--active');
 		}			
 	}
 
 	function removeSectorActive() {		
 		var i;
-
-
 
 		for (i=0; i<allSectorBlocks.length; i++) {
 			if (allSectorBlocks[i].classList.contains('order__sector--active')) {
@@ -246,7 +271,8 @@ window.addEventListener('load', function() {
 					continue outer;
 				}
 
-				if (!block.classList.contains('order__sector--complete')) {
+				if (!block.classList.contains('order__sector--complete')
+						&& !block.classList.contains('order__sector--active')) {
 					block.classList.add('order__sector--complete');
 				}
 			}
@@ -259,60 +285,103 @@ window.addEventListener('load', function() {
 		}
 	}
 
-	function showAccordionBlock(e) {
-		var target = e.target;
-		var _self = this;
-		var parentBlock = _self.closest('.order__subsector');
-		var sector = parentBlock.closest('.order__sector');
-		var accordionBlock = parentBlock.querySelector('.order__subsector-accord');
+	
+	/*------------------------------
+	BEGIN BLOCK FORM FOR MOBILE js
+	--------------------------------*/
+	if (clientWidth < desktopSize) {
 
-		if (target.tagName == 'BUTTON') {
-			e.preventDefault();			
+		//console.log('!!!');
+
+		function actionSubsectorPoint(e) {
+			var target = e.target;		
+			var parentBlock = this.closest('.order__subsector');
+			var sector = parentBlock.closest('.order__sector');
+			var accordionBlock = parentBlock.querySelector('.order__subsector-accord');
+
+			if (target.tagName == 'BUTTON') {
+				e.preventDefault();			
+			}
+
+			makeSectorActive(this);
+			removeSectorComplete(sector);
+			
+			if (!accordionBlock.classList.contains('order__subsector-accord--active')) {
+				hideAllAccords();
+				accordionBlock.classList.add('order__subsector-accord--active');			
+			} else {
+				accordionBlock.classList.remove('order__subsector-accord--active');
+				fillCheckedItems(this);
+				removeSectorActive();			
+			}
+
+			makeSectorComplete();		
 		}
 
-		removeSectorActive();
-		makeSectorActive(_self);
-		makeSectorComplete();
-		//removeSectorComplete(sector);
-		
+		function actionAccordionBlock(e) {
+			var target = e.target;
+			var parentBlock = this.closest('.order__subsector-accord');
+			
+			
+			if (target.tagName == 'BUTTON') {
+				e.preventDefault();			
+			}
 
-		if (!accordionBlock.classList.contains('order__subsector-accord--active')) {
-			hideAllAccords();
-			accordionBlock.classList.add('order__subsector-accord--active');			
-		} else {
-			//accordionBlock.classList.remove('order__subsector-accord--active');
-			fillCheckedItems(this);
+			if (parentBlock.classList.contains('order__subsector-accord--active')) {
+				parentBlock.classList.remove('order__subsector-accord--active');
+				fillCheckedItems(this);
+			}
+
 			removeSectorActive();
-			//makeSectorComplete();
-		}			
-	}
-
-	function hideAccordionBlock(e) {
-		var target = e.target;
-		var parentBlock = this.closest('.order__subsector-accord');
-		
-		
-		if (target.tagName == 'BUTTON') {
-			e.preventDefault();			
+			makeSectorComplete();
 		}
 
-		if (parentBlock.classList.contains('order__subsector-accord--active')) {
-			parentBlock.classList.remove('order__subsector-accord--active');
-			fillCheckedItems(this);
+		hideAllAccords();
+		removeSectorActive();		
+
+		for (i=0; i<btsnShowAccordionBlock.length; i++) {
+			btsnShowAccordionBlock[i].addEventListener('click', actionSubsectorPoint);
 		}
 
-		removeSectorActive();
-		makeSectorComplete();
+		for (j=0; j<btnsHideAccordionBlock.length; j++) {
+			btnsHideAccordionBlock[j].addEventListener('click', actionAccordionBlock);
+		}
+
 	}
 
-	hideAllAccords();
-	removeSectorActive();		
+	/*------------------------------
+	END BLOCK FORM FOR MOBILE js
+	--------------------------------*/
 
-	for (i=0; i<btsnShowAccordionBlock.length; i++) {
-		btsnShowAccordionBlock[i].addEventListener('click', showAccordionBlock);
+	/*------------------------------
+	BEGIN BLOCK FORM FOR DESCTOP js
+	--------------------------------*/
+
+	if (clientWidth >= desktopSize) {
+		//console.log('444');
+		var i;
+
+		function actionSectorBlock(e) {
+			var target = e.target;
+
+			if (target.tagName == 'BUTTON') {
+				e.preventDefault();			
+			}
+
+						
+		}
+
+		for (i=0; i < allSectorBlocks.length; i++) {
+			allSectorBlocks[i].addEventListener('click', actionSectorBlock);
+		}
+		
 	}
 
-	for (j=0; j<btnsHideAccordionBlock.length; j++) {
-		btnsHideAccordionBlock[j].addEventListener('click', hideAccordionBlock);
-	}
-});// accordion
+	/*------------------------------
+	END BLOCK FORM FOR DESCTOP js
+	--------------------------------*/
+});
+
+/*--------------------------
+END ACCORDION BLOCK FORM js
+----------------------------*/

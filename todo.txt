@@ -1,14 +1,8 @@
 1) fix svg for ie
 2) logo for ie mobile 
-3) fix add comment trouble +
-3) checkbox and radio custom as maket
-4) radio and label on one line
-4) checkbox and label on one line
-5) add comment text 2px up +
-6) margin between accordion block and button and between buttonand block  with radio must be equal +
-7) loot at skype!!
+3) checkbox and radio custom as maket +
+4) autofocus for textarea
 8) label about tangut oil in one line (ask disigner WTF)
 9) selects dropdown look as makets (bottom) +
-10) input for customer info: margins between label and next label must be different +
-11) delete complete mark for active block
-12) fix JS!!!! it makes fuckin shit!!!
+11) delete complete mark for active block +
+12) fix JS!!!! it makes fuckin shit!!!++
