@@ -392,6 +392,7 @@
 				position: absolute;
 				width: 12px;
 				height: 12px;
+				padding: 2px;
 				margin-top: -6px;
 				left: 0;
 				top: 50%;
@@ -422,6 +423,10 @@
 
 	.order__accord-radio:checked + label::after {
 		display: block;
+	}
+
+	.order__accord-check:checked + label::before {
+		background-image: url("../img/icon/right.svg");
 	}
 
 	.order__accord-image {
@@ -456,7 +461,7 @@
 
 		border: 1px solid @grey-header;
 		outline: 0;
-		background-color: inherit;
+		background-color: @white;
 
 		text-align: center;
 		cursor: pointer;
@@ -605,7 +610,7 @@
 	}
 //}
 
-@media @mobile-width {
+@media (max-width: 1200px) { //max width mobile layout
 	.breadcrumbs--order {
 	.breadcrumbs__item::after {
 			color: @white;
@@ -658,6 +663,7 @@
 
 @media @desktop-wise-width {
 	.main-block--order {
+		position: relative;
 		padding-left: 0;
 	}
 
@@ -670,13 +676,13 @@
 
 	}
 
-	.order__block-space {
+	.order__block-space {//del?
 		display: block;
 		float: left;
 		-clear: both;
 		width: 345px;
 		height: 205px; //190
-		background-color: rgb(47,47,47); //check
+		background-color: @bgc-summery-block-space; //check
 	}
 
 	.order__head-block,
@@ -705,11 +711,15 @@
 		margin-right: -(@desktop-padding);
 		padding-left: @desktop-padding;
 		padding-right: @desktop-padding;
-		-margin-top: 0;
+		margin-top: 0;
 	}
 
 	.order__subsector {
 		-margin-top: 0;
+		-margin-bottom: 0;
+	}
+
+	.order__accord-field {
 		-margin-bottom: 0;
 	}
 
@@ -719,21 +729,46 @@
 
 	.order__desctop-menu {
 		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+
 		float: left;
 		clear: both;
 		width: 325px;
+		-height: 100%;
 		padding-left: 20px;
-		background-color: @bgc-summery-order;
+		padding-top: 200px;
+		-background-color: @bgc-summery-order;
+		background-color: @bgc-summery-block-space;// WTF&!!!
+		box-sizing: border-box;
 
 		.order__sector {
 			-display: none;
+			width: 345px;
+			-padding-left: 20px;
+			padding-right: 0;			
+			background-color: @bgc-summery-order;
+			box-sizing: border-box;
 			cursor: pointer;
-
 			
+
+
+			&:not(:last-child) {
+				padding-bottom: 30px;
+			}			
 		}
 
 		.order__sector-name {
 			display: block;
+		}
+
+		.order__subsector {
+			margin-top: 0;
+
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
 		}
 
 		.order__subsector-head {
@@ -774,6 +809,8 @@
 		}
 
 		.order__subsector {
+			margin-top: 0;
+			margin-bottom: 0;
 			border-top: 1px solid @bgc-summery-order-op-10;
 		}
 
