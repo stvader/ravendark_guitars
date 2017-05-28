@@ -424,6 +424,9 @@ input {
   border: none;
   cursor: pointer;
 }
+.btn-hide {
+  display: none;
+}
 .breadcrumbs {
   margin: 0;
   padding: 0;
@@ -455,6 +458,9 @@ input {
 }
 .breadcrumbs__link--current {
   color: #a9a9a9;
+}
+.breadcrumbs__item:first-child .breadcrumbs__link {
+  color: #9e0b0f;
 }
 .slider {
   padding-top: 60px;
@@ -1891,6 +1897,9 @@ style for all dates
   width: 130px;
   background-color: #00a37b;
 }
+.order__sector-btn-block {
+  display: none;
+}
 .social-links {
   font-size: 0;
 }
@@ -2315,7 +2324,7 @@ style for all dates
     -clear: both;
     width: 345px;
     height: 205px;
-    background-color: rgba(44, 44, 44, 0.69);
+    background-color: #2f2f2f;
   }
   .order__head-block,
   .order__order-section {
@@ -2363,7 +2372,7 @@ style for all dates
     padding-left: 20px;
     padding-top: 200px;
     -background-color: #393939;
-    background-color: rgba(44, 44, 44, 0.69);
+    background-color: #2f2f2f;
     box-sizing: border-box;
   }
   .order__desctop-menu .order__sector {
@@ -2374,6 +2383,9 @@ style for all dates
     background-color: #393939;
     box-sizing: border-box;
     cursor: pointer;
+  }
+  .order__desctop-menu .order__sector--active {
+    background-color: #4d4d4d;
   }
   .order__desctop-menu .order__sector:not(:last-child) {
     padding-bottom: 30px;
@@ -2393,6 +2405,7 @@ style for all dates
   }
   .order__order-section .order__sector {
     display: none;
+    margin-bottom: 70px;
   }
   .order__order-section .order__sector--active-desk {
     display: block;
@@ -2418,6 +2431,9 @@ style for all dates
     margin-bottom: 0;
     border-top: 1px solid rgba(57, 57, 57, 0.1);
   }
+  .order__order-section .order__subsector:last-child {
+    border-bottom: 1px solid rgba(57, 57, 57, 0.1);
+  }
   .order__order-section .order__subsector-head {
     display: none;
   }
@@ -2432,6 +2448,78 @@ style for all dates
   }
   .order__order-section .order__accord-header-button {
     display: none;
+  }
+  .order__sector-btn-block {
+    display: block;
+    float: right;
+    margin-top: 30px;
+    font-size: 0;
+  }
+  .order__btn-select {
+    position: relative;
+    display: inline-block;
+    width: 135px;
+    -padding-right: 25px;
+    box-sizing: border-box;
+  }
+  .order__btn-select--prev {
+    padding-left: 25px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    border: 2px solid #26b18f;
+    color: #26b18f;
+    line-height: 36px;
+  }
+  .order__btn-select--next {
+    padding-right: 25px;
+    background-color: #26b18f;
+  }
+  .order__btn-select--longer {
+    width: 175px;
+    padding-right: 45px;
+  }
+  .order__btn-select--longer-prev {
+    padding-left: 20px;
+    padding-right: 0;
+  }
+  .btn-sign {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 20px;
+    height: 1px;
+    background-color: #ffffff;
+  }
+  .btn-sign::before,
+  .btn-sign::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 9px;
+    height: 1px;
+    transform: rotate(45deg);
+    background-color: #ffffff;
+  }
+  .btn-sign::after {
+    top: 4px;
+    transform: rotate(-45deg);
+  }
+  .btn-sign--prev {
+    background-color: #26b18f;
+    left: 15px;
+    top: 18px;
+  }
+  .btn-sign--prev::before,
+  .btn-sign--prev::after {
+    left: 0;
+    background-color: #26b18f;
+    transform: rotate(-45deg);
+  }
+  .btn-sign--prev::after {
+    transform: rotate(45deg);
   }
 }
 @media (min-width: 1220px) {
@@ -2449,10 +2537,10 @@ style for all dates
   }
 }
 @media (max-width: 1200px) {
-  .breadcrumbs--order .breadcrumbs__item::after {
+  .main-block--order .breadcrumbs--order .breadcrumbs__item::after {
     color: #ffffff;
   }
-  .breadcrumbs--order .breadcrumbs__link {
+  .main-block--order .breadcrumbs--order .breadcrumbs__link {
     color: #ffffff;
   }
 }

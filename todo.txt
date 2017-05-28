@@ -1,9 +1,7 @@
-1) fix svg for ie +
+1) add in js-form move page to top+
 2) logo for ie mobile +?
-3) checkbox and radio custom as maket +
-4) autofocus for textarea +
+
 5) do background for left menu order +/-
 6) hide button in subsector order whet it's activated
-7) svg for social links +
+
 8) label about tangut oil in one line (ask disigner WTF)
-9) svg for checkbox disabled +

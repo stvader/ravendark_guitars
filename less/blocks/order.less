@@ -608,10 +608,14 @@
 		width: 130px;
 		background-color: @turquoise-btn;
 	}
+
+	.order__sector-btn-block {
+		display: none;
+	}
 //}
 
 @media (max-width: 1200px) { //max width mobile layout
-	.breadcrumbs--order {
+	.main-block--order .breadcrumbs--order { //for cascade
 	.breadcrumbs__item::after {
 			color: @white;
 		}
@@ -752,7 +756,9 @@
 			box-sizing: border-box;
 			cursor: pointer;
 			
-
+			&--active { // for desktop
+				background-color: @grey-order-sector-active;
+			}
 
 			&:not(:last-child) {
 				padding-bottom: 30px;
@@ -781,6 +787,7 @@
 
 		.order__sector {
 			display: none;
+			margin-bottom: 70px; // 40 + 30  btn height + btn margin to footer			
 
 			&--active-desk {
 				display: block;
@@ -812,6 +819,10 @@
 			margin-top: 0;
 			margin-bottom: 0;
 			border-top: 1px solid @bgc-summery-order-op-10;
+
+			&:last-child {
+				border-bottom: 1px solid @bgc-summery-order-op-10;
+			}
 		}
 
 		.order__subsector-head {
@@ -835,6 +846,93 @@
 		.order__accord-header-button {
 			display: none;
 		}
+	}
+
+	.order__sector-btn-block {
+		display: block;
+		float: right;
+		margin-top: 30px;
+		font-size: 0;
+	}
+
+	.order__btn-select {
+		position: relative;
+		display: inline-block;
+		width: 135px;
+		-padding-right: 25px;
+		box-sizing: border-box;
+
+		&--prev {
+			padding-left: 25px;
+			margin-right: 20px;
+			background-color: @white;
+			border: 2px solid @turquoise;
+			color: @turquoise;
+			line-height: 36px; // 40px - 2px*2 btn height - bd*2
+		}
+
+		&--next {
+			padding-right: 25px;
+			background-color: @turquoise;
+		}
+
+		&--longer {
+			width: 175px;
+			padding-right: 45px;
+		}
+
+		&--longer-prev {			
+			padding-left: 20px;
+			padding-right: 0;
+		}
+	}
+
+	.btn-sign {
+		display: block;
+		position: absolute;
+		top: 20px;
+		right: 15px;
+		width: 20px;
+		height: 1px;
+		background-color: @white;
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -4px;
+			right: 0;
+			width: 9px;
+			height: 1px;
+			transform: rotate(45deg);
+			background-color: @white;
+		}
+
+		&::after {
+			top: 4px;
+			transform: rotate(-45deg);
+		}
+
+		&--prev {
+			background-color: @turquoise;
+			left: 15px;
+			top: 18px;
+
+			&::before,
+			&::after {
+				left: 0;
+				background-color: @turquoise;
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				transform: rotate(45deg);
+			}
+		}
+
+		
+
 	}
 
 	

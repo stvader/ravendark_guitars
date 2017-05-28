@@ -95,14 +95,16 @@ BEGIN ACCORDION BLOCK FORM js
 ----------------------------*/
 
 window.addEventListener('load', function() {
-	var desktopSize = 1100;	
+	var desktopSize = 1200;	
 	var clientWidth = document.documentElement.clientWidth;
 	var btsnShowAccordionBlock = document.querySelectorAll('.js-show-accord-block');
 	var btnsHideAccordionBlock = document.querySelectorAll('.js-hide-accord-block');
 	var i, j;
 	var allSectorBlocks = document.querySelectorAll('.order__sector');
-
-
+	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block');
+	var desktopSectorAccords = document.querySelectorAll('.js-desktop-sector-accord');
+	var btnSelect = document.querySelectorAll('.order__btn-select');
+	//console.log(desktopSectorAccord);
 
 	function hideAllAccords() {		
 		var accordsBlock = document.querySelectorAll('.order__subsector-accord');
@@ -235,11 +237,8 @@ window.addEventListener('load', function() {
 	function makeSectorActive(block) {
 		var sectorBlock = block.closest('.order__sector');
 		
-		//removeSectorComplete(sectorBlock);
-
 		if (!sectorBlock.classList.contains('order__sector--active')) {
-			removeSectorActive();
-			
+			removeSectorActive();			
 			sectorBlock.classList.add('order__sector--active');
 		}			
 	}
@@ -285,6 +284,37 @@ window.addEventListener('load', function() {
 		}
 	}
 
+	function toggleBtnSubsector(btn) {
+		if (btn.classList.contains('btn-hide')) {
+			btn.classList.remove('btn-hide')
+		} else {
+			btn.classList.add('btn-hide');
+		}
+	}
+
+	function showDesktopAccord(block) {
+		var blockNum = block.getAttribute('data-block-number');
+		var purposeAccordBlock = desktopSectorAccords[(+blockNum -1)];
+
+		hideDesktopAccord();
+		window.scrollTo(0,0);		
+	
+		if (!purposeAccordBlock.classList.contains('order__sector--active-desk')) {
+			purposeAccordBlock.classList.add('order__sector--active-desk');
+		}
+	
+	}
+
+	function hideDesktopAccord() {
+		var i;
+
+		for (i=0; i<desktopSectorAccords.length; i++) {
+			if (desktopSectorAccords[i].classList.contains('order__sector--active-desk')) {
+				desktopSectorAccords[i].classList.remove('order__sector--active-desk');
+			}
+		}
+	}
+
 	
 	/*------------------------------
 	BEGIN BLOCK FORM FOR MOBILE js
@@ -298,6 +328,7 @@ window.addEventListener('load', function() {
 			var parentBlock = this.closest('.order__subsector');
 			var sector = parentBlock.closest('.order__sector');
 			var accordionBlock = parentBlock.querySelector('.order__subsector-accord');
+			var openBtn = parentBlock.querySelector('.order__subsector-button');
 
 			if (target.tagName == 'BUTTON') {
 				e.preventDefault();			
@@ -305,10 +336,12 @@ window.addEventListener('load', function() {
 
 			makeSectorActive(this);
 			removeSectorComplete(sector);
+			toggleBtnSubsector(openBtn);
 			
 			if (!accordionBlock.classList.contains('order__subsector-accord--active')) {
 				hideAllAccords();
-				accordionBlock.classList.add('order__subsector-accord--active');			
+				accordionBlock.classList.add('order__subsector-accord--active');
+
 			} else {
 				accordionBlock.classList.remove('order__subsector-accord--active');
 				fillCheckedItems(this);
@@ -321,6 +354,8 @@ window.addEventListener('load', function() {
 		function actionAccordionBlock(e) {
 			var target = e.target;
 			var parentBlock = this.closest('.order__subsector-accord');
+			var subSector = parentBlock.closest('.order__subsector');
+			var openBtnSubSector = subSector.querySelector('.order__subsector-button');
 			
 			
 			if (target.tagName == 'BUTTON') {
@@ -334,6 +369,7 @@ window.addEventListener('load', function() {
 
 			removeSectorActive();
 			makeSectorComplete();
+			toggleBtnSubsector(openBtnSubSector);
 		}
 
 		hideAllAccords();
@@ -359,7 +395,7 @@ window.addEventListener('load', function() {
 
 	if (clientWidth >= desktopSize) {
 		//console.log('444');
-		var i;
+		var i, j;
 
 		function actionSectorBlock(e) {
 			var target = e.target;
@@ -367,12 +403,37 @@ window.addEventListener('load', function() {
 			if (target.tagName == 'BUTTON') {
 				e.preventDefault();			
 			}
-
-						
+			//console.log(this);
+			makeSectorActive(this);
+			showDesktopAccord(this);			
 		}
 
-		for (i=0; i < allSectorBlocks.length; i++) {
-			allSectorBlocks[i].addEventListener('click', actionSectorBlock);
+		function actionBtnSelect(e) {
+			e.preventDefault();
+
+			var sectorAccord = this.closest('.order__sector');
+			var sectorAccordNum = sectorAccord.getAttribute('data-accord-number');
+			var sectorMenu; 
+
+			sectorAccordNum = +sectorAccordNum;
+
+			if (this.classList.contains('order__btn-select--prev')) {
+				sectorAccordNum = sectorAccordNum - 2;
+			}
+
+			sectorMenu = desktopSectorBlocks[sectorAccordNum];
+
+			makeSectorActive(sectorMenu);
+			showDesktopAccord(sectorMenu);
+			
+		}
+
+		for (i=0; i < desktopSectorBlocks.length; i++) {
+			desktopSectorBlocks[i].addEventListener('click', actionSectorBlock);
+		}
+
+		for (j=0; j < btnSelect.length; j++) {
+			btnSelect[j].addEventListener('click', actionBtnSelect);
 		}
 		
 	}
