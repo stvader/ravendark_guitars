@@ -134,10 +134,55 @@ window.addEventListener('load', function() {
 	}
 
 	function takeSelectItems(arr) {
-		var selectBlocks = Array.prototype.slice.call(arr);
+		//var selectBlocks = Array.prototype.slice.call(arr);
 		var resultArray = [];
+		var i, j;
 
-		selectBlocks.forEach(function(item) {
+		
+
+		outer: for (i=0; i<arr.length; i++) {
+			var intermediateResult = [];
+			var brackets = false;
+			var optionSelected = arr[i].querySelectorAll('option');
+			var siblingLabelPrev = arr[i].previousElementSibling;
+			var siblingLabelNext = arr[i].nextElementSibling;
+
+
+			for (j=0; j<optionSelected.length; j++) {
+				console.log(optionSelected[j]);
+				if (!optionSelected[j].selected) break;
+				if (optionSelected[j].classList.contains('js-not-show')) {
+					intermediateResult = null;
+					break;
+				} 
+
+				if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
+					intermediateResult.push(siblingLabelNext.innerHTML.trim());
+					brackets = true;
+				}
+
+				if (siblingLabelPrev && siblingLabelPrev.tagName == 'LABEL') {
+					intermediateResult.push(siblingLabelPrev.innerHTML.trim());
+					brackets = true;
+				}
+
+				if (brackets) {
+					intermediateResult.push('(' + item.value + ')');
+				} else {
+					intermediateResult.push(item.value);
+				}
+			}
+
+			//intermediateResult = intermediateResult.join(' ');
+			resultArray.push(intermediateResult);
+		}
+
+		console.log(resultArray);
+
+
+
+
+		/*selectBlocks.forEach(function(item) {
 			var intermediateResult = [];
 			var optionSeleected = item.querySelectorAll('option');
 			var siblingLabelPrev = item.previousElementSibling;
@@ -147,7 +192,7 @@ window.addEventListener('load', function() {
 			
 
 			optionSeleected.forEach(function(item) {
-				if (item.selected /*&& !item.classList.contains('js-not-show')*/) {					
+				if (item.selected && !item.classList.contains('js-not-show')) {					
 
 					if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
 						intermediateResult.push(siblingLabelNext.innerHTML.trim());
@@ -169,7 +214,7 @@ window.addEventListener('load', function() {
 
 			intermediateResult = intermediateResult.join(' ');
 			resultArray.push(intermediateResult);
-		});
+		});*/
 
 		return resultArray;
 	}

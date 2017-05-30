@@ -5,3 +5,4 @@
 6) hide button in subsector order whet it's activated
 
 8) label about tangut oil in one line (ask disigner WTF)
+9) what FUCKING this shit doing with select?!!!!
