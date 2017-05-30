@@ -144,18 +144,21 @@ window.addEventListener('load', function() {
 			var siblingLabelNext = item.nextElementSibling;
 			var brackets = false;
 
-			if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
-				intermediateResult.push(siblingLabelNext.innerHTML.trim());
-				brackets = true;
-			}
-
-			if (siblingLabelPrev && siblingLabelPrev.tagName == 'LABEL') {
-				intermediateResult.push(siblingLabelPrev.innerHTML.trim());
-				brackets = true;
-			}
+			
 
 			optionSeleected.forEach(function(item) {
-				if (item.selected) {
+				if (item.selected /*&& !item.classList.contains('js-not-show')*/) {					
+
+					if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
+						intermediateResult.push(siblingLabelNext.innerHTML.trim());
+						brackets = true;
+					}
+
+					if (siblingLabelPrev && siblingLabelPrev.tagName == 'LABEL') {
+						intermediateResult.push(siblingLabelPrev.innerHTML.trim());
+						brackets = true;
+					}
+
 					if (brackets) {
 						intermediateResult.push('(' + item.value + ')');
 					} else {
@@ -201,17 +204,13 @@ window.addEventListener('load', function() {
 		return resultArray;
 	}
 
-	function fillCheckedItems(block) {
+	function getFormValues(block) {
 		var valueArray = [];
-		var valueString;
-		var parentBlock = block.closest('.order__subsector');
-		var valueBlock = parentBlock.querySelector('.order__subsector-value');
-		var selectInputs = parentBlock.querySelectorAll('select');
-		var radioInputs = parentBlock.querySelectorAll('input[type="radio"]');
-		var checkInputs = parentBlock.querySelectorAll('input[type="checkbox"]');
-		var textarea = parentBlock.querySelectorAll('textarea');
-		
-		
+		var selectInputs = block.querySelectorAll('select');
+		var radioInputs = block.querySelectorAll('input[type="radio"]');
+		var checkInputs = block.querySelectorAll('input[type="checkbox"]');
+		var textarea = block.querySelectorAll('textarea');		
+
 		if (selectInputs.length) {
 			valueArray = valueArray.concat(takeSelectItems(selectInputs));
 		}
@@ -229,8 +228,29 @@ window.addEventListener('load', function() {
 			valueArray = valueArray.concat(takeTextareaItems(textarea));
 		}
 		
-		valueString = valueArray.join(',</br>');
-		valueBlock.innerHTML = valueString;	
+		return valueArray.join(',</br>');
+	}
+
+	function fillCheckedItems(block, dataBlock) {
+		
+		//var valueString;
+		var valueBlock;
+		var i; 
+
+		var parentBlock = block.closest('.order__subsector'); // for mobile only
+		var formBlock = dataBlock || parentBlock; // dataBlock is only for desctop, for mobile it's his own parent block
+		var subsectorInfoBlock = formBlock.querySelectorAll('.order__subsector-accord');
+		
+		if (!dataBlock) {
+			valueBlock = parentBlock.querySelectorAll('.order__subsector-value');
+		} else {
+			valueBlock = block.querySelectorAll('.order__subsector-value');
+		}//try || for it
+
+		for (i=0; i<subsectorInfoBlock.length; i++) {
+			var valueString = getFormValues(subsectorInfoBlock[i]); 
+			valueBlock[i].innerHTML = valueString;	
+		}		
 
 	}
 
@@ -311,6 +331,7 @@ window.addEventListener('load', function() {
 		for (i=0; i<desktopSectorAccords.length; i++) {
 			if (desktopSectorAccords[i].classList.contains('order__sector--active-desk')) {
 				desktopSectorAccords[i].classList.remove('order__sector--active-desk');
+				fillCheckedItems(desktopSectorBlocks[i], desktopSectorAccords[i]);
 			}
 		}
 	}
@@ -404,8 +425,12 @@ window.addEventListener('load', function() {
 				e.preventDefault();			
 			}
 			//console.log(this);
-			makeSectorActive(this);
-			showDesktopAccord(this);			
+			
+			showDesktopAccord(this);
+			removeSectorComplete(this);
+			makeSectorActive(this);			
+			makeSectorComplete();
+
 		}
 
 		function actionBtnSelect(e) {
@@ -423,8 +448,11 @@ window.addEventListener('load', function() {
 
 			sectorMenu = desktopSectorBlocks[sectorAccordNum];
 
-			makeSectorActive(sectorMenu);
+			
 			showDesktopAccord(sectorMenu);
+			removeSectorComplete(sectorMenu);
+			makeSectorActive(sectorMenu);
+			makeSectorComplete();
 			
 		}
 

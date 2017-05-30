@@ -657,10 +657,11 @@
 									<button class="order__accord-header-button"></button>
 								</div>
 								<select name="amount-freds" id="amount-freds" class="order__accord-select order__accord-select--freds">
+									<option disabled selected value> -- </option>
 									<option value="21">21</option>
 									<option value="22">22</option>
 									<option value="23">23</option>
-									<option value="24" selected>24</option>
+									<option value="24">24</option>
 								</select>
 								<button class="order__accord-btn">
 									Add Comment
@@ -921,7 +922,8 @@
 											количество ручек громкости
 										</label>
 										<select name="amount-volume" id="amount-volume" class="order__accord-select">
-											<option value="1" selected>1</option>
+											<option disabled value selected class="js-not-show"> -- </option>
+											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
 										</select>
@@ -931,8 +933,9 @@
 											количество ручек тона
 										</label>
 										<select name="amount-tone" id="amount-tone" class="order__accord-select">
-											<option value="1" selected>1</option>
-											<option value="2">2</option>
+											<!--option disabled selected value> -- </option-->
+											<option value="1">1</option>
+											<option value="2" disabled>2</option>
 											<option value="3">3</option>
 										</select>								
 									</div>
