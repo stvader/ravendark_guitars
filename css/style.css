@@ -1690,6 +1690,7 @@ style for all dates
 .form-label--radio {
   position: relative;
   padding-left: 20px;
+  -width: 100%;
 }
 .form-label--radio::before,
 .form-label--radio::after {
@@ -1709,7 +1710,7 @@ style for all dates
   width: 6px;
   height: 6px;
   margin-top: -3px;
-  left: 2.5px;
+  left: 2.4%;
   border: none;
   background-color: #464646;
 }
@@ -1730,7 +1731,7 @@ style for all dates
   box-sizing: border-box;
 }
 .form-label--image-radio {
-  width: auto;
+  width: 100%;
   margin-right: 0;
 }
 .form-label--customer {

@@ -138,9 +138,39 @@ window.addEventListener('load', function() {
 		var resultArray = [];
 		var i, j;
 
-		
+		for (i=0; i<arr.length; i++) {
+			var intermediateResult = [];
+			var currentSelect = arr[i];
+			var selectedId = currentSelect.selectedIndex;
+			var selectedOption = currentSelect.options[selectedId];
+			var optionValue = selectedOption.value;
+			var siblingLabelPrev = currentSelect.previousElementSibling;
+			var siblingLabelNext = currentSelect.nextElementSibling;
+			var brackets = false;
 
-		outer: for (i=0; i<arr.length; i++) {
+			if (selectedOption.classList.contains('js-not-show')) continue;
+
+			if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
+				intermediateResult.push(siblingLabelNext.innerHTML.trim());
+				brackets = true;
+			}
+
+			if (siblingLabelPrev && siblingLabelPrev.tagName == 'LABEL') {
+				intermediateResult.push(siblingLabelPrev.innerHTML.trim());
+				brackets = true;
+			}
+
+			if (brackets) {
+				intermediateResult.push('(' + optionValue + ')');
+			} else {
+				intermediateResult.push(optionValue);
+			}
+
+			intermediateResult = intermediateResult.join(' ');
+			resultArray.push(intermediateResult);			
+		}
+
+		/*outer: for (i=0; i<arr.length; i++) {
 			var intermediateResult = [];
 			var brackets = false;
 			var optionSelected = arr[i].querySelectorAll('option');
@@ -153,7 +183,7 @@ window.addEventListener('load', function() {
 				if (!optionSelected[j].selected) break;
 				if (optionSelected[j].classList.contains('js-not-show')) {
 					intermediateResult = null;
-					break;
+					break outer;
 				} 
 
 				if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
@@ -173,11 +203,11 @@ window.addEventListener('load', function() {
 				}
 			}
 
-			//intermediateResult = intermediateResult.join(' ');
+			intermediateResult = intermediateResult.join(' ');
 			resultArray.push(intermediateResult);
-		}
+		}*/
 
-		console.log(resultArray);
+		//console.log(resultArray);
 
 
 
