@@ -1,8 +1,5 @@
-1) add in js-form move page to top+
-2) logo for ie mobile +?
-
-5) do background for left menu order +/-
-6) hide button in subsector order whet it's activated
+1) radio after trouble
+2) do picture wood for order (Nastya)
 
 8) label about tangut oil in one line (ask disigner WTF)
 9) what FUCKING this shit doing with select?!!!!
