@@ -173,7 +173,6 @@ input {
   border: 0;
   outline: 0;
   background-color: rgba(43, 43, 43, 0.98);
-  -opacity: .8;
   cursor: pointer;
 }
 .main-nav--closed .main-nav__wrapper {
@@ -1439,7 +1438,11 @@ style for all dates
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  -border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 9px solid #d5d5d5;
+}
+.order__sector:last-child {
+  border-bottom: 9px solid #d5d5d5;
 }
 .order__sector--contacts {
   padding-bottom: 0;
@@ -1447,8 +1450,8 @@ style for all dates
 .order__sector--active {
   background-color: #4d4d4d;
 }
-.order__sector--active .order__subsector-button {
-  background-color: #4d4d4d;
+.order__sector--active .order__sector-button {
+  -background-color: #4d4d4d;
   /*for IE*/
 }
 .order__sector--complete .order__sector-number {
@@ -1456,8 +1459,10 @@ style for all dates
   background-color: #00a37b;
 }
 .order__sector-name {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  -padding-top: 20px;
+  -padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .order__sector-number {
   font-family: 'Rubik Medium';
@@ -1491,11 +1496,22 @@ style for all dates
   padding: 0;
   list-style: none;
 }
+.order__subsector:before,
+.order__subsector:after {
+  content: " ";
+  display: table;
+}
+.order__subsector:after {
+  clear: both;
+}
 .order__subsector:not(:first-child) {
-  margin-top: 30px;
+  -margin-top: 30px;
+  margin-top: 20px;
 }
 .order__subsector:not(:last-child) {
-  margin-bottom: 30px;
+  -margin-bottom: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid grey;
 }
 .order__subsector-head,
 .order__sector-name {
@@ -1513,23 +1529,25 @@ style for all dates
   text-transform: uppercase;
   -position: relative;
 }
-.order__subsector-button {
+.order__sector-button {
   margin: 0;
   padding: 0;
   position: absolute;
   right: 0;
-  top: 0;
-  bottom: 0;
+  -top: 0;
+  top: 5px;
+  -bottom: 0;
   height: 18px;
   width: 18px;
   border: 0;
   outline: 0;
-  background-color: #393939;
+  -background-color: #393939;
+  background-color: #ffffff;
   -border: 1px solid #fff;
   cursor: pointer;
 }
-.order__subsector-button::before,
-.order__subsector-button::after {
+.order__sector-button::before,
+.order__sector-button::after {
   content: "";
   position: absolute;
   width: 13px;
@@ -1537,11 +1555,11 @@ style for all dates
   bottom: 4px;
   background-color: #adadad;
 }
-.order__subsector-button::before {
+.order__sector-button::before {
   left: -2px;
   transform: rotate(45deg);
 }
-.order__subsector-button::after {
+.order__sector-button::after {
   right: -2px;
   transform: rotate(-45deg);
 }
@@ -1549,8 +1567,8 @@ style for all dates
   /*for contacts sector*/
   position: relative;
 }
-.order__customer-head-wrapper .order__subsector-button {
-  top: 10px;
+.order__customer-head-wrapper .order__sector-button {
+  -top: 10px;
 }
 .order__subsector-value {
   font-family: 'Rubik';
@@ -1563,14 +1581,21 @@ style for all dates
   -display: none;
   margin: 0;
   padding: 0;
-  margin-top: 30px;
-  margin-left: -20px;
-  margin-right: -20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 30px;
+  -margin-top: 30px;
+  -margin-top: 20px;
+  -margin-left: -20px;
+  -margin-right: -20px;
+  -margin-left: 20px;
+  -margin-right: 20px;
+  -padding-left: 20px;
+  -padding-right: 20px;
+  -padding-top: 30px;
   padding-bottom: 30px;
-  background-color: #ffffff;
+  -border-bottom: 1px solid grey;
+  -background-color: #ffffff;
+}
+.order__subsector-accord:last-child {
+  -border-bottom: none;
 }
 .order__subsector-accord--active {
   display: block;
@@ -1588,7 +1613,8 @@ style for all dates
   line-height: 18px;
   color: rgba(0, 0, 0, 0.7);
   -margin-top: 30px;
-  margin-bottom: 30px;
+  -margin-bottom: 30px;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 .order__accord-header-button {
@@ -1787,17 +1813,10 @@ style for all dates
   font-weight: normal;
   font-size: 14px;
   line-height: 38px;
-  color: #2c2c2c;
-  /*lh height - 2px (border width)*/
-  -margin-top: 30px;
-  width: 135px;
-  height: 40px;
-  border: 1px solid #2c2c2c;
-  outline: 0;
-  background-color: #ffffff;
-  text-align: center;
-  cursor: pointer;
-  display: block;
+  color: #1a5e97;
+  float: right;
+  margin-bottom: 20px;
+  text-decoration: none;
 }
 .order__accord-btn--hidden {
   display: none;
@@ -1911,8 +1930,13 @@ style for all dates
   border: 1px solid #000000;
 }
 .order__submit-btn {
-  width: 130px;
-  background-color: #00a37b;
+  -width: 130px;
+  width: 100%;
+  max-width: 600px;
+  -margin-left: auto;
+  -margin-right: auto;
+  -background-color: #00a37b;
+  background-color: #9e0b0f;
 }
 .order__sector-btn-block {
   display: none;
@@ -2146,10 +2170,10 @@ style for all dates
     padding-right: 40px;
   }
   .order__subsector-accord {
-    margin-left: -40px;
-    margin-right: -40px;
-    padding-left: 40px;
-    padding-right: 40px;
+    -margin-left: -40px;
+    -margin-right: -40px;
+    -padding-left: 40px;
+    -padding-right: 40px;
   }
 }
 @media (min-width: 845px) {
@@ -2361,10 +2385,10 @@ style for all dates
     padding-right: 40px;
   }
   .order__subsector-accord {
-    margin-left: -40px;
-    margin-right: -40px;
-    padding-left: 40px;
-    padding-right: 40px;
+    -margin-left: -40px;
+    -margin-right: -40px;
+    -padding-left: 40px;
+    -padding-right: 40px;
     margin-top: 0;
   }
   .order__subsector {
@@ -2429,8 +2453,10 @@ style for all dates
   }
   .order__order-section .order__sector-name {
     -display: none;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    -padding-top: 30px;
+    -padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   .order__order-section .order__sector-number {
     width: 36px;
@@ -2457,7 +2483,7 @@ style for all dates
   .order__order-section .order__sector--contacts .order__subsector-head {
     display: block;
   }
-  .order__order-section .order__subsector-button {
+  .order__order-section .order__sector-button {
     display: none;
   }
   .order__order-section .order__subsector-accord {

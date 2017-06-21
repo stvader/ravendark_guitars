@@ -41,7 +41,12 @@
 	padding-left: @mobile-padding;
 	padding-right: @mobile-padding;
 	padding-bottom: 30px;
-	border-top: 1px solid @white-opacity-20;
+	-border-top: 1px solid @white-opacity-20;
+	border-top: 9px solid rgb(213,213,213); //  CHECK     COLOR     !!!!!
+
+	&:last-child {
+		border-bottom: 9px solid rgb(213,213,213); //  CHECK     COLOR     !!!!!
+	}
 
 	&--contacts {
 		padding-bottom: 0;
@@ -50,8 +55,8 @@
 	&--active {
 		background-color: @grey-order-sector-active;
 
-		.order__subsector-button {
-			background-color: @grey-order-sector-active; /*for IE*/
+		.order__sector-button {
+			-background-color: @grey-order-sector-active; /*for IE*/
 		}
 	}
 
@@ -64,8 +69,10 @@
 }
 
 .order__sector-name {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	-padding-top: 20px;
+	-padding-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .order__sector-number {
@@ -105,12 +112,17 @@
 }
 
 .order__subsector {
+	.clearfix();
+
 	&:not(:first-child) {
-		margin-top: 30px;
+		-margin-top: 30px;
+		margin-top: 20px;
 	}
 
 	&:not(:last-child) {
-		margin-bottom: 30px;
+		-margin-bottom: 30px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid grey; //CHECK color!!!!!	
 	}	
 }
 
@@ -132,18 +144,20 @@
 	-position: relative;	
 }
 
-.order__subsector-button {
+.order__sector-button {
 	.out-indent();
 
 	position: absolute;
 	right: 0;
-	top: 0;
-	bottom: 0;
+	-top: 0;
+	top: 5px;
+	-bottom: 0;
 	height: 18px;
 	width: 18px;
 	border: 0;
 	outline: 0;
-	background-color: @bgc-summery-order;
+	-background-color: @bgc-summery-order;
+	background-color: @white;
 	-border: 1px solid #fff;
 	cursor: pointer;
 
@@ -171,8 +185,8 @@
 
 .order__customer-head-wrapper { /*for contacts sector*/
 	position: relative;
-	.order__subsector-button {
-		top: 10px;
+	.order__sector-button {
+		-top: 10px;
 	}
 }
 
@@ -184,19 +198,27 @@
 		@color: @white-opacity-80);
 }
 
-.order__subsector-accord {
+.order__subsector-accord { // !!!! maybe all style to li.order__subsector
 	-display: none;//////////timed!!
 
 	.out-indent();
 
-	margin-top: 30px;
-	margin-left: -(@mobile-padding);
-	margin-right: -(@mobile-padding);
-	padding-left: @mobile-padding;
-	padding-right: @mobile-padding;
-	padding-top: 30px;
+	-margin-top: 30px;
+	-margin-top: 20px;
+	-margin-left: -(@mobile-padding);
+	-margin-right: -(@mobile-padding);
+	-margin-left: @mobile-padding;
+	-margin-right: @mobile-padding;
+	-padding-left: @mobile-padding;
+	-padding-right: @mobile-padding;
+	-padding-top: 30px;
 	padding-bottom: 30px;
-	background-color: @white;
+	-border-bottom: 1px solid grey; //CHECK color!!!!!	
+	-background-color: @white;
+
+	&:last-child {
+		-border-bottom: none;
+	}
 }
 
 .order__subsector-accord--active {
@@ -219,7 +241,8 @@
 			@color: @black-opacity-70);// 14px @grey-order-accord
 
 		-margin-top: 30px;
-		margin-bottom: 30px;
+		-margin-bottom: 30px;
+		margin-bottom: 20px;
 		text-transform: uppercase;
 
 	}
@@ -454,24 +477,37 @@
 	
 
 	.order__accord-btn {
+		// .fonts(@family: 'Rubik'; 
+		// 	@weight: normal; 
+		// 	@size: 14px; 
+		// 	@line-height: 38px; 
+		// 	@color: @grey-header); /*lh height - 2px (border width)*/
+
+		// float: right;
+		// margin-bottom: 20px;
+		// -margin-top: 30px;
+		// width: 135px;
+		// height: 40px;
+
+		// border: 1px solid @grey-header;
+		// outline: 0;
+		// background-color: @white;
+
+		// text-align: center;
+		// cursor: pointer;
+
+		// display: block;
+
 		.fonts(@family: 'Rubik'; 
-			@weight: normal; 
-			@size: 14px; 
-			@line-height: 38px; 
-			@color: @grey-header); /*lh height - 2px (border width)*/
+		 	@weight: normal; 
+		 	@size: 14px; 
+		 	@line-height: 38px; 
+		 	@color: @blue);//check fonts!!!!!
 
-		-margin-top: 30px;
-		width: 135px;
-		height: 40px;
+		float: right;
+		margin-bottom: 20px;
 
-		border: 1px solid @grey-header;
-		outline: 0;
-		background-color: @white;
-
-		text-align: center;
-		cursor: pointer;
-
-		display: block;
+		text-decoration: none;
 	}
 
 	.order__accord-btn--hidden {
@@ -610,8 +646,13 @@
 	}
 
 	.order__submit-btn {
-		width: 130px;
-		background-color: @turquoise-btn;
+		-width: 130px;
+		width: 100%;
+		max-width: 600px;
+		-margin-left: auto;
+		-margin-right: auto;
+		-background-color: @turquoise-btn;
+		background-color: @red;
 	}
 
 	.order__sector-btn-block {
@@ -653,10 +694,10 @@
 	}
 
 	.order__subsector-accord {
-		margin-left: -(@desktop-padding);
-		margin-right: -(@desktop-padding);
-		padding-left: @desktop-padding;
-		padding-right: @desktop-padding;
+		-margin-left: -(@desktop-padding);
+		-margin-right: -(@desktop-padding);
+		-padding-left: @desktop-padding;
+		-padding-right: @desktop-padding;
 	}
 }
 
@@ -706,10 +747,10 @@
 	}
 
 	.order__subsector-accord {
-		margin-left: -(@desktop-padding);
-		margin-right: -(@desktop-padding);
-		padding-left: @desktop-padding;
-		padding-right: @desktop-padding;
+		-margin-left: -(@desktop-padding);
+		-margin-right: -(@desktop-padding);
+		-padding-left: @desktop-padding;
+		-padding-right: @desktop-padding;
 		margin-top: 0;
 	}
 
@@ -791,8 +832,10 @@
 
 		.order__sector-name {
 			-display: none;
-			padding-top: 30px;
-			padding-bottom: 30px;
+			-padding-top: 30px;
+			-padding-bottom: 30px;
+			margin-top: 30px;
+			margin-bottom: 30px;
 		}
 
 
@@ -830,7 +873,7 @@
 			}
 		}
 
-		.order__subsector-button {
+		.order__sector-button {
 			display: none;
 		}
 
@@ -943,3 +986,4 @@
 @media @descktop-order-width {
 	
 }
+// NOTE order__subsector-button  change to order__sector-button
