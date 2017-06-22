@@ -1826,10 +1826,20 @@ style for all dates
 }
 .order__accord-comment-wrapper {
   -display: none;
+  position: relative;
 }
 .order__accord-comment-wrapper--active {
-  position: relative;
   display: block;
+  margin-bottom: 20px;
+}
+.order__accord-comment-wrapper--disabled .order__accord-comment-field {
+  background-color: #f4f6f7;
+}
+.order__accord-comment-wrapper--disabled .order__comment-button-wrapper {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 .order__accord-comment-field {
   font-family: 'Rubik';
@@ -1841,12 +1851,13 @@ style for all dates
   -width: calc(100% - 35px);
   width: 100%;
   -margin-right: 35px;
+  -margin-bottom: 20px;
   padding: 20px;
   -border: 1px solid #2c2c2c;
   border: none;
   resize: none;
   outline: none;
-  background-color: #f4f6f7;
+  -background-color: #f4f6f7;
 }
 .order__accord-comment-field--fixed {
   -width: 100%;
@@ -1854,6 +1865,9 @@ style for all dates
 }
 .order__accord-comment-field--customer-info {
   -border: 1px solid #000000;
+}
+.order__accord-comment-field .order__comment-button-wrapper {
+  -display: none;
 }
 .order__accord-comment-button {
   display: none;

@@ -521,11 +521,30 @@
 
 	.order__accord-comment-wrapper {
 		-display: none;// TIMED !!!!!!!!!!!!!
+		position: relative;
+
+		&--active {			
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		&--disabled {
+			.order__accord-comment-field {
+				background-color: @order-comment-bg;
+			}
+
+			.order__comment-button-wrapper {
+				display: block;
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+			}
+		}
 	}
 
-	.order__accord-comment-wrapper--active {
-		position: relative;
-		display: block;
+
+	.order__accord-comment-wrapper--active {// do it for textarea order__accord-comment-field ???
+		
 	}
 
 	.order__accord-comment-field {
@@ -539,12 +558,13 @@
 		-width: calc(~"100% - 35px");
 		width: 100%;
 		-margin-right: 35px;
+		-margin-bottom: 20px;
 		padding: 20px;
 		-border: 1px solid @grey-header;
 		border: none;
 		resize: none;
 		outline: none;
-		background-color: @order-comment-bg;
+		-background-color: @order-comment-bg;		
 
 		&--fixed {
 			-width: 100%;
@@ -555,7 +575,15 @@
 		&--customer-info {
 			-border: 1px solid @black;
 		}
+
+		.order__comment-button-wrapper {
+			-display: none; ////////d-n!!!
+		}
+
+		
 	}
+
+
 	
 	.order__accord-comment-button {
 		display: none; ////// DELETE!!!!!!

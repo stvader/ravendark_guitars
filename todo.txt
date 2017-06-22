@@ -1,8 +1,9 @@
 1) radio after trouble
-2) do picture wood for order (Nastya)
-3) order__subsector-accord html comment all
+2) textarea trouble
+3) order__subsector-accord html comment all+
 4) order__accord-comment-button comment all
 5) begin from comment block. anchors for delete and send
+
 
 8) label about tangut oil in one line (ask disigner WTF)
 9) what FUCKING this shit doing with select?!!!!
