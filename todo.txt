@@ -1,5 +1,5 @@
 1) radio after trouble
-2) textarea trouble
+2) textarea trouble+
 3) order__subsector-accord html comment all+
 4) order__accord-comment-button comment all
 5) begin from comment block. anchors for delete and send

@@ -67,3 +67,13 @@
   @replace-src: replace("@{data-uri}", @replace-default, @replace-new, "g");
   background-image: e(@replace-src);
 };
+
+.order-links-font() {
+	.fonts(@family: 'Rubik'; 
+		 	@weight: normal; 
+		 	@size: 14px; 
+		 	@line-height: 18px; 
+		 	@color: @blue);
+
+	text-decoration: none;
+}

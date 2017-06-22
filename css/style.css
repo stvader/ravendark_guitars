@@ -1437,7 +1437,7 @@ style for all dates
   margin-right: -20px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 30px;
+  -padding-bottom: 30px;
   -border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 9px solid rgba(43, 43, 43, 0.2);
 }
@@ -1495,6 +1495,13 @@ style for all dates
   margin: 0;
   padding: 0;
   list-style: none;
+  -display: none;
+}
+.order__subsector-list--active {
+  display: block;
+}
+.order__subsector {
+  -margin-bottom: 20px;
 }
 .order__subsector:before,
 .order__subsector:after {
@@ -1814,23 +1821,26 @@ style for all dates
   font-family: 'Rubik';
   font-weight: normal;
   font-size: 14px;
-  line-height: 38px;
+  line-height: 18px;
   color: #1a5e97;
+  text-decoration: none;
   float: right;
   margin-bottom: 20px;
-  text-decoration: none;
-  display: none;
+  -display: none;
 }
 .order__accord-btn--hidden {
   display: none;
 }
 .order__accord-comment-wrapper {
-  -display: none;
+  display: none;
   position: relative;
+  margin-bottom: 20px;
+}
+.order__accord-comment-wrapper .order__comment-button-wrapper {
+  display: none;
 }
 .order__accord-comment-wrapper--active {
   display: block;
-  margin-bottom: 20px;
 }
 .order__accord-comment-wrapper--disabled .order__accord-comment-field {
   background-color: #f4f6f7;
@@ -1840,6 +1850,16 @@ style for all dates
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+.order__accord-comment-wrapper--disabled .order__comment-button {
+  font-family: 'Rubik';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #1a5e97;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 20px;
 }
 .order__accord-comment-field {
   font-family: 'Rubik';
@@ -1853,6 +1873,7 @@ style for all dates
   -margin-right: 35px;
   -margin-bottom: 20px;
   padding: 20px;
+  padding-bottom: 40px;
   -border: 1px solid #2c2c2c;
   border: none;
   resize: none;
@@ -1862,12 +1883,10 @@ style for all dates
 .order__accord-comment-field--fixed {
   -width: 100%;
   margin-top: 20px;
+  border: 2px solid #000000;
 }
 .order__accord-comment-field--customer-info {
-  -border: 1px solid #000000;
-}
-.order__accord-comment-field .order__comment-button-wrapper {
-  -display: none;
+  border: 1px solid #000000;
 }
 .order__accord-comment-button {
   display: none;
@@ -1957,6 +1976,7 @@ style for all dates
   -width: 130px;
   width: 100%;
   max-width: 600px;
+  margin-bottom: 20px;
   -margin-left: auto;
   -margin-right: auto;
   -background-color: #00a37b;
