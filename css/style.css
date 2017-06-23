@@ -1441,6 +1441,14 @@ style for all dates
   -border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 9px solid rgba(43, 43, 43, 0.2);
 }
+.order__sector:before,
+.order__sector:after {
+  content: " ";
+  display: table;
+}
+.order__sector:after {
+  clear: both;
+}
 .order__sector:last-child {
   border-bottom: 9px solid rgba(43, 43, 43, 0.2);
 }
@@ -1892,34 +1900,34 @@ style for all dates
   display: none;
   /*.out-indent();
 
-		position: absolute;		
-		width: 20px;
-		height: 20px;
-		top: 0;
-		right: 0;
-		outline: 0;
-		border: 0;
-		background-color: inherit;
-		cursor: pointer;
+	position: absolute;		
+	width: 20px;
+	height: 20px;
+	top: 0;
+	right: 0;
+	outline: 0;
+	border: 0;
+	background-color: inherit;
+	cursor: pointer;
 
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			height: 1px;
-			width: 28px;
-			top: 9px;
-			left: -4px;
-			background-color: @grey-header;
-		}
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		height: 1px;
+		width: 28px;
+		top: 9px;
+		left: -4px;
+		background-color: @grey-header;
+	}
 
-		&::before {
-			transform: rotate(45deg);
-		}
+	&::before {
+		transform: rotate(45deg);
+	}
 
-		&::after {
-			transform: rotate(-45deg)
-		}*/
+	&::after {
+		transform: rotate(-45deg)
+	}*/
 }
 .order__accord-select {
   font-family: 'Rubik';
@@ -2427,23 +2435,10 @@ style for all dates
     margin-right: -40px;
     padding-left: 40px;
     padding-right: 40px;
-  }
-  .order__subsector-accord {
-    -margin-left: -40px;
-    -margin-right: -40px;
-    -padding-left: 40px;
-    -padding-right: 40px;
-    -margin-top: 0;
-  }
-  .order__subsector {
-    -margin-top: 0;
-    -margin-bottom: 0;
+    border: none;
   }
   .order__accord-field {
     -margin-bottom: 0;
-  }
-  .order__sector {
-    -padding-bottom: 0;
   }
   .order__desctop-menu {
     display: block;
@@ -2506,20 +2501,22 @@ style for all dates
     width: 36px;
     height: 36px;
     color: #393939;
+    font-size: 18px;
     line-height: 33px;
     border: 3px solid #393939;
   }
   .order__order-section .order__sector-header {
     font-size: 24px;
     color: #000000;
+    line-height: 40px;
   }
   .order__order-section .order__subsector {
     margin-top: 0;
     margin-bottom: 0;
-    border-top: 1px solid rgba(57, 57, 57, 0.1);
-  }
-  .order__order-section .order__subsector:last-child {
     border-bottom: 1px solid rgba(57, 57, 57, 0.1);
+  }
+  .order__order-section .order__subsector:first-child {
+    border-top: 1px solid rgba(57, 57, 57, 0.1);
   }
   .order__order-section .order__subsector-head {
     -display: none;
@@ -2533,8 +2530,20 @@ style for all dates
   .order__order-section .order__subsector-accord {
     -display: block;
   }
+  .order__order-section .order__accord-header {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #979797;
+  }
   .order__order-section .order__accord-header-button {
     display: none;
+  }
+  .order__order-section .order__accord-descript {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .order__order-section .order__accord-comment-field {
+    font-size: 14px;
   }
   .order__sector-btn-block {
     display: block;
