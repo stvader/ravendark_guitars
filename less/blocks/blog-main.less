@@ -1,4 +1,4 @@
-.main-block--blog .taskbar__navigation {
+.main-block--blog .taskbar {
 	display: none;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .blog-articles__picture {
-	padding-top: 20px;
+	-padding-top: 20px;
 	padding-bottom: 20px;
 	max-width: 660px;
 }
@@ -66,13 +66,18 @@
 }
 
 @media @desktop-width {
-	.main-block--blog .taskbar__navigation {
+	.main-block--blog .taskbar {
 		display: block;
-		float: right;
+		-float: right;
 		-width: 285px;
 	}
 
+	.main-block--blog .taskbar__navigation {
+		-padding-top: 0;
+	}
+
 	.blog-articles {
+		margin-top: 20px;
 		margin-right: 355px;
 	}
 
@@ -83,4 +88,8 @@
 	.blog-articles__header {
 		font-size: 42px;
 	}
+
+	/* .blog-articles__picture {
+		padding-top: 0;
+	} */
 }

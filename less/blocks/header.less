@@ -144,7 +144,7 @@
 	-display: block;
 	-opacity: .6;
 	text-decoration: none;
-
+	position: relative;
 
 }
 
@@ -254,18 +254,50 @@
 	-opacity: 1;
 	position: relative;
 
-	&::before {
+	/* &::before {
 		content: "";
 		display: block;
 		width: 100%;
 		height: 2px;
 		position: absolute;
-		bottom: -10px; /*chech in psd*/
+		bottom: -10px; chech in psd
 		left: 0;
 		right: 0;
 		background-color: @red;
+	} */
+}
+
+.main-nav__list--main-list {
+	.main-nav__item--current .main-nav__link,
+	.main-nav__item .main-nav__link:hover {
+		position: relative;
+
+		&::before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+			right: 0;
+			background-color: @red;
+		}
 	}
 }
+
+.main-nav__list--search .main-nav__search-icon:hover {
+	fill: @white;
+}
+
+.main-nav__list--language .main-nav__link:hover{	
+	color: @white;			
+}
+
+
+
+
+
 /*munu mobile working if js is turned off*/
 .no-js {
 	.page-header {
@@ -326,6 +358,7 @@
 		display: inline-block;
 		margin-top: 0;
 		padding-right: 30px;
+		-position: relative;
 	}
 
 	.main-nav__item:last-child {
@@ -334,7 +367,7 @@
 
 	.main-nav__list--request {
 		padding-left: 0;
-		-padding-right: 0;
+		-padding-right: 0;		
 	}
 
 	.main-nav__link--request {
@@ -351,6 +384,7 @@
 		margin-bottom: -20px;
 	    padding-top: 10px;	    
 	    padding-bottom: 10px;
+	    border-radius: 0;
 	    -opacity: 1;
 	}
 

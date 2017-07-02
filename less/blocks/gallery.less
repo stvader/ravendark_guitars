@@ -22,6 +22,10 @@
 		@color: @grey-header);
 
 	text-decoration: none;
+
+	&:hover {
+		color: @red;
+	}
 }
 
 .gallery-submenu__list {
@@ -53,7 +57,11 @@
 			@color: @grey-header);
 
 		text-decoration: none;
-	}
+
+		&:hover {
+			color: @red;
+		}
+	}		
 }
 
 .gallery-images-block {
@@ -71,6 +79,14 @@
 	border: 1px solid @white;
 	box-sizing: border-box;
 	overflow: hidden;
+	transition: 1s transform;
+				//0s box-shadow 1s;
+
+	&:hover {
+		transform: scale(1.1);
+		z-index: 99999;
+		box-shadow: 0 0 10px 2px @black-opacity-70;
+	}
 }
 
 /*for height % from width*/

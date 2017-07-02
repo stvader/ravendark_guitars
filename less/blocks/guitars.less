@@ -45,13 +45,27 @@
 
 .guitar-card__header {
 	.out-indent();
+	/*.fonts(@family: "Merriweather Bold"; 
+		@weight: bold; 
+		@size: 18px; 
+		@line-height: 1; 
+		@color: @grey-header-catalog-op);
+	
+	-opacity: .5; */
+}
+
+.guitar-card__header-link {
 	.fonts(@family: "Merriweather Bold"; 
 		@weight: bold; 
 		@size: 18px; 
 		@line-height: 1; 
-		@color: @grey-header);
+		@color: @grey-header-catalog-op);
 
-	opacity: .5;
+	text-decoration: none;
+
+	&:hover {
+		color: @red;
+	}
 }
 
 .guitar-card__min-deskr {
@@ -84,7 +98,7 @@
 		padding-bottom: 65px;
 	}
 
-	.guitar-card__header {
+	.guitar-card__header-link {
 		font-size: 42px;
 	}
 

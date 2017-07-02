@@ -37,19 +37,18 @@ BEGIN COMMENTS js
 ----------------------------*/
 
 window.addEventListener('load', function() {
-	var btnOpenComment = document.querySelectorAll('.order__add-comment-btn');
-	var btnSendComment = document.querySelectorAll('.order__send-comment-btn');
-	var btnDeleteComment = document.querySelectorAll('.js-delete-comment');
-	var btnEditComment = document.querySelectorAll('.js-edit-comment');
+	var btnOpenComment = document.querySelectorAll('.order__accord-btn');
+	var btnHideComment = document.querySelectorAll('.order__accord-comment-button');
+	var i, j;	
 
 	function showCommentBlock(e) {
 		e.preventDefault();
-		var parent = this.closest('.order__subsector');
+		var parent = this.closest('.order__subsector-accord');
 		var aimBlock = parent.querySelector('.order__accord-comment-wrapper');
 		var textarea = parent.querySelector('.order__accord-comment-field');
 
-		if (!this.classList.contains('order__add-comment-btn--hidden')) {
-			this.classList.add('order__add-comment-btn--hidden');
+		if (!this.classList.contains('order__accord-btn--hidden')) {
+			this.classList.add('order__accord-btn--hidden');
 		}
 
 		if (!aimBlock.classList.contains('order__accord-comment-wrapper--active')) {
@@ -58,59 +57,7 @@ window.addEventListener('load', function() {
 		}
 	}
 
-	function sendCommentText(e) {
-		e.preventDefault();
-		var wrapper = this.closest('.order__accord-comment-wrapper');
-		var textarea = wrapper.querySelector('.order__accord-comment-field');
-
-		if (wrapper.classList.contains('order__accord-comment-wrapper--active')) {
-			wrapper.classList.remove('order__accord-comment-wrapper--active');
-		}
-
-		if (!wrapper.classList.contains('order__accord-comment-wrapper--disabled')) {
-			wrapper.classList.add('order__accord-comment-wrapper--disabled');
-		}
-
-		textarea.disabled = true;
-	}
-
-	function deteteComment(e) {
-		e.preventDefault();
-		var wrapper = this.closest('.order__accord-comment-wrapper');
-		var parent = wrapper.closest('.order__subsector');
-		var btnAddComment = parent.querySelector('.order__add-comment-btn');
-		var textarea = wrapper.querySelector('.order__accord-comment-field');
-
-		if (wrapper.classList.contains('order__accord-comment-wrapper--disabled')) {
-			wrapper.classList.remove('order__accord-comment-wrapper--disabled');
-		}
-
-		if (btnAddComment.classList.contains('order__add-comment-btn--hidden')) {
-			btnAddComment.classList.remove('order__add-comment-btn--hidden');
-		}
-
-		textarea.disabled = false;
-		textarea.value = null;
-	}
-
-	function editCommentText(e) {
-		e.preventDefault();
-		var wrapper = this.closest('.order__accord-comment-wrapper');
-		var textarea = wrapper.querySelector('.order__accord-comment-field');
-
-		if (wrapper.classList.contains('order__accord-comment-wrapper--disabled')) {
-			wrapper.classList.remove('order__accord-comment-wrapper--disabled');
-		}
-
-		if (!wrapper.classList.contains('order__accord-comment-wrapper--active')) {
-			wrapper.classList.add('order__accord-comment-wrapper--active');
-		}
-
-		textarea.disabled = false;
-		textarea.focus();
-	}
-
-	/*function hideCommentBlock(e) {
+	function hideCommentBlock(e) {
 		e.preventDefault();
 		var wrapper = this.closest('.order__accord-comment-wrapper');
 		var parentBlock = this.closest('.order__subsector-accord');
@@ -125,34 +72,18 @@ window.addEventListener('load', function() {
 			wrapper.classList.remove('order__accord-comment-wrapper--active');
 		}
 
-		if (blockBtn.classList.contains('order__add-comment-btn--hidden')) {
-			blockBtn.classList.remove('order__add-comment-btn--hidden');
+		if (blockBtn.classList.contains('order__accord-btn--hidden')) {
+			blockBtn.classList.remove('order__accord-btn--hidden');
 		}
-	}*/
+	}
 	
-	btnOpenComment.forEach(function(item) {
-		item.addEventListener('click', showCommentBlock);
-	});
-
-	btnSendComment.forEach(function(item) {
-		item.addEventListener('click', sendCommentText);
-	});
-
-	btnDeleteComment.forEach(function(item) {
-		item.addEventListener('click', deteteComment);
-	});
-
-	btnEditComment.forEach(function(item) {
-		item.addEventListener('click', editCommentText);
-	})
-
-	/*for (i=0; i<btnOpenComment.length; i++) {
+	for (i=0; i<btnOpenComment.length; i++) {
 		btnOpenComment[i].addEventListener('click', showCommentBlock);		
 	}
 
 	for (j=0; j<btnHideComment.length; j++) {
 		btnHideComment[j].addEventListener('click', hideCommentBlock);
-	}*/
+	}
 });
 
 /*--------------------------
@@ -166,19 +97,16 @@ BEGIN ACCORDION BLOCK FORM js
 window.addEventListener('load', function() {
 	var desktopSize = 1200;	
 	var clientWidth = document.documentElement.clientWidth;
-	//var btsnShowAccordionBlock = document.querySelectorAll('.js-show-accord-block');
-	//var btnsHideAccordionBlock = document.querySelectorAll('.js-hide-accord-block');
-	var btnToggleMobite = document.querySelectorAll('.js-toggle-btn');
+	var btsnShowAccordionBlock = document.querySelectorAll('.js-show-accord-block');
+	var btnsHideAccordionBlock = document.querySelectorAll('.js-hide-accord-block');
 	var i, j;
-	//var allSectorBlocks = document.querySelectorAll('.order__sector');//maybe delete
-	var toggleListsBlocks = document.querySelectorAll('.order__subsector-list');
-	var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector');
+	var allSectorBlocks = document.querySelectorAll('.order__menu-sector');
 	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block');
 	var desktopSectorAccords = document.querySelectorAll('.js-desktop-sector-accord');
 	var btnSelect = document.querySelectorAll('.order__btn-select');
-	console.log(btnToggleMobite);
+	//console.log(desktopSectorAccord);
 
-	function hideAllAccords() {// maybe delete
+	function hideAllAccords() {		
 		var accordsBlock = document.querySelectorAll('.order__subsector-accord');
 		var i;
 
@@ -341,7 +269,7 @@ window.addEventListener('load', function() {
 
 		areas.forEach(function(item) {
 			for (i=0; i < areas.length; i++) {
-				if (areas[i].value.length && areas[i].disabled === true) {
+				if (areas[i].value.length) {
 					//console.log(areas[i].value);
 					resultArray.push(areas[i].value);
 				}
@@ -381,7 +309,7 @@ window.addEventListener('load', function() {
 	function fillCheckedItems(block, dataBlock) {
 		
 		//var valueString;
-		/*var valueBlock;
+		var valueBlock;
 		var i; 
 
 		var parentBlock = block.closest('.order__subsector'); // for mobile only
@@ -397,57 +325,43 @@ window.addEventListener('load', function() {
 		for (i=0; i<subsectorInfoBlock.length; i++) {
 			var valueString = getFormValues(subsectorInfoBlock[i]); 
 			valueBlock[i].innerHTML = valueString;	
-		}	*/
-
-		var valueBlock;
-		var i; 
-
-		//var parentBlock = block.closest('.order__subsector'); // for mobile only
-		var formBlock = dataBlock; // dataBlock is only for desctop, for mobile it's his own parent block
-		var subsectorInfoBlock = formBlock.querySelectorAll('.js-form-block');
-		
-
-		/*if (!dataBlock) {
-			valueBlock = parentBlock.querySelectorAll('.order__subsector-value');
-		} else {*/
-			valueBlock = block.querySelectorAll('.order__menu-subsector-value');
-		//}//try || for it
-
-		console.log(valueBlock);
-
-		for (i=0; i<subsectorInfoBlock.length; i++) {
-			var valueString = getFormValues(subsectorInfoBlock[i]); 
-			valueBlock[i].innerHTML = valueString;	
-		}
+		}		
 
 	}
 
-	function makeSectorActive(block) {// maybe delete
-		var sectorBlock = block.closest('.order__sector');
+	function makeSectorActive(block) {
+		//var sectorBlock = block.closest('.order__sector');
+		var sectorBlock = block.closest('.order__menu-sector');
 		
-		if (!sectorBlock.classList.contains('order__sector--active')) {
+		/*if (!sectorBlock.classList.contains('order__sector--active')) {
 			removeSectorActive();			
 			sectorBlock.classList.add('order__sector--active');
-		}			
+		}	*/	
+
+		if (!sectorBlock.classList.contains('order__menu-sector--active')) {
+			removeSectorActive();			
+			sectorBlock.classList.add('order__menu-sector--active');
+		}	
 	}
 
-	function removeSectorActive() {	//maybe delete ! not delete
-		
-		toggleListsBlocks.forEach(function(item) {
-			if (item.classList.contains('order__subsector-list--active')) {
-				item.classList.remove('order__subsector-list--active');
-			}
-		});
+	function removeSectorActive() {		
+		var i;
 
 		/*for (i=0; i<allSectorBlocks.length; i++) {
 			if (allSectorBlocks[i].classList.contains('order__sector--active')) {
 				allSectorBlocks[i].classList.remove('order__sector--active');
 			}
 		}*/
+
+		for (i=0; i<allSectorBlocks.length; i++) {
+			if (allSectorBlocks[i].classList.contains('order__menu-sector--active')) {
+				allSectorBlocks[i].classList.remove('order__menu-sector--active');
+		}
+
 	}
 
 	function makeSectorComplete() {
-		/*var i, j;  !!!! maybe back? but maybe delete
+		var i, j;
 
 		outer: for (i=0; i<allSectorBlocks.length; i++) {
 			var block = allSectorBlocks[i];			
@@ -466,79 +380,26 @@ window.addEventListener('load', function() {
 					block.classList.add('order__sector--complete');
 				}
 			}
-		}*/
-
-		var i, j;
-
-		outer: for (i=0; i<allDesktopMenuSectors.length; i++) {
-			var block = allDesktopMenuSectors[i];			
-			var valueBlocks = block.querySelectorAll('.order__menu-subsector-value');
-			//console.log(valueBlocks);
-
-			for (j=0; j<valueBlocks.length; j++) {
-				var valueContent = valueBlocks[j].innerHTML.trim();
-				if (!valueContent) {
-					removeDesctopMenuItemComplete(block);////////
-					continue outer;
-				}
-
-				if (!block.classList.contains('order__menu-sector--complete')
-						&& !block.classList.contains('order__menu-sector--active')) {
-					block.classList.add('order__menu-sector--complete');
-				}
-			}
 		}
 	}
 
-	function removeSectorComplete(block) {/// maybe delete
+	function removeSectorComplete(block) {
 		if (block.classList.contains('order__sector--complete')) {
 			block.classList.remove('order__sector--complete');
 		}
 	}
 
 	function toggleBtnSubsector(btn) {
-		/*if (btn.classList.contains('btn-hide')) {
+		if (btn.classList.contains('btn-hide')) {
 			btn.classList.remove('btn-hide')
 		} else {
 			btn.classList.add('btn-hide');
-		}*/
-
-		if (!btn.classList.contains('order__sector-button--open')) {
-			btn.classList.add('order__sector-button--open');
-		} else {
-			btn.classList.remove('order__sector-button--open');
-		}
-	}
-
-	function removeDesktopMenuSectorActive() {	
-		var i;
-
-		for (i=0; i<allDesktopMenuSectors.length; i++) {
-			if (allDesktopMenuSectors[i].classList.contains('order__menu-sector--active')) {
-				allDesktopMenuSectors[i].classList.remove('order__menu-sector--active');
-			}
-		}
-	}
-
-	function makeDesktopMenuSectorActive(block) {
-		var sectorBlock = block.closest('.order__menu-sector');
-		
-		if (!sectorBlock.classList.contains('order__menu-sector--active')) {
-			//removeSectorActive();	
-			removeDesktopMenuSectorActive();		
-			sectorBlock.classList.add('order__menu-sector--active');
-		}			
-	}
-
-	function removeDesctopMenuItemComplete(block) {//
-		if (block.classList.contains('order__menu-sector--complete')) {
-			block.classList.remove('order__menu-sector--complete');
 		}
 	}
 
 	function showDesktopAccord(block) {
 		var blockNum = block.getAttribute('data-block-number');
-		var purposeAccordBlock = desktopSectorAccords[(+blockNum -1)];
+		var purposeAccordBlock = desktopSectorAccords[(+blockNum - 1)];
 
 		hideDesktopAccord();
 		window.scrollTo(0,0);		
@@ -567,45 +428,12 @@ window.addEventListener('load', function() {
 	if (clientWidth < desktopSize) {
 
 		//console.log('!!!');
-		function toggleMobileAccord(e) {
-			var target = e.target;
-			var parentBlock = this.closest('.order__sector');
-			var toggleBlock = parentBlock.querySelector('.order__subsector-list');
-			var toggleBtn = this.querySelector('.order__sector-button');
 
-
-			if (target.tagName == 'BUTTON') {
-				e.preventDefault();			
-			}
-
-			//removeSectorComplete(sector);//need?
-			toggleBtnSubsector(toggleBtn);
-
-
-
-			if (!toggleBlock.classList.contains('order__subsector-list--active')) {
-				//hideAllAccords();
-				removeSectorActive();
-				toggleBlock.classList.add('order__subsector-list--active');
-
-			} else {
-				toggleBlock.classList.remove('order__subsector-list--active');
-				//fillCheckedItems(this);
-				//removeSectorActive();			
-			}
-
-			
-
-			//makeSectorComplete();//need?
-
-			//console.log('click');
-		}
-
-		/*function actionSubsectorPoint(e) {//delete
+		function actionSubsectorPoint(e) {
 			var target = e.target;		
 			var parentBlock = this.closest('.order__subsector');
 			var sector = parentBlock.closest('.order__sector');
-			var accordionBlock = parentBlock.querySelector('.order__subsector-list');
+			var accordionBlock = parentBlock.querySelector('.order__subsector-accord');
 			var openBtn = parentBlock.querySelector('.order__subsector-button');
 
 			if (target.tagName == 'BUTTON') {
@@ -627,9 +455,9 @@ window.addEventListener('load', function() {
 			}
 
 			makeSectorComplete();		
-		}*/
+		}
 
-		/*function actionAccordionBlock(e) {// delete
+		function actionAccordionBlock(e) {
 			var target = e.target;
 			var parentBlock = this.closest('.order__subsector-accord');
 			var subSector = parentBlock.closest('.order__subsector');
@@ -648,22 +476,18 @@ window.addEventListener('load', function() {
 			removeSectorActive();
 			makeSectorComplete();
 			toggleBtnSubsector(openBtnSubSector);
-		}*/
+		}
 
-		//hideAllAccords();
+		hideAllAccords();
 		removeSectorActive();		
 
-		/*for (i=0; i<btsnShowAccordionBlock.length; i++) {
+		for (i=0; i<btsnShowAccordionBlock.length; i++) {
 			btsnShowAccordionBlock[i].addEventListener('click', actionSubsectorPoint);
 		}
 
 		for (j=0; j<btnsHideAccordionBlock.length; j++) {
 			btnsHideAccordionBlock[j].addEventListener('click', actionAccordionBlock);
-		}*/
-
-		btnToggleMobite.forEach(function(item) {
-			item.addEventListener('click', toggleMobileAccord);
-		});
+		}
 
 	}
 
@@ -688,8 +512,8 @@ window.addEventListener('load', function() {
 			//console.log(this);
 			
 			showDesktopAccord(this);
-			removeDesctopMenuItemComplete(this);
-			makeDesktopMenuSectorActive(this);			
+			removeSectorComplete(this);
+			makeSectorActive(this);			
 			makeSectorComplete();
 
 		}
@@ -697,6 +521,7 @@ window.addEventListener('load', function() {
 		function actionBtnSelect(e) {
 			e.preventDefault();
 
+			//var sectorAccord = this.closest('.order__sector');
 			var sectorAccord = this.closest('.order__sector');
 			var sectorAccordNum = sectorAccord.getAttribute('data-accord-number');
 			var sectorMenu; 
@@ -711,8 +536,8 @@ window.addEventListener('load', function() {
 
 			
 			showDesktopAccord(sectorMenu);
-			removeDesctopMenuItemComplete(sectorMenu);
-			makeDesktopMenuSectorActive(sectorMenu);
+			removeSectorComplete(sectorMenu);
+			makeSectorActive(sectorMenu);
 			makeSectorComplete();
 			
 		}

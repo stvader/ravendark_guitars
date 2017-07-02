@@ -1,3 +1,20 @@
+.main-block--contacts {	
+	min-height: calc(~"100vh - 60px");
+	max-width: none;
+	-height: 100vh;
+	-padding-left: 0;// special for block contacts block for 100% hight;
+	-padding-right: 0;// special for block contacts block for 100% hight;
+}
+
+.contacts {
+	//.container-fluid(@mobile-padding);
+	width: 100%;
+	max-width: none;
+	-height: calc(~"100vh - 120px");
+	-min-height: 660px;
+	box-sizing: border-box;
+}
+
 .contacts__pre-info,
 .contacts__header--desktop,
 .contacts__btn {
@@ -26,8 +43,10 @@
 	.fonts(@family: "Rubik Light"; 
 		@weight: normal; 
 		@size: 14px; 
-		@line-height: 20px; 
+		@line-height: 21px; 
 		@color: @black-opacity-60);
+
+	margin-bottom: 25px;
 }
 
 .contacts__table {
@@ -64,6 +83,12 @@
 
 
 @media @desktop-width {
+	.main-block--contacts {
+		padding-left: 0;// special for block contacts block for 100% hight;
+		padding-right: 0;// special for block contacts block for 100% hight;
+		-position: relative;
+		height: auto;
+	}
 
 	.contacts__pre-info,
 	.contacts__header--desktop,
@@ -77,8 +102,7 @@
 	}
 
 	.contacts {
-		margin-left: -(@desktop-padding);
-		margin-right: -(@desktop-padding);
+		min-height: calc(~"100vh - 120px");
 		padding-left: @desktop-padding;
 		padding-right: @desktop-padding;
 		padding-top: 50px;
@@ -93,7 +117,7 @@
 		.out-indent();
 		.fonts(@family: "Rubik Medium"; 
 			@weight: normal; 
-			@size: 18px; 
+			@size: 14px; 
 			@line-height: 21px; 
 			@color: @white-opacity-70);
 	}
@@ -112,7 +136,7 @@
 
 	.contacts__slogan {
 		color: @white;
-		font-size: 18px;
+		-font-size: 18px;
 	}
 
 	.contacts__table {

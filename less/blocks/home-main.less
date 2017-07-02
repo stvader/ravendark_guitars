@@ -1,14 +1,22 @@
 .main-block--home {
-	margin-top: 0;
+	-margin-top: 0;
 }
 /*-------------------------------------------
 style for all h3
 ---------------------------------------------*/
-.main-home-header {
+.main-home-header { //maybe all in anchor
 	.out-indent();
-	.fonts(@family: 'Merriweather Bold'; @weight: bold; @size: 21px; @line-height: 26px; @color: @grey-taskbar);
+	.fonts(@family: 'Merriweather Bold'; 
+		@weight: bold;
+		@size: 21px; 
+		@line-height: 26px; 
+		@color: @grey-taskbar);
 
 	letter-spacing: -0.7px;
+
+	&:hover {
+		-color: @red;
+	}
 }
 
 /*------------------------------------------
@@ -21,7 +29,7 @@ style for all dates
 	opacity: .5;
 }
 
-.home-taskbar .taskbar__navigation {
+.taskbar .taskbar__navigation {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	border-bottom: 1px solid @grey-btm-bd;
@@ -54,15 +62,30 @@ style for all dates
 }
 
 .taskbar__nav-link {
-	.fonts(@family: 'Rubik Light'; @weight: normal; @size: 16px; @line-height: 21px; @color: @grey-taskbar);
+	.fonts(@family: 'Rubik Light'; 
+		@weight: normal; 
+		@size: 16px; 
+		@line-height: 21px; 
+		@color: @grey-taskbar);
 
 	text-decoration: none;
 	cursor: pointer;
+
+	&:hover {
+		color: @red;
+	}
+
+	&--carrent {
+		font-family: 'Rubik Medium';
+
+		&:hover {
+			color: @grey-taskbar;
+		}
+	}
+
 }
 
-.taskbar__nav-link--carrent {
-	font-family: 'Rubik Medium';
-}
+.taskbar__nav-link
 
 
 
@@ -80,9 +103,10 @@ style for all dates
 .taskbar__article-title {
 	padding-left: 20px;
 	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 35px;
-
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	background-color: @grey-blog-menu-op;
 }
 
 .taskbar__date {
@@ -93,20 +117,32 @@ style for all dates
 
 .taskbar__article-name {
 	.out-indent();
-	.fonts(@family: 'Merriweather Bold'; @weight: bold; @size: 16px; @line-height: 22px; @color: @grey-taskbar);
+	/* .fonts(@family: 'Merriweather Bold'; 
+		@weight: normal; 
+		@size: 16px; 
+		@line-height: 22px; 
+		@color: @grey-taskbar); */
 
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .taskbar__article-link {
-	.fonts(@family: 'Rubik'; @weight: normal; @size: 14px; @line-height: 14px; @color: @grey-taskbar);
+	.fonts(@family: 'Merriweather Bold'; 
+		@weight: normal; 
+		@size: 16px; 
+		@line-height: 22px; 
+		@color: @grey-taskbar);
 
-	display: block;
-	text-decoration: underline;
-	text-align: right;
-	cursor: pointer;
-	-float:right;
+	-display: block;
+	text-decoration: none;
+	-text-align: right;
+	-cursor: pointer;
+	-float: right;
+
+	&:hover {
+		color: @red;
+	}
 }
 
 .taskbar__blog-link {
@@ -143,11 +179,27 @@ style for all dates
 }
 
 .article__date {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
+}
+
+.main-home_header-link {
+	.fonts(@family: 'Merriweather Bold'; 
+		@weight: bold;
+		@size: 21px; 
+		@line-height: 26px; 
+		@color: @grey-taskbar);
+
+	letter-spacing: -0.7px;
+	text-decoration: none;
+
+	&:hover,
+	&:active {
+		color: @red;
+	}
 }
 
 .article__header {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .acticle__content {
@@ -175,7 +227,7 @@ style for all dates
 }
 
 @media @desktop-width {
-	.home-taskbar {
+	.taskbar {
 		width: 285px;
 		float: right;
 		margin-left: 70px;
