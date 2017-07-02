@@ -22,11 +22,100 @@ style for all h3
 /*------------------------------------------
 style for all dates
 --------------------------------------------*/
+
+
 .main-home-date {
 	.out-indent();
-	.fonts(@family: 'Rubik'; @weight: normal; @size: 14px; @line-height: 14px; @color: @grey-taskbar);
+	.fonts(@family: 'Rubik'; 
+		@weight: normal; 
+		@size: 14px; 
+		@line-height: 14px; 
+		@color: @grey-taskbar);
 
 	opacity: .5;
+}
+
+.poster {
+	.row(@mobile-padding);	
+
+	position: relative;
+	width: 100%;
+	min-height: calc(~"100vh - 60px");
+	-padding-top: 25%;
+	-box-sizing: border-box;
+	overflow: hidden;
+	background-color: @black-opacity-20;
+	background-image: url(../img/bg-home.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+}
+
+.poster__bg-header {
+	.out-indent();
+	.fonts(@family: 'Gentium Basic Bold'; 
+		@weight: normal; 
+		@size: 400px; 
+		@line-height: 300px; 
+		@color: @white-opacity-10);
+
+	position: absolute;
+	top: 25%;
+	left: -30%;
+	white-space: nowrap;
+}
+
+.poster__text-block {
+	max-width: 280px;
+	padding-top: 40%;
+	padding-bottom: 20%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.poster__header {
+	.out-indent();
+	.fonts(@family: 'Gentium Basic Bold'; 
+		@weight: normal; 
+		@size: 32px; 
+		@line-height: 32px; 
+		@color: @white);
+	
+	-margin-bottom: 7%;
+}
+
+.poster__remark {
+	.fonts(@family: 'Rubik Light'; 
+		@weight: normal; 
+		@size: 11px; 
+		@line-height: 21px; 
+		@color: @white-opacity-50);
+
+	text-align: right;
+	float: right;
+	-margin-bottom: 7%;
+}
+
+.poster__descr {
+	.out-indent();
+	.fonts(@family: 'Rubik Light'; 
+		@weight: normal; 
+		@size: 14px; 
+		@line-height: 21px; 
+		@color: @white);
+
+	max-width: 330px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.poster__btn {
+	position: relative;
+	z-index: 999; //for clicable of link
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .taskbar .taskbar__navigation {
@@ -226,7 +315,31 @@ style for all dates
 	float: right;
 }
 
+@media (min-width: 520px) {
+	.poster__text-block {
+		max-width: 430px;
+	}
+
+	.poster__header {
+		font-size: 50px;
+		line-height: 50px;
+	}
+}
+
 @media @desktop-width {
+	.poster {
+		.row(@desktop-padding);
+	}
+
+	.poster__text-block {
+		max-width: 600px;
+	}
+
+	.poster__header {
+		font-size: 70px;
+		line-height: 70px;
+	}
+
 	.taskbar {
 		width: 285px;
 		float: right;

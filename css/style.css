@@ -365,11 +365,13 @@ input {
 	} */
 }
 .main-nav__list--main-list .main-nav__item--current .main-nav__link,
-.main-nav__list--main-list .main-nav__item .main-nav__link:hover {
+.main-nav__list--main-list .main-nav__item .main-nav__link:hover,
+.main-nav__list--main-list .main-nav__item .main-nav__link:active {
   position: relative;
 }
 .main-nav__list--main-list .main-nav__item--current .main-nav__link::before,
-.main-nav__list--main-list .main-nav__item .main-nav__link:hover::before {
+.main-nav__list--main-list .main-nav__item .main-nav__link:hover::before,
+.main-nav__list--main-list .main-nav__item .main-nav__link:active::before {
   content: "";
   display: block;
   width: 100%;
@@ -641,6 +643,83 @@ style for all dates
   line-height: 14px;
   color: #282828;
   opacity: .5;
+}
+.poster {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  -padding-top: 25%;
+  -box-sizing: border-box;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url(../img/bg-home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.poster__bg-header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gentium Basic Bold';
+  font-weight: normal;
+  font-size: 400px;
+  line-height: 300px;
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 25%;
+  left: -30%;
+  white-space: nowrap;
+}
+.poster__text-block {
+  max-width: 280px;
+  padding-top: 40%;
+  padding-bottom: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.poster__header {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gentium Basic Bold';
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 32px;
+  color: #ffffff;
+  -margin-bottom: 7%;
+}
+.poster__remark {
+  font-family: 'Rubik Light';
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+  float: right;
+  -margin-bottom: 7%;
+}
+.poster__descr {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik Light';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  max-width: 330px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.poster__btn {
+  position: relative;
+  z-index: 999;
+  margin-left: auto;
+  margin-right: auto;
 }
 .taskbar .taskbar__navigation {
   padding-top: 30px;
@@ -2158,7 +2237,14 @@ style for all dates
     width: 33.333333%;
   }
 }
-@media (min-width: 520px) {/*for electronic layout*/
+@media (min-width: 520px) {
+  .poster__text-block {
+    max-width: 430px;
+  }
+  .poster__header {
+    font-size: 50px;
+    line-height: 50px;
+  }/*for electronic layout*/
   .order__accord-feild--electornic {
     -display: inline-block;
   }
@@ -2214,6 +2300,19 @@ style for all dates
   .slider__picture-note {
     padding-left: 40px;
     padding-right: 40px;
+  }
+  .poster {
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .poster__text-block {
+    max-width: 600px;
+  }
+  .poster__header {
+    font-size: 70px;
+    line-height: 70px;
   }
   .taskbar {
     width: 285px;
