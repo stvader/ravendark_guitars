@@ -1,9 +1,7 @@
-1) index page picture insted slider
-4) radio after trouble???
+1) radio after trouble!
+2) do passive comment height as height all text
 
 8) label about tangut oil in one line (ask disigner WTF)
 9) what FUCKING this shit doing with select?!!!!
 
 
-string WTF: 53, 58, 62 how much?, 63, 64, 65,
-begin 67

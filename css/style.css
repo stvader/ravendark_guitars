@@ -1,3 +1,4 @@
+/* @grey-btm-bd: #ebebeb; */
 /**
  * @src      The path to your SVG file
  * @fill-new The fill value you would like to have injected into your paths
@@ -724,7 +725,7 @@ style for all dates
 .taskbar .taskbar__navigation {
   padding-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #f4f6f7;
 }
 .taskbar__navigation {
   max-width: 285px;
@@ -765,10 +766,10 @@ style for all dates
 .taskbar__nav-link--carrent:hover {
   color: #282828;
 }
-.taskbar__nav-link .taskbar__last-articles {
-  padding-top: 30px;
+.taskbar__last-articles {
+  padding-top: 25px;
   padding-bottom: 70px;
-  -border-bottom: 1px solid #ebebeb;
+  -border-bottom: 1px solid #f4f6f7;
 }
 .taskbar__header--last-article {
   margin-bottom: 35px;
@@ -822,12 +823,12 @@ style for all dates
 .article {
   padding-top: 30px;
   padding-bottom: 30px;
-  border-top: 1px solid #ebebeb;
+  border-top: 1px solid #f4f6f7;
   min-height: 350px;
   box-sizing: border-box;
 }
 .article:last-child {
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #f4f6f7;
 }
 .article__img {
   margin-bottom: 30px;
@@ -853,9 +854,11 @@ style for all dates
   color: #cf090f;
 }
 .article__header {
-  margin-bottom: 20px;
+  margin-bottom: 23px;
 }
 .acticle__content {
+  margin: 0;
+  padding: 0;
   font-family: 'Rubik Light';
   font-weight: normal;
   font-size: 16px;
@@ -1910,7 +1913,8 @@ style for all dates
   border: 2px solid #26b18f;
 }
 .order__accord-field--customer-info .order__accord-comment-field {
-  width: 100%;
+  -width: 100%;
+  width: 340px;
 }
 .order__arrord-mat-card {
   display: inline-block;
@@ -1992,6 +1996,7 @@ style for all dates
 .form-label--customer {
   padding-top: 10px;
   padding-bottom: 10px;
+  vertical-align: top;
   font-weight: normal;
   color: #2c2c2c;
   text-transform: uppercase;
@@ -2008,6 +2013,7 @@ style for all dates
 }
 .order__accord-check:checked + label::before {
   background-image: url("../img/icon/right.svg");
+  background-repeat: no-repeat;
 }
 .order__accord-image {
   display: block;
@@ -2193,7 +2199,7 @@ style for all dates
   line-height: 18px;
   color: #2c2c2c;
   box-sizing: border-box;
-  width: 100%;
+  width: 340px;
   -padding: 10px;
   border: 1px solid #000000;
 }
@@ -2324,6 +2330,7 @@ style for all dates
   }
   .taskbar__blog-link {
     float: none;
+    margin-left: 20px;
   }
   .main-content {
     margin-right: 355px;
@@ -2855,7 +2862,7 @@ style for all dates
     color: #393939;
     font-size: 18px;
     line-height: 33px;
-    border: 3px solid #393939;
+    border: 2px solid #393939;
   }
   .order__order-section .order__sector-header {
     font-size: 24px;

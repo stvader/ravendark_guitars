@@ -361,7 +361,8 @@
 			}
 		}
 		.order__accord-comment-field {
-			width: 100%;
+			-width: 100%;
+			width: 340px;
 		}
 	}
 }
@@ -461,6 +462,7 @@
 	&--customer {
 		padding-top: 10px;
 		padding-bottom: 10px;
+		vertical-align: top;
 		font-weight: normal;
 		color: @grey-header;
 		text-transform: uppercase;
@@ -483,6 +485,7 @@
 
 .order__accord-check:checked + label::before {
 	background-image: url("../img/icon/right.svg");
+	background-repeat: no-repeat;
 }
 
 .order__accord-image {
@@ -726,7 +729,7 @@
 		@color: @grey-header);
 
 	box-sizing: border-box;
-	width: 100%;
+	width: 340px;
 	-padding: 10px;
 	border: 1px solid @black;
 }
@@ -1016,7 +1019,7 @@
 			color: @bgc-summery-order;
 			font-size: 18px;////
 			line-height: 33px;
-			border: 3px solid @bgc-summery-order;
+			border: 2px solid @bgc-summery-order;
 		}
 
 		.order__sector-header {
