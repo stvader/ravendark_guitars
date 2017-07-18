@@ -1394,9 +1394,12 @@ style for all dates
   position: relative;
   margin-right: 1px;
   margin-bottom: 1px;
-  width: 192px;
-  height: 145px;
-  -border: 1px solid #ffffff;
+  -width: 192px;
+  -height: 145px;
+  min-width: 280px;
+  min-height: 210px;
+  width: calc(100vw - 40px);
+  height: 65vw;
   box-sizing: border-box;
   overflow: hidden;
   transition: 0.5s transform;
@@ -2244,6 +2247,14 @@ style for all dates
 }
 .social-link .social-link__image:hover {
   fill: #cf090f;
+}
+@media (min-width: 440px) {
+  .gallery-image {
+    min-width: 0;
+    min-height: 0;
+    width: 192px;
+    height: 145px;
+  }
 }
 @media (min-width: 490px) {/*min-width card of color *3 + side padding * 2*/
   .order__subsector-accord--active .order__arrord-mat-card {

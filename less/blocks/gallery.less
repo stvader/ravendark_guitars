@@ -76,9 +76,12 @@
 	position: relative;
 	margin-right: 1px;
 	margin-bottom: 1px;
-	width: 192px;
-	height: 145px;
-	-border: 1px solid @white;
+	-width: 192px;//shift
+	-height: 145px;//shift
+	min-width: 280px;
+	min-height: 210px;
+	width: calc(~"100vw - 40px");
+	height: 65vw;
 	box-sizing: border-box;
 	overflow: hidden;
 	transition: 0.5s transform;
@@ -230,6 +233,15 @@
 		z-index: 1000;
 
 		background-color: @black-opacity-95;
+	}
+}
+
+@media (min-width: 440px) {
+	.gallery-image {
+		min-width: 0;
+		min-height: 0;
+		width: 192px;
+		height: 145px;
 	}
 }
 

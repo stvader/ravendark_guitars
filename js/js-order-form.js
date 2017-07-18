@@ -170,13 +170,13 @@ window.addEventListener('load', function() {
 	//var btnsHideAccordionBlock = document.querySelectorAll('.js-hide-accord-block');
 	var btnToggleMobite = document.querySelectorAll('.js-toggle-btn');
 	var i, j;
-	//var allSectorBlocks = document.querySelectorAll('.order__sector');//maybe delete
+	var allSectorBlocks = document.querySelectorAll('.order__sector');//maybe delete
 	var toggleListsBlocks = document.querySelectorAll('.order__subsector-list');
 	var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector');
 	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block');
 	var desktopSectorAccords = document.querySelectorAll('.js-desktop-sector-accord');
 	var btnSelect = document.querySelectorAll('.order__btn-select');
-	console.log(btnToggleMobite);
+	//console.log(btnToggleMobite);
 
 	function hideAllAccords() {// maybe delete
 		var accordsBlock = document.querySelectorAll('.order__subsector-accord');
@@ -413,7 +413,7 @@ window.addEventListener('load', function() {
 			valueBlock = block.querySelectorAll('.order__menu-subsector-value');
 		//}//try || for it
 
-		console.log(valueBlock);
+		/*console.log(valueBlock);*/
 
 		for (i=0; i<subsectorInfoBlock.length; i++) {
 			var valueString = getFormValues(subsectorInfoBlock[i]); 
@@ -488,6 +488,10 @@ window.addEventListener('load', function() {
 				}
 			}
 		}
+	}
+
+	function makeSectorCompleteMobile(block) {
+		
 	}
 
 	function removeSectorComplete(block) {/// maybe delete
@@ -578,7 +582,7 @@ window.addEventListener('load', function() {
 				e.preventDefault();			
 			}
 
-			//removeSectorComplete(sector);//need?
+			removeSectorComplete(parentBlock);
 			toggleBtnSubsector(toggleBtn);
 
 
@@ -596,7 +600,7 @@ window.addEventListener('load', function() {
 
 			
 
-			//makeSectorComplete();//need?
+			makeSectorCompleteMobile();
 
 			//console.log('click');
 		}
@@ -651,7 +655,7 @@ window.addEventListener('load', function() {
 		}*/
 
 		//hideAllAccords();
-		removeSectorActive();		
+		//removeSectorActive();		
 
 		/*for (i=0; i<btsnShowAccordionBlock.length; i++) {
 			btsnShowAccordionBlock[i].addEventListener('click', actionSubsectorPoint);
