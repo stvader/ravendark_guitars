@@ -724,7 +724,7 @@ style for all dates
 }
 .taskbar .taskbar__navigation {
   padding-top: 30px;
-  padding-bottom: 30px;
+  -padding-bottom: 30px;
   border-bottom: 1px solid #f4f6f7;
 }
 .taskbar__navigation {
@@ -744,6 +744,7 @@ style for all dates
 }
 .taskbar__nav-item {
   display: inline-block;
+  margin-bottom: 20px;
   padding-right: 10px;
   padding-left: 10px;
   border-right: 1px solid #000000;
@@ -775,11 +776,15 @@ style for all dates
   margin-bottom: 35px;
 }
 .taskbar__article-title {
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 20px;
+  -padding-left: 20px;
+  -padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: 20px;
   background-color: rgba(248, 248, 248, 0.3);
 }
 .taskbar__date {
@@ -1387,12 +1392,14 @@ style for all dates
 .gallery-image {
   display: inline-block;
   position: relative;
+  margin-right: 1px;
+  margin-bottom: 1px;
   width: 192px;
   height: 145px;
-  border: 1px solid #ffffff;
+  -border: 1px solid #ffffff;
   box-sizing: border-box;
   overflow: hidden;
-  transition: 1s transform;
+  transition: 0.5s transform;
 }
 .gallery-image:hover {
   transform: scale(1.1);
@@ -1554,7 +1561,7 @@ style for all dates
 .contacts__slogan {
   margin: 0;
   padding: 0;
-  font-family: "Rubik Light";
+  font-family: "Rubik";
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
@@ -1756,7 +1763,7 @@ style for all dates
   background-color: #ffffff;
   -border: 1px solid #fff;
   cursor: pointer;
-  transition: transform 0.5s ease-in 0s;
+  transition: transform 0.25s ease-in 0s;
 }
 .order__sector-button::before,
 .order__sector-button::after {
@@ -2325,6 +2332,12 @@ style for all dates
     float: right;
     margin-left: 70px;
   }
+  .taskbar__article-title {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .taskbar__for-desktop {
     display: block;
   }
@@ -2429,7 +2442,7 @@ style for all dates
   .contacts__pre-info {
     margin: 0;
     padding: 0;
-    font-family: "Rubik Medium";
+    font-family: "Rubik";
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
@@ -2912,6 +2925,7 @@ style for all dates
   }
   .order__order-section .order__submit-btn {
     width: 130px;
+    margin-left: 148px;
   }
   .order__sector-btn-block {
     display: block;

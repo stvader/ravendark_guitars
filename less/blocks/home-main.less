@@ -120,7 +120,7 @@ style for all dates
 
 .taskbar .taskbar__navigation {
 	padding-top: 30px;
-	padding-bottom: 30px;
+	-padding-bottom: 30px;
 	border-bottom: 1px solid @grey-btm-bd;
 }
 
@@ -145,6 +145,7 @@ style for all dates
 
 .taskbar__nav-item {
 	display: inline-block;
+	margin-bottom: 20px;
 	padding-right: 10px;
 	padding-left: 10px;
 	border-right: 1px solid @black;
@@ -186,11 +187,15 @@ style for all dates
 }
 
 .taskbar__article-title {
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	margin-left: -20px;
+	margin-right: -20px;
 	margin-bottom: 20px;
+	-padding-left: 20px;
+	-padding-right: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;	
 	background-color: @grey-blog-menu-op;
 }
 
@@ -341,6 +346,13 @@ style for all dates
 		width: 285px;
 		float: right;
 		margin-left: 70px;
+	}
+
+	.taskbar__article-title {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	.taskbar__for-desktop {
