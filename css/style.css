@@ -2110,6 +2110,7 @@ style for all dates
   color: #4f4f4f;
   -width: calc(100% - 35px);
   width: 100%;
+  -min-height: 200px;
   -margin-right: 35px;
   -margin-bottom: 20px;
   padding: 20px;
@@ -2123,6 +2124,8 @@ style for all dates
 }
 .order__accord-comment-field--fixed {
   -width: 100%;
+  -min-height: 0;
+  -height: 0;
   margin-top: 20px;
   -border: 2px solid #000000;
 }

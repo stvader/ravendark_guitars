@@ -72,6 +72,7 @@ window.addEventListener('load', function() {
 		}
 
 		textarea.disabled = true;
+		textarea.style.height = textarea.scrollHeight + 'px';
 	}
 
 	function deteteComment(e) {
@@ -90,6 +91,7 @@ window.addEventListener('load', function() {
 		}
 
 		textarea.disabled = false;
+		textarea.style.height = 'auto';
 		textarea.value = null;
 	}
 
@@ -107,6 +109,7 @@ window.addEventListener('load', function() {
 		}
 
 		textarea.disabled = false;
+		textarea.style.height = 'auto';
 		textarea.focus();
 	}
 
