@@ -129,7 +129,8 @@ input {
   border: none;
   cursor: pointer;
 }
-.btn:hover {
+.btn:hover,
+.btn:focus {
   opacity: 0.9;
 }
 .btn-hide {
@@ -367,11 +368,13 @@ input {
 }
 .main-nav__list--main-list .main-nav__item--current .main-nav__link,
 .main-nav__list--main-list .main-nav__item .main-nav__link:hover,
+.main-nav__list--main-list .main-nav__item .main-nav__link:focus,
 .main-nav__list--main-list .main-nav__item .main-nav__link:active {
   position: relative;
 }
 .main-nav__list--main-list .main-nav__item--current .main-nav__link::before,
 .main-nav__list--main-list .main-nav__item .main-nav__link:hover::before,
+.main-nav__list--main-list .main-nav__item .main-nav__link:focus::before,
 .main-nav__list--main-list .main-nav__item .main-nav__link:active::before {
   content: "";
   display: block;
@@ -490,7 +493,8 @@ input {
   text-decoration: none;
   letter-spacing: 0.01em;
 }
-.breadcrumbs__link:hover {
+.breadcrumbs__link:hover,
+.breadcrumbs__link:focus {
   color: #cf090f;
 }
 /* .breadcrumbs__link--current {
@@ -629,7 +633,8 @@ style for all h3
   color: #282828;
   letter-spacing: -0.7px;
 }
-.main-home-header:hover {
+.main-home-header:hover,
+.main-home-header:focus {
   -color: #cf090f;
 }
 /*------------------------------------------
@@ -653,7 +658,7 @@ style for all dates
   position: relative;
   width: 100%;
   min-height: calc(100vh - 60px);
-  -padding-top: 25%;
+  padding-top: 190px;
   -box-sizing: border-box;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.2);
@@ -677,8 +682,8 @@ style for all dates
 }
 .poster__text-block {
   max-width: 280px;
-  padding-top: 40%;
-  padding-bottom: 20%;
+  -padding-top: 40%;
+  -padding-bottom: 20%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -758,13 +763,15 @@ style for all dates
   text-decoration: none;
   cursor: pointer;
 }
-.taskbar__nav-link:hover {
+.taskbar__nav-link:hover,
+.taskbar__nav-link:focus {
   color: #cf090f;
 }
 .taskbar__nav-link--carrent {
   font-family: 'Rubik Medium';
 }
-.taskbar__nav-link--carrent:hover {
+.taskbar__nav-link--carrent:hover,
+.taskbar__nav-link--carrent:focus {
   color: #282828;
 }
 .taskbar__last-articles {
@@ -813,7 +820,8 @@ style for all dates
   -cursor: pointer;
   -float: right;
 }
-.taskbar__article-link:hover {
+.taskbar__article-link:hover,
+.taskbar__article-link:focus {
   color: #cf090f;
 }
 .taskbar__blog-link {
@@ -855,6 +863,7 @@ style for all dates
   text-decoration: none;
 }
 .main-home_header-link:hover,
+.main-home_header-link:focus,
 .main-home_header-link:active {
   color: #cf090f;
 }
@@ -1039,7 +1048,8 @@ style for all dates
   color: rgba(44, 44, 44, 0.5);
   text-decoration: none;
 }
-.guitar-card__header-link:hover {
+.guitar-card__header-link:hover,
+.guitar-card__header-link:focus {
   color: #cf090f;
 }
 .guitar-card__min-deskr {
@@ -1266,7 +1276,8 @@ style for all dates
   display: inline-block;
   cursor: pointer;
 }
-.guitar-item-card__gallery-image:hover::before {
+.guitar-item-card__gallery-image:hover::before,
+.guitar-item-card__gallery-image:focus::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -1354,7 +1365,8 @@ style for all dates
   color: #2c2c2c;
   text-decoration: none;
 }
-.gallery-menu__link:hover {
+.gallery-menu__link:hover,
+.gallery-menu__link:focus {
   color: #cf090f;
 }
 .gallery-submenu__list {
@@ -1380,7 +1392,8 @@ style for all dates
   color: #2c2c2c;
   text-decoration: none;
 }
-.gallery-menu__item--active .gallery-submenu__link:hover {
+.gallery-menu__item--active .gallery-submenu__link:hover,
+.gallery-menu__item--active .gallery-submenu__link:focus {
   color: #cf090f;
 }
 .gallery-images-block {
@@ -1404,7 +1417,8 @@ style for all dates
   overflow: hidden;
   transition: 0.5s transform;
 }
-.gallery-image:hover {
+.gallery-image:hover,
+.gallery-image:focus {
   transform: scale(1.1);
   z-index: 99999;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.7);
@@ -2248,7 +2262,8 @@ style for all dates
   height: 26px;
   fill: rgba(0, 0, 0, 0.2);
 }
-.social-link .social-link__image:hover {
+.social-link .social-link__image:hover,
+.social-link .social-link__image:focus {
   fill: #cf090f;
 }
 @media (min-width: 440px) {

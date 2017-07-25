@@ -23,6 +23,9 @@
 	fill: @black-opacity-20;
 }
 
-.social-link .social-link__image:hover {
-	fill: @red;
+.social-link .social-link__image {
+	&:hover,
+	&:focus {
+		fill: @red;
+	}
 }

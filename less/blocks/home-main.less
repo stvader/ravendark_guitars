@@ -14,7 +14,8 @@ style for all h3
 
 	letter-spacing: -0.7px;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		-color: @red;
 	}
 }
@@ -41,7 +42,7 @@ style for all dates
 	position: relative;
 	width: 100%;
 	min-height: calc(~"100vh - 60px");
-	-padding-top: 25%;
+	padding-top: 190px;
 	-box-sizing: border-box;
 	overflow: hidden;
 	background-color: @black-opacity-20;
@@ -67,8 +68,8 @@ style for all dates
 
 .poster__text-block {
 	max-width: 280px;
-	padding-top: 40%;
-	padding-bottom: 20%;
+	-padding-top: 40%;
+	-padding-bottom: 20%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -161,14 +162,16 @@ style for all dates
 	text-decoration: none;
 	cursor: pointer;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: @red;
 	}
 
 	&--carrent {
 		font-family: 'Rubik Medium';
 
-		&:hover {
+		&:hover,
+		&:focus {
 			color: @grey-taskbar;
 		}
 	}
@@ -230,7 +233,8 @@ style for all dates
 	-cursor: pointer;
 	-float: right;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: @red;
 	}
 }
@@ -283,6 +287,7 @@ style for all dates
 	text-decoration: none;
 
 	&:hover,
+	&:focus,
 	&:active {
 		color: @red;
 	}
