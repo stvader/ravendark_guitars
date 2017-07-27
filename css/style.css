@@ -777,8 +777,10 @@ style for all dates
 }
 .taskbar__last-articles {
   padding-top: 25px;
-  padding-bottom: 70px;
   -border-bottom: 1px solid #f4f6f7;
+}
+.taskbar__last-articles--main-page {
+  padding-bottom: 70px;
 }
 .taskbar__header--last-article {
   margin-bottom: 35px;
@@ -935,7 +937,7 @@ style for all dates
   width: 190px;
 }
 /*footer will stick to bottom*/
-.main-block--blog .taskbar {
+.main-block--article .taskbar {
   display: none;
 }
 .blog-articles__article {
@@ -2408,7 +2410,8 @@ style for all dates
     margin-left: 0;
     margin-right: 0;
   }
-  .main-block--blog .taskbar {
+  .main-block--blog .taskbar,
+  .main-block--article .taskbar {
     display: block;
     -float: right;
     -width: 285px;

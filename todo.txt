@@ -1,7 +1,4 @@
-1) make blog-page (look at maket). maybe change class???
+1) make blog-page (look at maket). + maybe change class???
 2) do passive comment height as height all text +
-3) 
-
-
-
-
+3) check all html files for script links
+4) local storage for order form

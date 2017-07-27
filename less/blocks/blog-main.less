@@ -1,4 +1,4 @@
-.main-block--blog .taskbar {
+.main-block--article .taskbar {
 	display: none;
 }
 
@@ -66,10 +66,13 @@
 }
 
 @media @desktop-width {
-	.main-block--blog .taskbar {
-		display: block;
-		-float: right;
-		-width: 285px;
+	.main-block--blog,
+	.main-block--article {
+		.taskbar {
+			display: block;
+			-float: right;
+			-width: 285px;
+		}
 	}
 
 	.main-block--blog .taskbar__navigation {
