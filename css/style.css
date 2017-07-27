@@ -627,7 +627,7 @@ style for all h3
   margin: 0;
   padding: 0;
   font-family: 'Merriweather Bold';
-  font-weight: bold;
+  font-weight: normal;
   font-size: 21px;
   line-height: 26px;
   color: #282828;
@@ -657,7 +657,8 @@ style for all dates
   padding-left: 20px;
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px - 190px);
+  -height: calc(100vh - 60px - 190px);
   padding-top: 190px;
   -box-sizing: border-box;
   overflow: hidden;
@@ -783,16 +784,16 @@ style for all dates
   margin-bottom: 35px;
 }
 .taskbar__article-title {
-  margin-left: -20px;
-  margin-right: -20px;
+  -margin-left: -20px;
+  -margin-right: -20px;
   margin-bottom: 20px;
-  -padding-left: 20px;
-  -padding-right: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -padding-left: 40px;
+  -padding-right: 40px;
+  padding-top: 5px;
   padding-bottom: 20px;
-  background-color: rgba(248, 248, 248, 0.3);
+  background-color: #f4f6f7;
 }
 .taskbar__date {
   -margin-bottom: 15px;
@@ -855,7 +856,7 @@ style for all dates
 }
 .main-home_header-link {
   font-family: 'Merriweather Bold';
-  font-weight: bold;
+  font-weight: normal;
   font-size: 21px;
   line-height: 26px;
   color: #282828;
@@ -947,7 +948,7 @@ style for all dates
   margin: 0;
   padding: 0;
   font-family: "Merriweather Bold";
-  font-weight: bold;
+  font-weight: normal;
   font-size: 30px;
   line-height: 42px;
   color: #282828;
@@ -1272,12 +1273,14 @@ style for all dates
   padding-left: 0;
 }
 .guitar-item-card__gallery-image {
-  position: relative;
   display: inline-block;
-  cursor: pointer;
 }
-.guitar-item-card__gallery-image:hover::before,
-.guitar-item-card__gallery-image:focus::before {
+.guitar-item-card__gallery-image-link {
+  position: relative;
+  display: block;
+}
+.guitar-item-card__gallery-image-link:hover::before,
+.guitar-item-card__gallery-image-link:focus::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -1416,12 +1419,16 @@ style for all dates
   box-sizing: border-box;
   overflow: hidden;
   transition: 0.5s transform;
+  /* &:hover,
+	&:focus {
+		transform: scale(1.1);
+		z-index: 99999;
+		box-shadow: 0 0 10px 2px @black-opacity-70;
+	} */
 }
-.gallery-image:hover,
-.gallery-image:focus {
-  transform: scale(1.1);
-  z-index: 99999;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.7);
+.gallery-image:hover .gallery-photo,
+.gallery-image:focus .gallery-photo {
+  transform: translateY(-50%) scale(1.5);
 }
 /*for height % from width*/
 .gallery-images__img-container {
@@ -1929,6 +1936,7 @@ style for all dates
 .order__accord-field--customer-info .order__accord-customer-input,
 .order__accord-field--customer-info .order__accord-comment-field {
   padding: 10px;
+  border-radius: 4px;
 }
 .order__accord-field--customer-info .order__accord-customer-input:active,
 .order__accord-field--customer-info .order__accord-comment-field:active,
@@ -1939,6 +1947,7 @@ style for all dates
 .order__accord-field--customer-info .order__accord-comment-field {
   -width: 100%;
   width: 340px;
+  height: 100px;
 }
 .order__arrord-mat-card {
   display: inline-block;
@@ -2348,6 +2357,8 @@ style for all dates
     margin-right: -40px;
     padding-right: 40px;
     padding-left: 40px;
+    min-height: calc(100vh - 60px - 240px);
+    padding-top: 240px;
   }
   .poster__text-block {
     max-width: 600px;
@@ -2462,11 +2473,12 @@ style for all dates
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 50px;
-    padding-bottom: 230px;
+    -padding-bottom: 230px;
     background-color: #f7f7f7;
     background-image: url('../../img/bg-order.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
   }
   .contacts__pre-info {
     margin: 0;
@@ -2484,6 +2496,8 @@ style for all dates
     font-size: 70px;
   }
   .contacts__info-wrapper {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 450px;
     padding-top: 0;
   }
@@ -2495,6 +2509,8 @@ style for all dates
     position: static;
     margin-top: 30px;
     margin-bottom: 30px;
+    margin-left: 130px;
+    text-align: left;
     font-size: 14px;
   }
   .contacts__table-cell--title {
@@ -2505,6 +2521,8 @@ style for all dates
     font-size: 14px;
   }
   .contacts__btn {
+    margin-left: auto;
+    margin-right: auto;
     width: 142px;
   }
   .order__wrapper {

@@ -91,10 +91,17 @@
 
 	&:hover,
 	&:focus {
+		.gallery-photo {
+			transform: translateY(-50%) scale(1.5);
+		}
+	}
+
+	/* &:hover,
+	&:focus {
 		transform: scale(1.1);
 		z-index: 99999;
 		box-shadow: 0 0 10px 2px @black-opacity-70;
-	}
+	} */
 }
 
 /*for height % from width*/
@@ -123,8 +130,8 @@
 .gallery-photo {
 	width: 100%;
 	max-width: none;	
-	 position: absolute;
-	 top: 50%;
+	position: absolute;
+	top: 50%;
 	// left: 0;
 	// right: 0;
 	transform: translateY(-50%);

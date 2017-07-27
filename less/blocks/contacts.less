@@ -102,15 +102,16 @@
 	}
 
 	.contacts {
-		min-height: calc(~"100vh - 120px");
+		min-height: calc(~"100vh - 120px");// 120px = header height(60px) + footer height(60px)
 		padding-left: @desktop-padding;
 		padding-right: @desktop-padding;
 		padding-top: 50px;
-		padding-bottom: 230px;
+		-padding-bottom: 230px;
 		background-color: #f7f7f7;
 		background-image: url('../../img/bg-order.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
+		text-align: center;
 	}
 
 	.contacts__pre-info {
@@ -130,6 +131,8 @@
 	}
 
 	.contacts__info-wrapper {
+		margin-left: auto;
+		margin-right: auto;
 		max-width: 450px;
 		padding-top: 0;
 	}
@@ -143,6 +146,8 @@
 		position: static;
 		margin-top: 30px;
 		margin-bottom: 30px;
+		margin-left: 130px;
+		text-align: left;
 		font-size: 14px;
 	}
 
@@ -156,6 +161,8 @@
 	}
 
 	.contacts__btn {
+		margin-left: auto;
+		margin-right: auto;
 		width: 142px;
 	}
 

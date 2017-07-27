@@ -7,7 +7,7 @@ style for all h3
 .main-home-header { //maybe all in anchor
 	.out-indent();
 	.fonts(@family: 'Merriweather Bold'; 
-		@weight: bold;
+		@weight: normal;
 		@size: 21px; 
 		@line-height: 26px; 
 		@color: @grey-taskbar);
@@ -41,7 +41,8 @@ style for all dates
 
 	position: relative;
 	width: 100%;
-	min-height: calc(~"100vh - 60px");
+	min-height: calc(~"100vh - 60px - 190px");
+	-height: calc(~"100vh - 60px - 190px");
 	padding-top: 190px;
 	-box-sizing: border-box;
 	overflow: hidden;
@@ -190,16 +191,16 @@ style for all dates
 }
 
 .taskbar__article-title {
-	margin-left: -20px;
-	margin-right: -20px;
+	-margin-left: -20px;
+	-margin-right: -20px;
 	margin-bottom: 20px;
-	-padding-left: 20px;
-	-padding-right: 20px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	-padding-left: 40px;
+	-padding-right: 40px;
+	padding-top: 5px;
 	padding-bottom: 20px;	
-	background-color: @grey-blog-menu-op;
+	background-color: @grey-btm-bd; //@grey-blog-menu-op;
 }
 
 .taskbar__date {
@@ -278,7 +279,7 @@ style for all dates
 
 .main-home_header-link {
 	.fonts(@family: 'Merriweather Bold'; 
-		@weight: bold;
+		@weight: normal;
 		@size: 21px; 
 		@line-height: 26px; 
 		@color: @grey-taskbar);
@@ -336,6 +337,9 @@ style for all dates
 @media @desktop-width {
 	.poster {
 		.row(@desktop-padding);
+
+		min-height: calc(~"100vh - 60px - 240px");
+		padding-top: 240px;
 	}
 
 	.poster__text-block {
