@@ -677,9 +677,11 @@ style for all dates
   line-height: 300px;
   color: rgba(255, 255, 255, 0.1);
   position: absolute;
-  top: 25%;
+  -top: 5%;
+  top: 40px;
   left: -30%;
   white-space: nowrap;
+  opacity: 0;
 }
 .poster__text-block {
   max-width: 280px;
