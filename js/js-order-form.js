@@ -162,11 +162,126 @@ window.addEventListener('load', function() {
 END COMMENTS js
 ----------------------------*/
 
+/*----------------------------------------
+LOCAL STORAGE BEGIN
+-----------------------------------------*/
+
+
+window.addEventListener('load', function() {
+	var i, j, k;
+
+	var stateForm = {
+		inputs: [],
+		selects: [],
+		textareas: []
+	};
+
+	var dataForm = localStorage.getItem('dataFormRDG');
+
+
+	var allInputs = Array.prototype.slice.call(document.getElementsByTagName('input'));
+	var allSelects = Array.prototype.slice.call(document.getElementsByTagName('select'));
+	var allTextareas = Array.prototype.slice.call(document.getElementsByTagName('textarea'));
+	
+
+	function changeLocalStorage() {
+		var inputValues = allInputs.map(function(item) {			
+			if (item.type == 'radio' || item.type == 'checkbox') {
+				return item = item.checked;
+			} else {
+				return item = item.value;
+			}			
+		});
+
+		var selectIdSelOptions = allSelects.map(function(item) {
+			return item = item.selectedIndex;
+		});
+
+		var textareaValues = allTextareas.map(function(item) {
+			return item = item.value;
+		});
+
+		stateForm.inputs = inputValues;
+		stateForm.selects = selectIdSelOptions;
+		stateForm.textareas = textareaValues;
+
+		localStorage.setItem('dataFormRDG', JSON.stringify(stateForm));
+	}
+
+	function makeCommentStyle(textarea) {
+		var wrapper = textarea.closest('.order__accord-comment-wrapper');
+		var parent = wrapper.closest('.order__subsector');
+		var btnAddComment = parent.querySelector('.order__add-comment-btn');
+				
+		if (!btnAddComment.classList.contains('order__add-comment-btn--hidden')) {
+			btnAddComment.classList.add('order__add-comment-btn--hidden');
+		}
+		
+		if (!wrapper.classList.contains('order__accord-comment-wrapper--disabled')) {
+			wrapper.classList.add('order__accord-comment-wrapper--disabled');
+		}
+
+		textarea.disabled = true;
+		textarea.style.height = textarea.scrollHeight + 100 + 'px';// 100px for bug with height
+	}
+
+	function renderForm() {
+		var i, j, k;
+
+		for (i=0; i<allInputs.length; i++) {
+			if (stateForm.inputs[i] && typeof stateForm.inputs[i] == 'boolean') {
+				allInputs[i].checked = true;
+			} else {
+				allInputs[i].value = stateForm.inputs[i];
+			}
+		}
+
+		for (j=0; j<allSelects.length; j++) {
+			allSelects[j].selectedIndex = stateForm.selects[j];
+		}
+
+		for (k=0; k<allTextareas.length; k++) {
+			var currentElem = allTextareas[k]
+			if (stateForm.textareas[k]) {
+				currentElem.value = stateForm.textareas[k];
+				if (currentElem.classList.contains('js-no-changed-style')) continue;
+				makeCommentStyle(currentElem);
+			}
+		}
+
+		makeSectorComplete();
+	}
+
+	if (dataForm) {
+		stateForm = JSON.parse(dataForm);
+		renderForm();
+	};	
+
+
+	for (i=0; i<allInputs.length; i++) {
+		allInputs[i].addEventListener('change', changeLocalStorage);
+	}
+
+	for (j=0; j<allSelects.length; j++) {
+		allSelects[j].addEventListener('change', changeLocalStorage);
+	}
+
+	for (k=0; k<allTextareas.length; k++) {
+		allTextareas[k].addEventListener('change', changeLocalStorage);
+	}
+	
+});
+
+
+/*----------------------------------------
+LOCAL STORAGE END
+-----------------------------------------*/
+
 /*--------------------------
 BEGIN ACCORDION BLOCK FORM js
 ----------------------------*/
 
-window.addEventListener('load', function() {
+//window.addEventListener('load', function() {
 	var desktopSize = 1200;	
 	var clientWidth = document.documentElement.clientWidth;
 	//var btsnShowAccordionBlock = document.querySelectorAll('.js-show-accord-block');
@@ -223,7 +338,7 @@ window.addEventListener('load', function() {
 			var siblingLabelNext = currentSelect.nextElementSibling;
 			var brackets = false;
 
-			if (selectedOption.classList.contains('js-not-show')) continue;
+			if (selectedOption.classList.contains('js-not-show')) continue;//maybe delete
 
 			if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
 				intermediateResult.push(siblingLabelNext.innerHTML.trim());
@@ -281,12 +396,7 @@ window.addEventListener('load', function() {
 			intermediateResult = intermediateResult.join(' ');
 			resultArray.push(intermediateResult);
 		}*/
-
-		//console.log(resultArray);
-
-
-
-
+		
 		/*selectBlocks.forEach(function(item) {
 			var intermediateResult = [];
 			var optionSeleected = item.querySelectorAll('option');
@@ -493,7 +603,7 @@ window.addEventListener('load', function() {
 		}
 	}
 
-	function makeSectorCompleteMobile(block) {
+	function makeSectorCompleteMobile(block) {//////////
 		
 	}
 
@@ -567,6 +677,8 @@ window.addEventListener('load', function() {
 		}
 	}
 
+	
+window.addEventListener('load', function() {
 	
 	/*------------------------------
 	BEGIN BLOCK FORM FOR MOBILE js
