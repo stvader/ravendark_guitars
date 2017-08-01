@@ -873,7 +873,7 @@ style for all dates
   color: #cf090f;
 }
 .article__header {
-  margin-bottom: 23px;
+  margin-bottom: 15px;
 }
 .acticle__content {
   margin: 0;
@@ -2071,6 +2071,10 @@ style for all dates
 		vertical-align: top;
 	}*/
 .order__add-comment-btn {
+  width: 135px;
+  border: 1px solid #cf090f;
+  outline: 0;
+  background-color: #ffffff;
   font-family: 'Rubik';
   font-weight: normal;
   font-size: 14px;
@@ -2117,12 +2121,17 @@ style for all dates
   text-decoration: none;
   display: inline-block;
   margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 .order__accord-comment-wrapper--disabled .order__send-comment-btn {
   display: none;
 }
 .order__accord-comment-wrapper .order__send-comment-btn {
   margin-top: 20px;
+  width: auto;
   padding-left: 30px;
   padding-right: 30px;
   border: 1px solid #cf090f;
@@ -2246,7 +2255,7 @@ style for all dates
 .order__submit-btn {
   -width: 130px;
   width: 100%;
-  max-width: 600px;
+  max-width: 490px;
   margin-bottom: 20px;
   -margin-left: auto;
   -margin-right: auto;

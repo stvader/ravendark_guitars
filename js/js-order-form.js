@@ -249,7 +249,7 @@ window.addEventListener('load', function() {
 			}
 		}
 
-		makeSectorComplete();
+		//makeSectorComplete();
 	}
 
 	if (dataForm) {
@@ -281,7 +281,7 @@ LOCAL STORAGE END
 BEGIN ACCORDION BLOCK FORM js
 ----------------------------*/
 
-//window.addEventListener('load', function() {
+window.addEventListener('load', function() {
 	var desktopSize = 1200;	
 	var clientWidth = document.documentElement.clientWidth;
 	//var btsnShowAccordionBlock = document.querySelectorAll('.js-show-accord-block');
@@ -289,10 +289,10 @@ BEGIN ACCORDION BLOCK FORM js
 	var btnToggleMobite = document.querySelectorAll('.js-toggle-btn');
 	var i, j;
 	var allSectorBlocks = document.querySelectorAll('.order__sector');//maybe delete
-	var toggleListsBlocks = document.querySelectorAll('.order__subsector-list');
-	var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector');
-	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block');
-	var desktopSectorAccords = document.querySelectorAll('.js-desktop-sector-accord');
+	var toggleListsBlocks = document.querySelectorAll('.order__subsector-list'); //OUT
+	var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector'); //OUT
+	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block'); //OUT
+	var desktopSectorAccords = document.querySelectorAll('.js-desktop-sector-accord'); //OUT
 	var btnSelect = document.querySelectorAll('.order__btn-select');
 	//console.log(btnToggleMobite);
 
@@ -678,7 +678,7 @@ BEGIN ACCORDION BLOCK FORM js
 	}
 
 	
-window.addEventListener('load', function() {
+//window.addEventListener('load', function() {
 	
 	/*------------------------------
 	BEGIN BLOCK FORM FOR MOBILE js

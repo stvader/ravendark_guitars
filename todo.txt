@@ -1,8 +1,9 @@
 1) make blog-page (look at maket). + maybe change class???
 2) do passive comment height as height all text +
 3) check all html files for script links
-4) local storage for order form
-5) order__submit-btn check style
-6) order__send-comment-btn, order__add-comment-btn, order__comment-button  fix style
-6) bug with poiners up/down
-7) bug with fill out form and make sector complete
+4) local storage for order form +
+5) order__submit-btn check style +
+6) order__send-comment-btn+, order__add-comment-btn+, order__comment-button  fix style +
+7) bug with poiners up/down
+8) bug with fill out form and make sector complete
+9) delete place holder when a comment be sent
