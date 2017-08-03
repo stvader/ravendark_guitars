@@ -171,7 +171,9 @@ LOCAL STORAGE BEGIN
 
 	var dataForm = localStorage.getItem('dataFormRDG');
 
-
+	var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector'); //OUT
+	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block'); //OUT
+	
 	var allInputs = Array.prototype.slice.call(document.getElementsByTagName('input'));
 	var allSelects = Array.prototype.slice.call(document.getElementsByTagName('select'));
 	var allTextareas = Array.prototype.slice.call(document.getElementsByTagName('textarea'));
@@ -285,7 +287,7 @@ window.addEventListener('load', function() {
 	var i, j;
 	//var allSectorBlocks = document.querySelectorAll('.order__sector');//maybe delete
 	var allSectorBlocks = document.querySelectorAll('.js-sector-accord');//OUT
-	var toggleListsBlocks = document.querySelectorAll('.order__subsector-list'); //OUT
+	//var toggleListsBlocks = document.querySelectorAll('.order__subsector-list'); //OUT
 	var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector'); //OUT
 	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block'); //OUT
 	//var allSectorBlocks = document.querySelectorAll('.js-sector-accord'); //OUT    !!!!!!!!

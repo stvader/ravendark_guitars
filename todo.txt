@@ -8,3 +8,4 @@
 11) fix trouble when delete comment - change localstorage +
 12) js-toggle-btn class delete from element (maybe) +
 13) for mobile make autoscrolling????
+14) bug fill form for item звукосниматели
