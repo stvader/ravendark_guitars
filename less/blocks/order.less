@@ -68,14 +68,24 @@
 			color: @white-opacity-80;
 			background-color: @tiffany;
 		}
+	}
+
+	&--active {
+		.order__subsector-list {
+			display: block;
+		}
+
+		.order__sector-button {
+			transform: rotate(180deg);	
+		}
 	} 
 }
 
 .order__sector-name {//maybe detele???
-	-padding-top: 20px;
-	-padding-bottom: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	-margin-top: 20px;
+	-margin-bottom: 20px;
 }
 
 .order__sector-number {
@@ -113,17 +123,15 @@
 
 	max-width: 740px;
 	list-style: none;
-	display: none;
+	display: none;//////////////// maybe under this
 	-opacity: 0;
 	-height: 0%;
 	-overflow: hidden;
 	-transition: all 3s linear 0s;
 
-	&--active {
-		display: block;
-		-height: 100%;
-		-opacity: 1;
-	}
+	/* &--active {
+		display: block;		
+	} */
 }
 
 .order__subsector {
@@ -167,7 +175,7 @@
 	position: absolute;
 	right: 0;
 	-top: 0;
-	top: 5px;
+	top: 30px;
 	-bottom: 0;
 	height: 18px;
 	width: 18px;
@@ -201,9 +209,9 @@
 		transform: rotate(-45deg);
 	}
 
-	&--open {
+	/* &--open {
 		transform: rotate(180deg);
-	}
+	} */
 }
 
 .order__customer-head-wrapper { /*for contacts sector*/

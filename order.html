@@ -15,7 +15,7 @@
 	<main class="main-block main-block--order">
 		<div class="order__wrapper">
 			<!--div class="order__block-space"></div-->
-			<aside class="order__desctop-menu">
+			<aside class="order__desctop-menu js-aside-event-block">
 				<div class="order__sector111 order__sector--active111 order__menu-sector order__menu-sector--body order__menu-sector--active js-desktop-sector-block" data-block-number="1">
 					<div class="order__menu-sector-name">
 						<span class="order__sector-number111 order__menu-sector-number">
@@ -254,10 +254,10 @@
 
 			
 
-			<section class="order__order-section">
+			<section class="order__order-section js-main-event-block">
 				<form action="/" method="POST" class="order__form">
-				<div class="order__sector order__sector--body order__sector--active-desk js-desktop-sector-accord" data-accord-number="1">
-					<div class="order__sector-name js-toggle-btn">
+				<div class="order__sector order__sector--body order__sector--active-desk js-sector-accord  order__sector--active11" data-accord-number="1">
+					<div data-toggle-btn class="order__sector-name">
 						<span class="order__sector-number">
 							1
 						</span>
@@ -336,20 +336,20 @@
 									
 								</fieldset>
 
-								<button type="button" class="order__add-comment-btn btn  order__comment-link">
+								<button type="button" data-create-comment class="order__add-comment-btn btn  order__comment-link">
 									Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>
@@ -423,20 +423,20 @@
 									</div>									
 								</fieldset>
 
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 									Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>
@@ -444,22 +444,22 @@
 						</li>
 					</ul>
 					<div class="order__sector-btn-block">
-						<button type="button" type="button" class="order__btn-select order__btn-select--next btn">
+						<button type="button" type="button" data-btn-select="next" class="order__btn-select order__btn-select--next btn">
 							Гриф
 							<span class="btn-sign btn-sign--next"></span>
 						</button>
 					</div>
 				</div>
 
-				<div class="order__sector order__sector--fingerboard order__sector--active-desk11 js-desktop-sector-accord" data-accord-number="2">
-					<div class="order__sector-name js-toggle-btn">
+				<div class="order__sector order__sector--fingerboard order__sector--active-desk11 js-sector-accord " data-accord-number="2">
+					<div data-toggle-btn class="order__sector-name">
 						<span class="order__sector-number">
 							2
 						</span>
 						<h2 class="order__sector-header">
 							Гриф
 						</h2>
-						<button type="button" type="button" class="order__sector-button"></button>
+						<button type="button" class="order__sector-button"></button>
 					</div>
 					<ul class="order__subsector-list">
 						<li class="order__subsector js-form-block">
@@ -534,20 +534,20 @@
 									
 								</fieldset>
 
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 									Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>
@@ -662,20 +662,20 @@
 									
 								</fieldset>
 
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 									Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>
@@ -705,20 +705,20 @@
 									<option value="23">23</option>
 									<option value="24" selected>24</option>
 								</select>
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 									Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>
@@ -784,20 +784,20 @@
 								</fieldset>
 									
 
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 									Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>								
@@ -805,19 +805,19 @@
 						</li>
 					</ul>
 					<div class="order__sector-btn-block">
-						<button type="button" class="order__btn-select order__btn-select--prev btn">
+						<button type="button" data-btn-select="prev" class="order__btn-select order__btn-select--prev btn">
 							<span class="btn-sign btn-sign--prev"></span>
 							Корпус							
 						</button>
-						<button type="button" class="order__btn-select order__btn-select--next btn">
+						<button type="button" data-btn-select="next" class="order__btn-select order__btn-select--next btn">
 							Покрытие
 							<span class="btn-sign btn-sign--next"></span>
 						</button>
 					</div>
 				</div>
 
-				<div class="order__sector order__sector--cover order__sector--active-desk11 js-desktop-sector-accord" data-accord-number="3">
-					<div class="order__sector-name js-toggle-btn">
+				<div class="order__sector order__sector--cover order__sector--active-desk11 js-sector-accord " data-accord-number="3">
+					<div data-toggle-btn class="order__sector-name">
 						<span class="order__sector-number">
 							3
 						</span>
@@ -905,20 +905,20 @@
 									</div>
 								</fieldset>								
 
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 									Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>							
@@ -926,19 +926,19 @@
 						</li>
 					</ul>
 					<div class="order__sector-btn-block">
-						<button type="button" class="order__btn-select order__btn-select--prev btn">
+						<button type="button" data-btn-select="prev" class="order__btn-select order__btn-select--prev btn">
 							<span class="btn-sign btn-sign--prev"></span>
 							Гриф							
 						</button>
-						<button type="button" class="order__btn-select order__btn-select--next order__btn-select--longer btn">
+						<button type="button" data-btn-select="next" class="order__btn-select order__btn-select--next order__btn-select--longer btn">
 							Электроника
 							<span class="btn-sign btn-sign--next"></span>
 						</button>
 					</div>
 				</div>
 
-				<div class="order__sector order__sector--electronic order__sector--active-desk11 js-desktop-sector-accord" data-accord-number="4">
-					<div class="order__sector-name js-toggle-btn">
+				<div class="order__sector order__sector--electronic order__sector--active-desk11 js-sector-accord " data-accord-number="4">
+					<div data-toggle-btn class="order__sector-name">
 						<span class="order__sector-number">
 							4
 						</span>
@@ -1033,20 +1033,20 @@
 										</label>
 									</div>
 								</div>
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 								Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>							
@@ -1054,19 +1054,19 @@
 						</li>
 					</ul>
 					<div class="order__sector-btn-block">
-						<button type="button" class="order__btn-select order__btn-select--prev btn">
+						<button type="button" data-btn-select="prev" class="order__btn-select order__btn-select--prev btn">
 							<span class="btn-sign btn-sign--prev"></span>
 							Покрытие							
 						</button>
-						<button type="button" class="order__btn-select order__btn-select--next btn">
+						<button type="button" data-btn-select="next" class="order__btn-select order__btn-select--next btn">
 							 Фурнитура
 							<span class="btn-sign btn-sign--next"></span>
 						</button>
 					</div>
 				</div>
 
-				<div class="order__sector order__sector--furniture order__sector--active-desk11 js-desktop-sector-accord" data-accord-number="5">
-					<div class="order__sector-name js-toggle-btn">
+				<div class="order__sector order__sector--furniture order__sector--active-desk11 js-sector-accord " data-accord-number="5">
+					<div data-toggle-btn class="order__sector-name">
 						<span class="order__sector-number">
 							5
 						</span>
@@ -1132,20 +1132,20 @@
 										</li>
 									</ul>									
 								</fieldset>
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 								Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>
@@ -1216,20 +1216,20 @@
 									</ul>
 								</fieldset>
 
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 								Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>
@@ -1278,20 +1278,20 @@
 									</ul>
 								</fieldset>									
 
-								<button type="button" class="order__add-comment-btn btn ">
+								<button type="button" data-create-comment class="order__add-comment-btn btn ">
 									Add Comment
 								</button>
 								<div class="order__accord-comment-wrapper ">		
 									<textarea name="body-material-comment" id="body-material-comment" rows="0" cols="20" class="order__accord-comment-field" placeholder="Your message" ></textarea>
 									<div class="order__comment-button-wrapper">
-										<button type="button" class="order__comment-button order__comment-link js-delete-comment">
+										<button type="button" data-delete-comment class="order__comment-button order__comment-link js-delete-comment">
 											Delete
 										</button>
-										<button type="button" class="order__comment-button order__comment-link js-edit-comment">
+										<button type="button" data-edit-comment class="order__comment-button order__comment-link js-edit-comment">
 											Edit
 										</button>
 									</div>
-									<button type="button" class="order__send-comment-btn btn">
+									<button type="button" data-add-comment class="order__send-comment-btn btn">
 										Add comment
 									</button>									
 								</div>
@@ -1299,19 +1299,19 @@
 						</li>
 					</ul>
 					<div class="order__sector-btn-block">
-						<button type="button" class="order__btn-select order__btn-select--prev order__btn-select--longer order__btn-select--longer-prev btn">
+						<button type="button" data-btn-select="prev" class="order__btn-select order__btn-select--prev order__btn-select--longer order__btn-select--longer-prev btn">
 							<span class="btn-sign btn-sign--prev"></span>
 							Электроника							
 						</button>
-						<button type="button" class="order__btn-select order__btn-select--next btn">
+						<button type="button" data-btn-select="next" class="order__btn-select order__btn-select--next btn">
 							Контакты
 							<span class="btn-sign btn-sign--next"></span>
 						</button>
 					</div>
 				</div>
 
-				<div class="order__sector order__sector--contacts js-desktop-sector-accord" data-accord-number="6">
-					<div class="order__sector-name js-toggle-btn">
+				<div class="order__sector order__sector--contacts js-sector-accord " data-accord-number="6">
+					<div data-toggle-btn class="order__sector-name">
 						<span class="order__sector-number">
 							6
 						</span>

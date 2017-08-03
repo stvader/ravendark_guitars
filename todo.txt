@@ -1,9 +1,10 @@
 1) make blog-page (look at maket). + maybe change class???
-2) do passive comment height as height all text +
-3) check all html files for script links
-4) local storage for order form +
-5) order__submit-btn check style +
-6) order__send-comment-btn+, order__add-comment-btn+, order__comment-button  fix style +
-7) bug with poiners up/down
-8) bug with fill out form and make sector complete
-9) delete place holder when a comment be sent
+2) check all html files for script links
+
+7) bug with poiners up/down -- rewrite program toggle big sector order__sector +
+8) bug with fill out form and make sector complete 
+9) delete placeholder when a comment be sent +
+10) change event on btns as event.target +
+11) fix trouble when delete comment - change localstorage +
+12) js-toggle-btn class delete from element (maybe) +
+13) for mobile make autoscrolling????

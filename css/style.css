@@ -1690,11 +1690,17 @@ style for all dates
   color: rgba(255, 255, 255, 0.8);
   background-color: #00a37b;
 }
+.order__sector--active .order__subsector-list {
+  display: block;
+}
+.order__sector--active .order__sector-button {
+  transform: rotate(180deg);
+}
 .order__sector-name {
-  -padding-top: 20px;
-  -padding-bottom: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -margin-top: 20px;
+  -margin-bottom: 20px;
 }
 .order__sector-number {
   font-family: 'Rubik Medium';
@@ -1733,11 +1739,9 @@ style for all dates
   -height: 0%;
   -overflow: hidden;
   -transition: all 3s linear 0s;
-}
-.order__subsector-list--active {
-  display: block;
-  -height: 100%;
-  -opacity: 1;
+  /* &--active {
+		display: block;		
+	} */
 }
 .order__subsector {
   -margin-bottom: 20px;
@@ -1781,7 +1785,7 @@ style for all dates
   position: absolute;
   right: 0;
   -top: 0;
-  top: 5px;
+  top: 30px;
   -bottom: 0;
   height: 18px;
   width: 18px;
@@ -1792,6 +1796,9 @@ style for all dates
   -border: 1px solid #fff;
   cursor: pointer;
   transition: transform 0.25s ease-in 0s;
+  /* &--open {
+		transform: rotate(180deg);
+	} */
 }
 .order__sector-button::before,
 .order__sector-button::after {
@@ -1810,9 +1817,6 @@ style for all dates
 .order__sector-button::after {
   right: -2px;
   transform: rotate(-45deg);
-}
-.order__sector-button--open {
-  transform: rotate(180deg);
 }
 .order__customer-head-wrapper {
   /*for contacts sector*/
