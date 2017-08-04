@@ -171,6 +171,7 @@ LOCAL STORAGE BEGIN
 
 	var dataForm = localStorage.getItem('dataFormRDG');
 
+	var allSectorBlocks = document.querySelectorAll('.js-sector-accord'); //OUT
 	var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector'); //OUT
 	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block'); //OUT
 	
@@ -223,7 +224,7 @@ LOCAL STORAGE BEGIN
 	}
 
 	function renderForm() {
-		var i, j, k;
+		var i, j, k, l;
 
 		for (i=0; i<allInputs.length; i++) {
 			if (stateForm.inputs[i] && typeof stateForm.inputs[i] == 'boolean') {
@@ -242,11 +243,17 @@ LOCAL STORAGE BEGIN
 			if (stateForm.textareas[k]) {
 				currentElem.value = stateForm.textareas[k];
 				if (currentElem.classList.contains('js-no-changed-style')) continue;
-				makeCommentStyle(currentElem);
+				makeCommentStyle(currentElem);				
 			}
 		}
 
-		//fill changed items		
+		//console.log(allSectorBlocks);
+
+		//fill changed items
+		for (l=0; l < allSectorBlocks.length; l++) {
+			fillCheckedItems(desktopSectorBlocks[l], allSectorBlocks[l]);
+			makeSectorComplete();
+		}		
 	}
 
 	function changeFormElements(e) {
@@ -265,7 +272,7 @@ LOCAL STORAGE BEGIN
 	};
 
 	mainEventBlock.addEventListener('change', changeFormElements);	
-});
+//});
 
 
 /*----------------------------------------
@@ -276,25 +283,25 @@ LOCAL STORAGE END
 BEGIN ACCORDION BLOCK FORM js
 ----------------------------*/
 
-window.addEventListener('load', function() {
-	var mainEventBlock = document.querySelector('.js-main-event-block');
+//window.addEventListener('load', function() {
+	//var mainEventBlock = document.querySelector('.js-main-event-block');
 	var asideEventBlock = document.querySelector('.js-aside-event-block');
 	var desktopSize = 1200;	
 	var clientWidth = document.documentElement.clientWidth;
 	//var btsnShowAccordionBlock = document.querySelectorAll('.js-show-accord-block');
 	//var btnsHideAccordionBlock = document.querySelectorAll('.js-hide-accord-block');
 	//var btnToggleMobite = document.querySelectorAll('.js-toggle-btn');
-	var i, j;
+	var i, j; // maybe delete
 	//var allSectorBlocks = document.querySelectorAll('.order__sector');//maybe delete
-	var allSectorBlocks = document.querySelectorAll('.js-sector-accord');//OUT
+	//var allSectorBlocks = document.querySelectorAll('.js-sector-accord');//OUT
 	//var toggleListsBlocks = document.querySelectorAll('.order__subsector-list'); //OUT
-	var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector'); //OUT
-	var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block'); //OUT
+	//var allDesktopMenuSectors = document.querySelectorAll('.order__menu-sector'); //OUT ??????
+	//var desktopSectorBlocks = document.querySelectorAll('.js-desktop-sector-block'); //OUT ?????
 	//var allSectorBlocks = document.querySelectorAll('.js-sector-accord'); //OUT    !!!!!!!!
 	var btnSelect = document.querySelectorAll('.order__btn-select');
 	//console.log(btnToggleMobite);
 
-	function hideAllAccords() {// maybe delete
+	/*function hideAllAccords() {// maybe delete
 		var accordsBlock = document.querySelectorAll('.order__subsector-accord');
 		var i;
 
@@ -304,7 +311,7 @@ window.addEventListener('load', function() {
 				fillCheckedItems(accordsBlock[i]);
 			}
 		}
-	}
+	}*/
 
 	function takeCheckedItems(arr) {
 		var inputs = Array.prototype.slice.call(arr);
@@ -322,7 +329,6 @@ window.addEventListener('load', function() {
 	}
 
 	function takeSelectItems(arr) {
-		//var selectBlocks = Array.prototype.slice.call(arr);
 		var resultArray = [];
 		var i, j;
 
@@ -356,78 +362,7 @@ window.addEventListener('load', function() {
 
 			intermediateResult = intermediateResult.join(' ');
 			resultArray.push(intermediateResult);			
-		}
-
-		/*outer: for (i=0; i<arr.length; i++) {
-			var intermediateResult = [];
-			var brackets = false;
-			var optionSelected = arr[i].querySelectorAll('option');
-			var siblingLabelPrev = arr[i].previousElementSibling;
-			var siblingLabelNext = arr[i].nextElementSibling;
-
-
-			for (j=0; j<optionSelected.length; j++) {
-				console.log(optionSelected[j]);
-				if (!optionSelected[j].selected) break;
-				if (optionSelected[j].classList.contains('js-not-show')) {
-					intermediateResult = null;
-					break outer;
-				} 
-
-				if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
-					intermediateResult.push(siblingLabelNext.innerHTML.trim());
-					brackets = true;
-				}
-
-				if (siblingLabelPrev && siblingLabelPrev.tagName == 'LABEL') {
-					intermediateResult.push(siblingLabelPrev.innerHTML.trim());
-					brackets = true;
-				}
-
-				if (brackets) {
-					intermediateResult.push('(' + item.value + ')');
-				} else {
-					intermediateResult.push(item.value);
-				}
-			}
-
-			intermediateResult = intermediateResult.join(' ');
-			resultArray.push(intermediateResult);
-		}*/
-		
-		/*selectBlocks.forEach(function(item) {
-			var intermediateResult = [];
-			var optionSeleected = item.querySelectorAll('option');
-			var siblingLabelPrev = item.previousElementSibling;
-			var siblingLabelNext = item.nextElementSibling;
-			var brackets = false;
-
-			
-
-			optionSeleected.forEach(function(item) {
-				if (item.selected && !item.classList.contains('js-not-show')) {					
-
-					if (siblingLabelNext && siblingLabelNext.tagName == 'LABEL') {
-						intermediateResult.push(siblingLabelNext.innerHTML.trim());
-						brackets = true;
-					}
-
-					if (siblingLabelPrev && siblingLabelPrev.tagName == 'LABEL') {
-						intermediateResult.push(siblingLabelPrev.innerHTML.trim());
-						brackets = true;
-					}
-
-					if (brackets) {
-						intermediateResult.push('(' + item.value + ')');
-					} else {
-						intermediateResult.push(item.value);
-					}
-				}
-			});
-
-			intermediateResult = intermediateResult.join(' ');
-			resultArray.push(intermediateResult);
-		});*/
+		}		
 
 		return resultArray;
 	}
@@ -450,9 +385,13 @@ window.addEventListener('load', function() {
 		var resultArray = [];
 		var i;
 
+		//console.log(areas);
+
 		areas.forEach(function(item) {
 			for (i=0; i < areas.length; i++) {
-				if (areas[i].value.length && areas[i].disabled === true) {
+				if (areas[i].value.length && 
+					(areas[i].disabled === true || 
+						areas[i].classList.contains('js-send-undisabled'))) {
 					//console.log(areas[i].value);
 					resultArray.push(areas[i].value);
 				}
@@ -481,9 +420,9 @@ window.addEventListener('load', function() {
 			valueArray = valueArray.concat(takeCheckedItems(checkInputs));
 		}
 
-		if (textarea.length) {	
-			//console.log('yes');		
+		if (textarea.length) {					
 			valueArray = valueArray.concat(takeTextareaItems(textarea));
+			//console.log(textarea);	
 		}
 		
 		return valueArray.join(',</br>');
@@ -514,8 +453,8 @@ window.addEventListener('load', function() {
 		var i; 
 
 		//var parentBlock = block.closest('.order__subsector'); // for mobile only
-		var formBlock = dataBlock; // dataBlock is only for desctop, for mobile it's his own parent block
-		var subsectorInfoBlock = formBlock.querySelectorAll('.js-form-block');
+		//var formBlock = dataBlock; // dataBlock is only for desctop, for mobile it's his own parent block
+		var subsectorInfoBlock = dataBlock.querySelectorAll('.js-form-block');
 		
 
 		/*if (!dataBlock) {
@@ -524,10 +463,11 @@ window.addEventListener('load', function() {
 			valueBlock = block.querySelectorAll('.order__menu-subsector-value');
 		//}//try || for it
 
-		/*console.log(valueBlock);*/
+		//console.log(valueBlock);
 
 		for (i=0; i<subsectorInfoBlock.length; i++) {
-			var valueString = getFormValues(subsectorInfoBlock[i]); 
+			var valueString = getFormValues(subsectorInfoBlock[i]);
+			if (!valueString) continue;
 			valueBlock[i].innerHTML = valueString;	
 		}
 
@@ -692,7 +632,7 @@ window.addEventListener('load', function() {
 			var parentBlock = elem.closest('.js-sector-accord');
 			//var parentBlock = elem.parentElement;
 
-			console.log(parentBlock);
+			//console.log(parentBlock);
 
 			removeSectorComplete(parentBlock);// rewrite style
 			//toggleBtnSubsector(toggleBtn);
@@ -773,16 +713,18 @@ window.addEventListener('load', function() {
 
 		function addListenerAccrdionToggle(e) {
 			var target = e.target;
-			//var action = target.hasAttribute('data-toggle-btn');
-			console.log(target);
-
+			
 			while (target != asideEventBlock) {
-			    if (target.hasAttribute('data-toggle-btn')) {
+			    /*if (target.hasAttribute('data-toggle-btn')) {*/
+			    if (target.dataset.toggleBtn) {
+
 				    toggleMobileAccord(target);
 				    return;
 			    }
 			    target = target.parentNode;
-			}			
+
+			}	
+			console.log(target);		
 		}
 
 		mainEventBlock.addEventListener('click', addListenerAccrdionToggle);
@@ -804,9 +746,7 @@ window.addEventListener('load', function() {
 
 		function actionSectorBlock(elem) {
 			//var target = e.target;
-
-			console.log('yep');
-			
+					
 			showDesktopAccord(elem);
 			removeDesctopMenuItemComplete(elem);
 			makeDesktopMenuSectorActive(elem);			
