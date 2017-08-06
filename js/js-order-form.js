@@ -717,14 +717,11 @@ BEGIN ACCORDION BLOCK FORM js
 			while (target != asideEventBlock) {
 			    /*if (target.hasAttribute('data-toggle-btn')) {*/
 			    if (target.dataset.toggleBtn) {
-
 				    toggleMobileAccord(target);
 				    return;
 			    }
 			    target = target.parentNode;
-
-			}	
-			console.log(target);		
+			}					
 		}
 
 		mainEventBlock.addEventListener('click', addListenerAccrdionToggle);
