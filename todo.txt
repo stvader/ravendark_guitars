@@ -2,10 +2,11 @@
 2) check all html files for script links
 
 7) bug with poiners up/down -- rewrite program toggle big sector order__sector +
-8) bug with fill out form and make sector complete 
+8) bug with fill out form and make sector complete + add for diff devices +
 9) delete placeholder when a comment be sent +
 10) change event on btns as event.target +
 11) fix trouble when delete comment - change localstorage +
 12) js-toggle-btn class delete from element (maybe) +
 13) for mobile make autoscrolling????
 14) bug fill form for item звукосниматели +
+15) do select checked after sector have been acting

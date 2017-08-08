@@ -250,10 +250,12 @@ LOCAL STORAGE BEGIN
 		//console.log(allSectorBlocks);
 
 		//fill changed items
-		for (l=0; l < allSectorBlocks.length; l++) {
+		//makeSectorCompleteMobile();// for dif devices
+
+		/*for (l=0; l < allSectorBlocks.length; l++) {
 			fillCheckedItems(desktopSectorBlocks[l], allSectorBlocks[l]);
 			makeSectorComplete();
-		}		
+		}	*/	
 	}
 
 	function changeFormElements(e) {
@@ -530,8 +532,7 @@ BEGIN ACCORDION BLOCK FORM js
 		outer: for (i=0; i<allDesktopMenuSectors.length; i++) {
 			var block = allDesktopMenuSectors[i];			
 			var valueBlocks = block.querySelectorAll('.order__menu-subsector-value');
-			//console.log(valueBlocks);
-
+			
 			for (j=0; j<valueBlocks.length; j++) {
 				var valueContent = valueBlocks[j].innerHTML.trim();
 				if (!valueContent) {
@@ -547,11 +548,28 @@ BEGIN ACCORDION BLOCK FORM js
 		}
 	}
 
-	function makeSectorCompleteMobile(block) {//////////
-		
+	function makeSectorCompleteMobile() {
+		var i, j;
+		outer: for (i=0; i<allSectorBlocks.length; i++) {
+			var sector = allSectorBlocks[i];
+			var subSector = sector.querySelectorAll('.js-form-block');
+
+			for (j=0; j<subSector.length; j++) {
+				var blockFull = getFormValues(subSector[j]).length;
+				if (!blockFull) {
+					removeSectorComplete(sector);
+					continue outer;
+				}
+
+				if (!sector.classList.contains('order__sector--complete')
+						&& !sector.classList.contains('order__sector--active')) {
+					sector.classList.add('order__sector--complete');
+				}
+			}
+		}
 	}
 
-	function removeSectorComplete(block) {/// maybe delete
+	function removeSectorComplete(block) {/// maybe delete | not delete
 		if (block.classList.contains('order__sector--complete')) {
 			block.classList.remove('order__sector--complete');
 		}
@@ -634,7 +652,7 @@ BEGIN ACCORDION BLOCK FORM js
 
 			//console.log(parentBlock);
 
-			removeSectorComplete(parentBlock);// rewrite style
+			removeSectorComplete(parentBlock);
 			//toggleBtnSubsector(toggleBtn);
 
 			if (!parentBlock.classList.contains('order__sector--active')) {
@@ -659,7 +677,8 @@ BEGIN ACCORDION BLOCK FORM js
 
 			
 
-			makeSectorCompleteMobile();			
+			makeSectorCompleteMobile();	
+
 		}
 
 		/*function actionSubsectorPoint(e) {//delete
@@ -724,6 +743,7 @@ BEGIN ACCORDION BLOCK FORM js
 			}					
 		}
 
+		makeSectorCompleteMobile();
 		mainEventBlock.addEventListener('click', addListenerAccrdionToggle);
 
 
@@ -739,7 +759,7 @@ BEGIN ACCORDION BLOCK FORM js
 
 	if (clientWidth >= desktopSize) {
 		//console.log('444');
-		var i, j;
+		var i;
 
 		function actionSectorBlock(elem) {
 			//var target = e.target;
@@ -800,6 +820,11 @@ BEGIN ACCORDION BLOCK FORM js
 			}
 			
 		}
+
+		for (i=0; i<allSectorBlocks.length; i++) {
+			fillCheckedItems(desktopSectorBlocks[i], allSectorBlocks[i]);
+			makeSectorComplete();
+		}	
 
 		asideEventBlock.addEventListener('click', addListenerSelectBlock);
 		mainEventBlock.addEventListener('click', addListenetSelectBtn);

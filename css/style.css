@@ -1689,6 +1689,7 @@ style for all dates
 .order__sector--complete .order__sector-number {
   color: rgba(255, 255, 255, 0.8);
   background-color: #00a37b;
+  border: none;
 }
 .order__sector--active .order__subsector-list {
   display: block;
